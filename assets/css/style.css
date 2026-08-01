@@ -424,97 +424,6 @@ img { max-width: 100%; display: block; }
     50% { opacity: 0.3; transform: scaleY(0.5); }
 }
 
-/* === OBJECTIONS === */
-.objections {
-    padding: 120px 0;
-    background: var(--bg-secondary);
-    position: relative;
-}
-
-.objections::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border-accent), transparent);
-}
-
-.objections__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
-}
-
-.objection-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 36px;
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-}
-
-.objection-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--gradient);
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.objection-card:hover {
-    border-color: var(--border-accent);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-accent);
-}
-
-.objection-card:hover::before {
-    opacity: 1;
-}
-
-.objection-card__icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 12px;
-    background: rgba(22, 163, 74, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    color: var(--accent);
-}
-
-.objection-card__title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: var(--text-primary);
-}
-
-.objection-card__text {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin-bottom: 16px;
-}
-
-.objection-card__highlight {
-    padding: 16px;
-    background: rgba(22, 163, 74, 0.05);
-    border-left: 3px solid var(--accent);
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-
 /* === SERVICES === */
 .services {
     padding: 120px 0;
@@ -587,26 +496,6 @@ img { max-width: 100%; display: block; }
     font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 12px;
-}
-
-.service-card__price {
-    margin-bottom: 24px;
-}
-
-.price {
-    font-size: 2rem;
-    font-weight: 800;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.period {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-top: 4px;
 }
 
 .service-card__features {
@@ -1181,7 +1070,6 @@ img { max-width: 100%; display: block; }
         font-size: 2rem;
     }
 
-    .objections__grid,
     .services__grid,
     .cases__grid,
     .differentials__grid {
