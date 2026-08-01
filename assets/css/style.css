@@ -1020,7 +1020,7 @@ img { max-width: 100%; display: block; }
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .navbar__links,
     .navbar__cta {
         display: none;
@@ -1087,15 +1087,66 @@ img { max-width: 100%; display: block; }
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    .hero__title {
+        font-size: 1.8rem;
+    }
+
+    .hero__subtitle {
+        font-size: 0.95rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .section-desc {
+        font-size: 0.95rem;
+    }
+
+    .hero__badge {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+    }
+
     .hero__actions {
         flex-direction: column;
         align-items: center;
+        gap: 12px;
     }
 
     .hero__actions .btn {
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
+    }
+
+    .btn--lg {
+        padding: 14px 24px;
+        font-size: 0.95rem;
+    }
+
+    .service-card {
+        padding: 24px;
+    }
+
+    .service-card__title {
+        font-size: 1.2rem;
+    }
+
+    .diff-card {
+        padding: 24px;
+    }
+
+    .step__number {
+        font-size: 3rem;
+    }
+
+    .cta-final__title {
+        font-size: 1.6rem;
+    }
+
+    .cta-final__text {
+        font-size: 0.95rem;
     }
 
     .cta-final__actions {
@@ -1105,10 +1156,24 @@ img { max-width: 100%; display: block; }
 
     .cta-final__actions .btn {
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
     }
 
     .services__extras {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .footer__brand .navbar__logo-img {
+        height: 60px;
+        width: 180px;
+    }
+
+    .navbar__logo {
+        height: 60px;
+    }
+
+    .navbar__logo-img {
+        height: 60px;
+        width: 180px;
     }
 }
