@@ -1011,12 +1011,30 @@ img { max-width: 100%; display: block; }
     border-radius: var(--radius);
     padding: 32px;
     position: relative;
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
 }
 
 .pricing-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(22, 163, 74, 0.12);
+    border-color: var(--accent);
+}
+
+.pricing-card:hover::before {
+    transform: scaleX(1);
 }
 
 .pricing-card--featured {
@@ -1025,21 +1043,22 @@ img { max-width: 100%; display: block; }
 }
 
 .pricing-card--featured:hover {
-    transform: scale(1.02) translateY(-4px);
+    transform: scale(1.02) translateY(-8px);
 }
 
 .pricing-card__badge {
     position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 16px;
+    right: -30px;
     background: var(--gradient);
     color: #fff;
-    padding: 4px 16px;
-    border-radius: 20px;
-    font-size: 0.75rem;
+    padding: 6px 40px;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 8px rgba(22, 163, 74, 0.3);
 }
 
 .pricing-card__header {
@@ -1053,6 +1072,7 @@ img { max-width: 100%; display: block; }
     font-size: 1.1rem;
     color: var(--text-primary);
     margin-bottom: 12px;
+    font-weight: 700;
 }
 
 .pricing-card__from {
@@ -1070,6 +1090,14 @@ img { max-width: 100%; display: block; }
     background-clip: text;
 }
 
+.pricing-card__value--small {
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: none;
+    -webkit-text-fill-color: var(--text-secondary);
+    font-style: italic;
+}
+
 .pricing-card__period {
     font-size: 0.8rem;
     color: var(--text-muted);
@@ -1082,14 +1110,23 @@ img { max-width: 100%; display: block; }
 }
 
 .pricing-card__features li {
-    padding: 8px 0;
+    padding: 10px 0;
     font-size: 0.9rem;
     color: var(--text-secondary);
     border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
 }
 
 .pricing-card__features li:last-child {
     border-bottom: none;
+}
+
+.pricing-card__features li:hover {
+    color: var(--text-primary);
+    padding-left: 4px;
 }
 
 .pricing__note {
