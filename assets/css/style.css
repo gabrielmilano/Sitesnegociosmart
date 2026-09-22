@@ -302,12 +302,12 @@ img { max-width: 100%; display: block; }
     position: absolute;
     inset: -20%;
     background:
-        radial-gradient(40% 50% at 15% 25%, rgba(22, 163, 74, 0.18) 0%, transparent 60%),
-        radial-gradient(35% 45% at 85% 15%, rgba(37, 99, 235, 0.16) 0%, transparent 60%),
-        radial-gradient(30% 40% at 70% 70%, rgba(139, 92, 246, 0.12) 0%, transparent 60%),
-        radial-gradient(25% 35% at 30% 80%, rgba(16, 185, 129, 0.14) 0%, transparent 60%);
-    filter: blur(40px);
-    animation: aurora 16s ease-in-out infinite alternate;
+        radial-gradient(45% 55% at 15% 20%, rgba(34, 197, 94, 0.45) 0%, transparent 65%),
+        radial-gradient(40% 50% at 85% 10%, rgba(59, 130, 246, 0.35) 0%, transparent 65%),
+        radial-gradient(35% 45% at 75% 75%, rgba(168, 85, 247, 0.30) 0%, transparent 65%),
+        radial-gradient(30% 40% at 25% 85%, rgba(45, 212, 191, 0.35) 0%, transparent 65%);
+    filter: blur(60px);
+    animation: aurora 18s ease-in-out infinite alternate;
     will-change: transform, opacity;
 }
 
