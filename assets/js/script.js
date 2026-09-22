@@ -5,6 +5,20 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // === SCROLL PROGRESS BAR ===
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.appendChild(progressBar);
+
+    const updateProgress = () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = progress + '%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
     // === NAVBAR SCROLL ===
     const navbar = document.getElementById('navbar');
     const handleScroll = () => {
