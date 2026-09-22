@@ -1272,75 +1272,6 @@ img { max-width: 100%; display: block; }
     color: var(--text-muted);
 }
 
-/* === TESTIMONIALS === */
-.testimonials {
-    padding: 80px 0;
-}
-
-.testimonials__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 40px;
-}
-
-.testimonial-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 32px;
-    transition: var(--transition);
-}
-
-.testimonial-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-}
-
-.testimonial-card__stars {
-    color: #f59e0b;
-    font-size: 1.2rem;
-    margin-bottom: 16px;
-}
-
-.testimonial-card__text {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-style: italic;
-}
-
-.testimonial-card__author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.testimonial-card__avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--gradient);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 0.85rem;
-}
-
-.testimonial-card__author strong {
-    display: block;
-    font-size: 0.9rem;
-    color: var(--text-primary);
-}
-
-.testimonial-card__author span {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-}
-
 /* === WHATSAPP FLOAT === */
 .whatsapp-float {
     position: fixed;
@@ -1585,8 +1516,7 @@ img { max-width: 100%; display: block; }
         grid-template-columns: 1fr;
     }
 
-    .pricing__grid,
-    .testimonials__grid {
+    .pricing__grid {
         grid-template-columns: 1fr;
     }
 
@@ -1649,9 +1579,5 @@ img { max-width: 100%; display: block; }
 @media (max-width: 480px) {
     .pricing-card__value {
         font-size: 2rem;
-    }
-
-    .testimonial-card {
-        padding: 24px;
     }
 }
