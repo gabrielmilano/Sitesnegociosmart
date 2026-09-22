@@ -39,6 +39,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -47,6 +48,7 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -289,6 +291,7 @@ img { max-width: 100%; display: block; }
     justify-content: center;
     position: relative;
     overflow: hidden;
+    overflow-x: clip;
     padding: 120px 0 80px;
 }
 
@@ -296,6 +299,7 @@ img { max-width: 100%; display: block; }
     position: absolute;
     inset: 0;
     overflow: hidden;
+    overflow-x: clip;
 }
 
 .hero__aurora {
@@ -986,6 +990,7 @@ img { max-width: 100%; display: block; }
     padding: 120px 0;
     position: relative;
     overflow: hidden;
+    overflow-x: clip;
     text-align: center;
 }
 
@@ -993,6 +998,7 @@ img { max-width: 100%; display: block; }
     position: absolute;
     inset: 0;
     overflow: hidden;
+    overflow-x: clip;
 }
 
 .cta-final__orb {
@@ -1387,6 +1393,13 @@ img { max-width: 100%; display: block; }
     z-index: 1001;
     border-radius: 0 2px 2px 0;
     transition: width 0.1s linear;
+}
+
+/* === SAFEGUARD CONTRA SCROLL HORIZONTAL === */
+.hero__orb,
+.hero__aurora,
+.cta-final__orb {
+    max-width: none;
 }
 
 /* === REDUCED MOTION === */
