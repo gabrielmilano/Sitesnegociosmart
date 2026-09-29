@@ -3,512 +3,516 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Negócios Smart - Criamos sites e landing pages que transformam visitantes em clientes. Presença digital profissional para o seu negócio.">
-    <meta name="keywords" content="criação de sites, landing page, site institucional, marketing digital, presença digital">
     <title>Negócios Smart | Sites e Landing Pages que Vendem</title>
+    <meta name="description" content="Criamos sites, landing pages e perfis no Google Meu Negócio que transformam visitantes em clientes. Design sob medida, rápido no celular e pronto para o Google.">
+    <link rel="canonical" href="https://sites.negociosmart.com.br/">
+    <meta name="theme-color" content="#070B14">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Negócios Smart">
+    <meta property="og:url" content="https://sites.negociosmart.com.br/">
+    <meta property="og:title" content="Negócios Smart | Seu negócio merece um site que vende">
+    <meta property="og:description" content="Sites, landing pages e Google Meu Negócio sob medida — rápidos, bonitos no celular e prontos para o Google.">
+    <meta property="og:image" content="https://sites.negociosmart.com.br/assets/brand/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/brand/favicon-64.png">
+    <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Inter+Tight:wght@500..800&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" type="image/png" href="assets/img/iconebar.png">
+    <link rel="preload" as="image" href="assets/cases/imoveis.webp">
+
+    <script>document.documentElement.classList.add('js');</script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Negócios Smart",
+        "description": "Criação de sites, landing pages e perfis no Google Meu Negócio.",
+        "url": "https://sites.negociosmart.com.br/",
+        "logo": "https://sites.negociosmart.com.br/assets/brand/apple-touch-icon.png",
+        "image": "https://sites.negociosmart.com.br/assets/brand/og-image.jpg",
+        "telephone": "+55 48 99179-5646",
+        "email": "negociosmartoficiall@gmail.com",
+        "areaServed": "BR",
+        "sameAs": ["https://www.instagram.com/negociossmart/"]
+    }
+    </script>
 </head>
 <body>
 
-    <!-- HEADER / NAVBAR -->
-    <header class="navbar" id="navbar">
-        <div class="container navbar__inner">
-            <a href="#" class="navbar__logo">
-                <img src="assets/img/transluscidoNegociosmartNavbar.png" alt="Negócios Smart" class="navbar__logo-img">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header__pill">
+            <a href="#topo" class="brand" aria-label="Negócios Smart — início">
+                <img src="assets/brand/logo-mark.png" alt="" width="176" height="240" class="brand__mark">
+                <span class="brand__word">Negócios <b>Smart</b></span>
             </a>
-            <nav class="navbar__links">
-                <a href="#servicos">Serviços</a>
-                <a href="#como-funciona">Como Funciona</a>
-                <a href="#portfolios">Portfólio</a>
+            <nav class="header__nav" id="headerNav" aria-label="Principal">
+                <a href="#diferenciais">Diferenciais</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#planos">Planos</a>
+                <a href="#processo">Processo</a>
                 <a href="#faq">FAQ</a>
+                <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais!" class="btn btn--primary btn--sm header__nav-cta" target="_blank" rel="noopener">Falar no WhatsApp</a>
             </nav>
-            <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20vim%20pela%20landing%20page%20e%20quero%20saber%20mais!" class="btn btn--primary navbar__cta" target="_blank" rel="noopener">
-                Fale Conosco
+            <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais!" class="btn btn--primary btn--sm header__cta" target="_blank" rel="noopener">
+                Falar no WhatsApp
             </a>
-            <button class="navbar__toggle" id="navToggle" aria-label="Menu">
-                <span></span><span></span><span></span>
+            <button class="header__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="headerNav">
+                <span></span><span></span>
             </button>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="hero">
-        <div class="hero__bg">
-            <div class="hero__aurora"></div>
-            <div class="hero__orb hero__orb--1"></div>
-            <div class="hero__orb hero__orb--2"></div>
-            <div class="hero__orb hero__orb--3"></div>
-        </div>
-        <div class="container hero__content">
-            <div class="hero__badge" data-animate="fade-up">Presença Digital Profissional</div>
-            <h1 class="hero__title" data-animate="fade-up" data-delay="100">
-                Seu negócio não pode<br>
-                ficar <span class="gradient-text">invisível</span> na internet
-            </h1>
-            <p class="hero__subtitle" data-animate="fade-up" data-delay="200">
-                Criamos sites e landing pages que transformam visitantes em clientes.
-                Design profissional, carregamento rápido e otimizado para o Google.
-            </p>
-            <div class="hero__actions" data-animate="fade-up" data-delay="300">
-                <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20quero%20um%20site%20para%20meu%20neg%C3%B3cio!" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    Chamar no WhatsApp
-                </a>
-                <a href="#servicos" class="btn btn--ghost btn--lg">
-                    Ver Serviços
-                </a>
-            </div>
-            <div class="hero__trust" data-animate="fade-up" data-delay="400">
-                <span class="hero__trust-item">&#10003; Garantia de Satisfação</span>
-                <span class="hero__trust-item">&#10003; Entrega no Prazo</span>
-                <span class="hero__trust-item">&#10003; Suporte Pós-Entrega</span>
-            </div>
-        </div>
-        <div class="hero__scroll">
-            <span>Scroll</span>
-            <div class="hero__scroll-line"></div>
-        </div>
-    </section>
+    <main id="conteudo">
 
-    <!-- SERVIÇOS -->
-    <section class="services" id="servicos">
-        <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-tag">Nossos Serviços</span>
-                <h2 class="section-title">Soluções completas para sua <span class="gradient-text">presença digital</span></h2>
-                <p class="section-desc">Escolha a opção ideal para o estágio do seu negócio.</p>
+        <!-- HERO -->
+        <section class="hero" id="topo">
+            <div class="hero__bg" aria-hidden="true">
+                <div class="hero__grid"></div>
+                <div class="glow glow--green"></div>
+                <div class="glow glow--blue"></div>
             </div>
-            <div class="services__grid">
-                <!-- Google Meu Negócio -->
-                <div class="service-card" data-animate="fade-up" data-delay="0">
-                    <div class="service-card__badge">Popular</div>
-                    <div class="service-card__icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    </div>
-                    <h3 class="service-card__title">Google Meu Negócio</h3>
-                    <ul class="service-card__features">
-                        <li>Perfil completo no Google</li>
-                        <li>Localização verificada</li>
-                        <li>Fotos profissionais</li>
-                        <li>Otimizado para buscas locais</li>
-                    </ul>
-                    <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20quero%20o%20servi%C3%A7o%20de%20Google%20Meu%20Neg%C3%B3cio!" class="btn btn--primary btn--block" target="_blank" rel="noopener">
-                        Quero Esse
-                    </a>
-                </div>
-                <!-- Landing Page -->
-                <div class="service-card service-card--featured" data-animate="fade-up" data-delay="100">
-                    <div class="service-card__badge service-card__badge--featured">Mais Vendido</div>
-                    <div class="service-card__icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    </div>
-                    <h3 class="service-card__title">Landing Page</h3>
-                    <ul class="service-card__features">
-                        <li>Site de página única</li>
-                        <li>Várias chamadas para ação (CTA)</li>
-                        <li>Posicionamento no Google</li>
-                        <li>Responde principais dúvidas</li>
-                        <li>Design responsivo e moderno</li>
-                        <li>Formulário de contato</li>
-                        <li>Botão WhatsApp integrado</li>
-                    </ul>
-                    <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20quero%20uma%20Landing%20Page!" class="btn btn--primary btn--block" target="_blank" rel="noopener">
-                        Quero Essa
-                    </a>
-                </div>
-                <!-- Site Institucional -->
-                <div class="service-card" data-animate="fade-up" data-delay="200">
-                    <div class="service-card__badge">Completo</div>
-                    <div class="service-card__icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                    </div>
-                    <h3 class="service-card__title">Site Institucional</h3>
-                    <ul class="service-card__features">
-                        <li>Site com várias páginas</li>
-                        <li>História da empresa</li>
-                        <li>Credibilidade profissional</li>
-                        <li>SEO otimizado</li>
-                        <li>Painel administrativo</li>
-                        <li>Suporte pós-entrega</li>
-                    </ul>
-                    <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20quero%20um%20Site%20Institucional!" class="btn btn--primary btn--block" target="_blank" rel="noopener">
-                        Quero Esse
-                    </a>
-                </div>
-            </div>
-            <!-- Serviços extras -->
-            <div class="services__extras" data-animate="fade-up">
-                <div class="extra-card">
-                    <h4>Domínio</h4>
-                    <p>Registro de domínio próprio</p>
-                    <span class="extra-price">Sob consulta</span>
-                </div>
-                <div class="extra-card">
-                    <h4>Servidor</h4>
-                    <p>Hospedagem com manutenção simples inclusa</p>
-                    <span class="extra-price">Sob consulta</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- COMO FUNCIONA -->
-    <section class="how-it-works" id="como-funciona">
-        <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-tag">Processo Simples</span>
-                <h2 class="section-title">Como <span class="gradient-text">funciona</span>?</h2>
-                <p class="section-desc">Em poucos passos seu negócio já está no ar.</p>
-            </div>
-            <div class="steps">
-                <div class="step" data-animate="fade-up" data-delay="0">
-                    <div class="step__number">01</div>
-                    <div class="step__content">
-                        <h3 class="step__title">Briefing</h3>
-                        <p class="step__text">Conversamos sobre seu negócio, objetivo, público-alvo e preferências visuais. Entendemos o que você precisa.</p>
+            <div class="container hero__inner">
+                <div class="hero__copy">
+                    <span class="eyebrow" data-reveal>
+                        <span class="eyebrow__dot"></span>
+                        Sites · Landing Pages · Google Meu Negócio
+                    </span>
+                    <h1 class="hero__title" data-reveal style="--d:80ms">
+                        Seu negócio merece um site que <em class="serif">vende.</em>
+                    </h1>
+                    <p class="hero__lead" data-reveal style="--d:160ms">
+                        Criamos sites e landing pages sob medida para empresas que querem ser levadas a sério:
+                        rápidos, bonitos no celular e prontos para aparecer no Google. Você fala direto com a gente
+                        pelo WhatsApp e recebe tudo no ar.
+                    </p>
+                    <div class="hero__actions" data-reveal style="--d:240ms">
+                        <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20quero%20um%20site%20para%20meu%20neg%C3%B3cio!" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            Quero meu site
+                        </a>
+                        <a href="#projetos" class="btn btn--glass btn--lg">
+                            Ver projetos
+                            <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+                        </a>
                     </div>
+                    <ul class="hero__trust" data-reveal style="--d:320ms">
+                        <li><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Prazo combinado e cumprido</li>
+                        <li><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Pagamento 50% / 50%</li>
+                        <li><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Manutenção simples inclusa</li>
+                    </ul>
                 </div>
-                <div class="step" data-animate="fade-up" data-delay="150">
-                    <div class="step__number">02</div>
-                    <div class="step__content">
-                        <h3 class="step__title">Design & Conteúdo</h3>
-                        <p class="step__text">Criamos o layout com copy persuasiva, otimizada para converter visitantes em clientes.</p>
-                    </div>
-                </div>
-                <div class="step" data-animate="fade-up" data-delay="300">
-                    <div class="step__number">03</div>
-                    <div class="step__content">
-                        <h3 class="step__title">Entrega & Publicação</h3>
-                        <p class="step__text">Prazo definido no briefing e cumprido rigorosamente. Configuramos domínio, SSL e tudo que precisa para funcionar.</p>
-                    </div>
-                </div>
-                <div class="step" data-animate="fade-up" data-delay="450">
-                    <div class="step__number">04</div>
-                    <div class="step__content">
-                        <h3 class="step__title">Suporte Contínuo</h3>
-                        <p class="step__text">Manutenções simples gratuitas. Seu site sempre atualizado e funcionando perfeitamente.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- CASES -->
-    <section class="cases" id="portfolios">
-        <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-tag">Portfólio</span>
-                <h2 class="section-title">Nossos <span class="gradient-text">cases</span> de sucesso</h2>
-                <p class="section-desc">Veja exemplos de projetos que já entregamos.</p>
-            </div>
-            <div class="cases__grid">
-                <!-- Case 1 - Financeiro -->
-                <div class="case-card" data-animate="fade-up" data-delay="0">
-                    <div class="case-card__image">
-                        <img src="assets/images/financeiro.png" alt="Print da Landing Page do Financeiro" class="case-card__img">
-                    </div>
-                    <div class="case-card__info">
-                        <span class="case-card__type">Aplicativo Web (PWA)</span>
-                        <h3 class="case-card__title">Financeiro</h3>
-                        <p class="case-card__desc">App de controle financeiro pessoal e familiar com lançamento por WhatsApp e Telegram. Assinaturas via Mercado Pago e plano Família para até 4 pessoas.</p>
-                        <div class="case-card__tags">
-                            <span>PWA</span>
-                            <span>WhatsApp</span>
-                            <span>Assinatura</span>
-                            <span>Mercado Pago</span>
+                <div class="hero__visual" data-reveal="scale" style="--d:200ms">
+                    <div class="browser browser--dark hero__browser">
+                        <div class="browser__bar" aria-hidden="true">
+                            <i></i><i></i><i></i>
+                            <span class="browser__url">imoveis.negociosmart.com.br</span>
                         </div>
-                        <a href="https://financeiro.negociosmart.com.br" target="_blank" rel="noopener" class="case-card__link">
-                            Ver projeto &rarr;
+                        <img src="assets/cases/imoveis.webp" width="1600" height="1000" alt="Site da plataforma Imóveis, criado pela Negócios Smart" fetchpriority="high">
+                    </div>
+                    <div class="phone hero__phone">
+                        <img src="assets/cases/financeiro-mobile.webp" width="520" height="1125" alt="Aplicativo Financeiro aberto no celular">
+                    </div>
+                    <div class="chip chip--wa hero__chip-wa" aria-hidden="true">
+                        <span class="chip__icon chip__icon--wa"><svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg></span>
+                        <span><b>Novo contato</b><small>“Oi! Vi o site de vocês…”</small></span>
+                    </div>
+                    <div class="chip hero__chip-seo" aria-hidden="true">
+                        <span class="chip__icon"><svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#i-search"/></svg></span>
+                        <span><b>Pronto para o Google</b><small>SEO · SSL · velocidade</small></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marquee" aria-label="O que entregamos">
+                <div class="marquee__track">
+                    <ul class="marquee__list">
+                        <li>Sites institucionais</li><li>Landing pages</li><li>Google Meu Negócio</li><li>SEO local</li><li>WhatsApp integrado</li><li>Domínio &amp; SSL</li><li>Hospedagem</li><li>Suporte pós-entrega</li>
+                    </ul>
+                    <ul class="marquee__list" aria-hidden="true">
+                        <li>Sites institucionais</li><li>Landing pages</li><li>Google Meu Negócio</li><li>SEO local</li><li>WhatsApp integrado</li><li>Domínio &amp; SSL</li><li>Hospedagem</li><li>Suporte pós-entrega</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIFERENCIAIS (BENTO) -->
+        <section class="section section--paper" id="diferenciais">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="tag">Por que a Negócios Smart</span>
+                    <h2 class="section-title">Um site que trabalha por você <em class="serif">24 horas</em> por dia.</h2>
+                    <p class="section-lead">Não é só ficar bonito. Cada detalhe é pensado para o cliente te encontrar, confiar e chamar.</p>
+                </div>
+
+                <div class="bento">
+                    <article class="bento__card bento__card--wide" data-reveal>
+                        <div class="mock-search" aria-hidden="true">
+                            <div class="mock-search__bar">
+                                <svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#i-search"/></svg>
+                                <span>eletricista perto de mim</span>
+                            </div>
+                            <div class="mock-search__result is-top">
+                                <span class="mock-search__site"><i></i>seunegocio.com.br</span>
+                                <b>Seu Negócio — Atendimento rápido na sua região</b>
+                                <span class="mock-search__stars">★★★★★ <small>Aberto agora · Chamar no WhatsApp</small></span>
+                            </div>
+                            <div class="mock-search__result">
+                                <span class="mock-line"></span><span class="mock-line mock-line--short"></span>
+                            </div>
+                        </div>
+                        <div class="bento__text">
+                            <h3>Encontrado no Google</h3>
+                            <p>SEO técnico, títulos, velocidade e Google Meu Negócio configurados para você aparecer quando o cliente procura.</p>
+                        </div>
+                    </article>
+
+                    <article class="bento__card bento__card--wide bento__card--dark" data-reveal style="--d:80ms">
+                        <div class="mock-chat" aria-hidden="true">
+                            <div class="mock-chat__msg mock-chat__msg--in">Oi! Vi o site de vocês, fazem orçamento hoje?</div>
+                            <div class="mock-chat__msg mock-chat__msg--out">Fazemos sim! Me conta o que você precisa 😊</div>
+                            <div class="mock-chat__typing"><i></i><i></i><i></i></div>
+                        </div>
+                        <div class="bento__text">
+                            <h3>Clientes direto no WhatsApp</h3>
+                            <p>Botões de ação em todo o site levam o visitante para uma conversa com você — sem formulário esquecido na caixa de entrada.</p>
+                        </div>
+                    </article>
+
+                    <article class="bento__card" data-reveal>
+                        <span class="bento__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"/></svg></span>
+                        <h3>Prazo cumprido</h3>
+                        <p>Definido no briefing e respeitado. Sem surpresas, sem atrasos.</p>
+                    </article>
+                    <article class="bento__card" data-reveal style="--d:80ms">
+                        <span class="bento__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg></span>
+                        <h3>Perfeito no celular</h3>
+                        <p>Pensado primeiro para a tela do celular, onde a maioria dos seus clientes está.</p>
+                    </article>
+                    <article class="bento__card" data-reveal style="--d:160ms">
+                        <span class="bento__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield"/></svg></span>
+                        <h3>Manutenção inclusa</h3>
+                        <p>Trocas de texto, imagem e ajustes simples sem custo. Seu site sempre em dia.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETOS -->
+        <section class="section" id="projetos">
+            <div class="container">
+                <div class="section-head section-head--split" data-reveal>
+                    <div>
+                        <span class="tag">Portfólio</span>
+                        <h2 class="section-title">Projetos reais, <em class="serif">no ar</em> agora.</h2>
+                    </div>
+                    <p class="section-lead">Clique e navegue: todos estão publicados e funcionando, do celular ao computador.</p>
+                </div>
+
+                <div class="cases">
+                    <article class="case" data-reveal>
+                        <a class="case__media" href="https://imoveis.negociosmart.com.br/" target="_blank" rel="noopener" aria-label="Abrir o site Imóveis">
+                            <div class="browser">
+                                <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">imoveis.negociosmart.com.br</span></div>
+                                <img src="assets/cases/imoveis.webp" width="1600" height="1000" alt="Página inicial da plataforma Imóveis" loading="lazy" decoding="async">
+                            </div>
+                            <div class="phone case__phone">
+                                <img src="assets/cases/imoveis-mobile.webp" width="520" height="1125" alt="" loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                        <div class="case__info">
+                            <span class="case__kicker">01 · Plataforma web</span>
+                            <h3 class="case__title">Imóveis</h3>
+                            <p>Vitrine profissional para corretores autônomos, com a marca de cada um: cadastro de imóveis pelo celular, busca com filtros, favoritos e contatos chegando direto no WhatsApp.</p>
+                            <ul class="case__tags"><li>Plataforma</li><li>Site dinâmico</li><li>WhatsApp</li><li>Mobile</li></ul>
+                            <a class="link-arrow" href="https://imoveis.negociosmart.com.br/" target="_blank" rel="noopener">Visitar projeto <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="case case--reverse" data-reveal>
+                        <a class="case__media" href="https://lavanderialaundrylounge.com.br" target="_blank" rel="noopener" aria-label="Abrir o site da Laundry Lounge">
+                            <div class="browser">
+                                <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">lavanderialaundrylounge.com.br</span></div>
+                                <img src="assets/cases/laundry.webp" width="1600" height="1000" alt="Landing page da lavanderia Laundry Lounge" loading="lazy" decoding="async">
+                            </div>
+                            <div class="phone case__phone">
+                                <img src="assets/cases/laundry-mobile.webp" width="520" height="1125" alt="" loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                        <div class="case__info">
+                            <span class="case__kicker">02 · Landing page</span>
+                            <h3 class="case__title">Laundry Lounge</h3>
+                            <p>Lavanderia com atendimento de balcão e self-service em Criciúma/SC. Página focada em agendamento pelo WhatsApp, planos mensais e serviços especializados em edredons e toalhas.</p>
+                            <ul class="case__tags"><li>Landing page</li><li>WhatsApp</li><li>Planos mensais</li><li>SEO local</li></ul>
+                            <a class="link-arrow" href="https://lavanderialaundrylounge.com.br" target="_blank" rel="noopener">Visitar projeto <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="case" data-reveal>
+                        <a class="case__media" href="https://financeiro.negociosmart.com.br" target="_blank" rel="noopener" aria-label="Abrir o aplicativo Financeiro">
+                            <div class="browser">
+                                <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">financeiro.negociosmart.com.br</span></div>
+                                <img src="assets/cases/financeiro.webp" width="1600" height="1000" alt="Página do aplicativo Financeiro" loading="lazy" decoding="async">
+                            </div>
+                            <div class="phone case__phone">
+                                <img src="assets/cases/financeiro-mobile.webp" width="520" height="1125" alt="" loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                        <div class="case__info">
+                            <span class="case__kicker">03 · Aplicativo web (PWA)</span>
+                            <h3 class="case__title">Financeiro</h3>
+                            <p>App de controle financeiro pessoal e familiar com lançamentos pelo WhatsApp e Telegram, assinaturas via Mercado Pago e plano Família para até 4 pessoas.</p>
+                            <ul class="case__tags"><li>PWA</li><li>WhatsApp</li><li>Assinaturas</li><li>Mercado Pago</li></ul>
+                            <a class="link-arrow" href="https://financeiro.negociosmart.com.br" target="_blank" rel="noopener">Visitar projeto <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLANOS -->
+        <section class="section section--dark" id="planos">
+            <div class="section-bg" aria-hidden="true"><div class="glow glow--blue glow--center"></div></div>
+            <div class="container">
+                <div class="section-head section-head--center" data-reveal>
+                    <span class="tag tag--dark">Planos</span>
+                    <h2 class="section-title">Escolha o <em class="serif">ponto de partida</em> ideal.</h2>
+                    <p class="section-lead">Orçamento sob medida para o tamanho do seu negócio. Todos incluem design profissional e suporte pelo WhatsApp.</p>
+                </div>
+
+                <div class="plans">
+                    <article class="plan" data-reveal>
+                        <span class="plan__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg></span>
+                        <h3 class="plan__name">Google Meu Negócio</h3>
+                        <p class="plan__desc">Para ser encontrado no Maps e nas buscas da sua região.</p>
+                        <ul class="plan__list">
+                            <li>Perfil completo no Google</li>
+                            <li>Localização verificada</li>
+                            <li>Fotos profissionais</li>
+                            <li>Otimizado para buscas locais</li>
+                            <li>Suporte via WhatsApp</li>
+                        </ul>
+                        <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20quero%20o%20servi%C3%A7o%20de%20Google%20Meu%20Neg%C3%B3cio!" class="btn btn--glass btn--block" target="_blank" rel="noopener">Pedir orçamento</a>
+                    </article>
+
+                    <article class="plan plan--featured" data-reveal style="--d:80ms">
+                        <span class="plan__badge">Mais vendido</span>
+                        <span class="plan__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-layout"/></svg></span>
+                        <h3 class="plan__name">Landing Page</h3>
+                        <p class="plan__desc">Uma página certeira para transformar visitas em conversas.</p>
+                        <ul class="plan__list">
+                            <li>Página única focada em conversão</li>
+                            <li>Várias chamadas para ação</li>
+                            <li>Design responsivo e moderno</li>
+                            <li>Otimizada para o Google (SEO)</li>
+                            <li>Botão de WhatsApp integrado</li>
+                            <li>Responde às principais dúvidas</li>
+                            <li>Suporte pós-entrega</li>
+                        </ul>
+                        <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20quero%20uma%20Landing%20Page!" class="btn btn--primary btn--block" target="_blank" rel="noopener">Pedir orçamento</a>
+                    </article>
+
+                    <article class="plan" data-reveal style="--d:160ms">
+                        <span class="plan__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-building"/></svg></span>
+                        <h3 class="plan__name">Site Institucional</h3>
+                        <p class="plan__desc">Presença completa para contar sua história e passar credibilidade.</p>
+                        <ul class="plan__list">
+                            <li>Site com várias páginas</li>
+                            <li>História e serviços da empresa</li>
+                            <li>SEO otimizado</li>
+                            <li>Painel administrativo</li>
+                            <li>Formulários de contato</li>
+                            <li>Suporte pós-entrega</li>
+                        </ul>
+                        <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20quero%20um%20Site%20Institucional!" class="btn btn--glass btn--block" target="_blank" rel="noopener">Pedir orçamento</a>
+                    </article>
+                </div>
+
+                <div class="plans__extras" data-reveal>
+                    <div class="extra">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe"/></svg>
+                        <div><b>Domínio próprio</b><span>Registro do seu .com.br</span></div>
+                        <strong>R$ 50<small>/ano</small></strong>
+                    </div>
+                    <div class="extra">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-server"/></svg>
+                        <div><b>Hospedagem</b><span>Com manutenção simples inclusa</span></div>
+                        <strong>R$ 60<small>/mês</small></strong>
+                    </div>
+                    <p class="plans__note">Parcelamento em até 12x no cartão · PIX ou transferência</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESSO -->
+        <section class="section section--paper" id="processo">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="tag">Como funciona</span>
+                    <h2 class="section-title">Do primeiro “oi” ao site <em class="serif">no ar.</em></h2>
+                    <p class="section-lead">Um processo simples, sem burocracia e com você acompanhando cada etapa.</p>
+                </div>
+
+                <ol class="steps">
+                    <li class="step" data-reveal>
+                        <span class="step__num">01</span>
+                        <h3>Briefing</h3>
+                        <p>Conversamos sobre seu negócio, objetivos, público e preferências visuais.</p>
+                    </li>
+                    <li class="step" data-reveal style="--d:80ms">
+                        <span class="step__num">02</span>
+                        <h3>Design &amp; conteúdo</h3>
+                        <p>Criamos o layout e os textos pensados para converter visitantes em clientes.</p>
+                    </li>
+                    <li class="step" data-reveal style="--d:160ms">
+                        <span class="step__num">03</span>
+                        <h3>Publicação</h3>
+                        <p>Configuramos domínio, SSL e tudo o que precisa. Entrega no prazo combinado.</p>
+                    </li>
+                    <li class="step" data-reveal style="--d:240ms">
+                        <span class="step__num">04</span>
+                        <h3>Suporte contínuo</h3>
+                        <p>Manutenções simples gratuitas para seu site continuar sempre atualizado.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+            <div class="container faq">
+                <div class="faq__aside" data-reveal>
+                    <span class="tag">Dúvidas frequentes</span>
+                    <h2 class="section-title">Perguntas <em class="serif">frequentes.</em></h2>
+                    <div class="faq__help">
+                        <p><b>Não achou sua resposta?</b> A gente responde rapidinho no WhatsApp.</p>
+                        <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20os%20sites!" class="btn btn--dark btn--sm" target="_blank" rel="noopener">
+                            <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            Tirar dúvida
                         </a>
                     </div>
                 </div>
 
-                <!-- Case 2 - Laundry Lounge -->
-                <div class="case-card" data-animate="fade-up" data-delay="150">
-                    <div class="case-card__image">
-                        <img src="assets/images/LaundryLoungeLavanderia.png" alt="Laundry Lounge" class="case-card__img">
-                    </div>
-                    <div class="case-card__info">
-                        <span class="case-card__type">Landing Page</span>
-                        <h3 class="case-card__title">Laundry Lounge</h3>
-                        <p class="case-card__desc">Lavanderia com atendimento de balcão e self-service em Criciúma - SC. Planos mensais, especializada em edredons e toalhas.</p>
-                        <div class="case-card__tags">
-                            <span>Landing Page</span>
-                            <span>WhatsApp</span>
-                            <span>Planos Mensais</span>
-                            <span>SEO</span>
-                        </div>
-                        <a href="https://lavanderialaundrylounge.com.br" target="_blank" rel="noopener" class="case-card__link">
-                            Ver projeto &rarr;
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Case 3 - Imóveis (Plataforma) -->
-                <div class="case-card" data-animate="fade-up" data-delay="300">
-                    <div class="case-card__image">
-                        <img src="assets/img/imoveis-criciuma-preview.png" alt="Imóveis - Plataforma para Corretores" class="case-card__img">
-                    </div>
-                    <div class="case-card__info">
-                        <span class="case-card__type">Plataforma Web (PWA)</span>
-                        <h3 class="case-card__title">Imóveis</h3>
-                        <p class="case-card__desc">Plataforma inovadora de site dinâmico para corretores de imóveis. Gerencie anúncios, busque com filtros avançados, salve favoritos e receba contatos direto no WhatsApp — tudo em um só lugar.</p>
-                        <div class="case-card__tags">
-                            <span>Plataforma</span>
-                            <span>Site Dinâmico</span>
-                            <span>Para Corretores</span>
-                            <span>WhatsApp</span>
-                            <span>Mobile</span>
-                        </div>
-                        <a href="https://imoveis.negociosmart.com.br/" target="_blank" rel="noopener" class="case-card__link">
-                            Ver projeto &rarr;
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DIFERENCIAIS -->
-    <section class="differentials" id="diferenciais">
-        <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-tag">Por que a Negócios Smart?</span>
-                <h2 class="section-title">O que nos <span class="gradient-text">diferencia</span></h2>
-            </div>
-            <div class="differentials__grid">
-                <div class="diff-card" data-animate="fade-up" data-delay="0">
-                    <div class="diff-card__icon">&#9889;</div>
-                    <h3>Prazo Cumprido</h3>
-                    <p>Prazo definido no briefing e cumprido rigorosamente. Sem surpresas, sem atrasos.</p>
-                </div>
-                <div class="diff-card" data-animate="fade-up" data-delay="100">
-                    <div class="diff-card__icon">&#127912;</div>
-                    <h3>Design Profissional</h3>
-                    <p>Layout moderno, responsivo e que transmite confiança para seu público.</p>
-                </div>
-                <div class="diff-card" data-animate="fade-up" data-delay="200">
-                    <div class="diff-card__icon">&#128269;</div>
-                    <h3>Otimizado para Google</h3>
-                    <p>Seu site aparece nas buscas orgânicas. Clientes encontram você naturalmente.</p>
-                </div>
-                <div class="diff-card" data-animate="fade-up" data-delay="300">
-                    <div class="diff-card__icon">&#128172;</div>
-                    <h3>Suporte via WhatsApp</h3>
-                    <p>Dúvidas? Atendimento direto pelo WhatsApp. Rápido e sem filas.</p>
-                </div>
-                <div class="diff-card" data-animate="fade-up" data-delay="400">
-                    <div class="diff-card__icon">&#128737;</div>
-                    <h3>Manutenção Inclusa</h3>
-                    <p>Manutenções simples gratuitas. Seu site sempre funcionando.</p>
-                </div>
-                <div class="diff-card" data-animate="fade-up" data-delay="500">
-                    <div class="diff-card__icon">&#128176;</div>
-                    <h3>Preço Justo</h3>
-                    <p>Investimento acessível com retorno comprovado. Pague uma vez, use para sempre.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PREÇOS -->
-    <section class="pricing" id="precos">
-        <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-tag">Investimento</span>
-                <h2 class="section-title">Planos e <span class="gradient-text">preços</span></h2>
-                <p class="section-desc">Escolha a opção ideal para o seu negócio. Todos incluem design profissional e suporte.</p>
-            </div>
-            <div class="pricing__grid">
-                <div class="pricing-card" data-animate="fade-up" data-delay="0">
-                    <div class="pricing-card__header">
-                        <h3 class="pricing-card__name">Google Meu Negócio</h3>
-                        <div class="pricing-card__price">
-                            <span class="pricing-card__value pricing-card__value--small">Sob consulta</span>
-                        </div>
-                    </div>
-                    <ul class="pricing-card__features">
-                        <li>&#10003; Perfil completo no Google</li>
-                        <li>&#10003; Localização verificada</li>
-                        <li>&#10003; Fotos profissionais</li>
-                        <li>&#10003; Otimizado para buscas locais</li>
-                        <li>&#10003; Suporte via WhatsApp</li>
-                    </ul>
-                    <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20quero%20o%20servi%C3%A7o%20de%20Google%20Meu%20Neg%C3%B3cio!" class="btn btn--primary btn--block" target="_blank" rel="noopener">
-                        Solicitar Orçamento
-                    </a>
-                </div>
-                <div class="pricing-card pricing-card--featured" data-animate="fade-up" data-delay="100">
-                    <div class="pricing-card__badge">Mais Vendido</div>
-                    <div class="pricing-card__header">
-                        <h3 class="pricing-card__name">Landing Page</h3>
-                        <div class="pricing-card__price">
-                            <span class="pricing-card__value pricing-card__value--small">Sob consulta</span>
-                        </div>
-                    </div>
-                    <ul class="pricing-card__features">
-                        <li>&#10003; Site de página única</li>
-                        <li>&#10003; Design responsivo e moderno</li>
-                        <li>&#10003; Otimizado para Google (SEO)</li>
-                        <li>&#10003; Formulário de contato</li>
-                        <li>&#10003; Botão WhatsApp integrado</li>
-                        <li>&#10003; Várias chamadas para ação</li>
-                        <li>&#10003; Suporte pós-entrega</li>
-                    </ul>
-                    <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20quero%20uma%20Landing%20Page!" class="btn btn--primary btn--block" target="_blank" rel="noopener">
-                        Solicitar Orçamento
-                    </a>
-                </div>
-                <div class="pricing-card" data-animate="fade-up" data-delay="200">
-                    <div class="pricing-card__header">
-                        <h3 class="pricing-card__name">Site Institucional</h3>
-                        <div class="pricing-card__price">
-                            <span class="pricing-card__value pricing-card__value--small">Sob consulta</span>
-                        </div>
-                    </div>
-                    <ul class="pricing-card__features">
-                        <li>&#10003; Site com várias páginas</li>
-                        <li>&#10003; Design profissional completo</li>
-                        <li>&#10003; SEO otimizado</li>
-                        <li>&#10003; Painel administrativo</li>
-                        <li>&#10003; Formulários de contato</li>
-                        <li>&#10003; Suporte pós-entrega</li>
-                    </ul>
-                    <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20quero%20um%20Site%20Institucional!" class="btn btn--primary btn--block" target="_blank" rel="noopener">
-                        Solicitar Orçamento
-                    </a>
-                </div>
-            </div>
-            <p class="pricing__note" data-animate="fade-up">Parcelamento disponível. Fale conosco para um orçamento personalizado.</p>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-tag">Dúvidas Frequentes</span>
-                <h2 class="section-title">Perguntas <span class="gradient-text">frequentes</span></h2>
-            </div>
-            <div class="faq__list" data-animate="fade-up">
-                <div class="faq-item">
-                    <button class="faq-item__question">
-                        <span>Quanto tempo leva para meu site ficar pronto?</span>
-                        <svg class="faq-item__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="faq-item__answer">
-                        <p>O prazo é definido no briefing de acordo com a complexidade do projeto. Landing pages são mais rápidas, sites institucionais levam um pouco mais. Cumprimos rigorosamente o prazo combinado.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-item__question">
-                        <span>Preciso ter domínio e hospedagem?</span>
-                        <svg class="faq-item__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="faq-item__answer">
+                <div class="faq__list" data-reveal style="--d:80ms">
+                    <details class="faq-item" open>
+                        <summary>Quanto tempo leva para meu site ficar pronto?<span class="faq-item__plus" aria-hidden="true"></span></summary>
+                        <p>O prazo é definido no briefing de acordo com a complexidade do projeto. Landing pages são mais rápidas; sites institucionais levam um pouco mais. O prazo combinado é cumprido rigorosamente.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Preciso ter domínio e hospedagem?<span class="faq-item__plus" aria-hidden="true"></span></summary>
                         <p>Se você já tem, ótimo! Se não tiver, cuidamos de tudo: domínio (R$ 50/ano) e hospedagem (R$ 60/mês). Entregamos tudo funcionando.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-item__question">
-                        <span>Posso editar o site depois de pronto?</span>
-                        <svg class="faq-item__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="faq-item__answer">
-                        <p>Sim! Entregamos acesso ao painel administrativo. Você pode alterar textos, imagens e informações. Para mudanças maiores, estamos à disposição.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-item__question">
-                        <span>O site aparece no Google?</span>
-                        <svg class="faq-item__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="faq-item__answer">
-                        <p>Sim! Todos os nossos sites são otimizados para SEO. Configuramos títulos, descrições, velocidade e tudo que o Google precisa para indexar seu site.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-item__question">
-                        <span>Qual a forma de pagamento?</span>
-                        <svg class="faq-item__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="faq-item__answer">
+                    </details>
+                    <details class="faq-item">
+                        <summary>Posso editar o site depois de pronto?<span class="faq-item__plus" aria-hidden="true"></span></summary>
+                        <p>Sim! Entregamos acesso ao painel administrativo para você alterar textos, imagens e informações. Para mudanças maiores, estamos à disposição.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>O site aparece no Google?<span class="faq-item__plus" aria-hidden="true"></span></summary>
+                        <p>Sim! Todos os nossos sites são otimizados para SEO. Configuramos títulos, descrições, velocidade e tudo o que o Google precisa para indexar seu site.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Qual a forma de pagamento?<span class="faq-item__plus" aria-hidden="true"></span></summary>
                         <p>50% no ato do pedido e 50% na entrega. Aceitamos PIX, transferência bancária e cartão de crédito (parcelado em até 12x).</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-item__question">
-                        <span>Manutenção tem custo adicional?</span>
-                        <svg class="faq-item__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="faq-item__answer">
-                        <p>Manutenções simples (alteração de texto, troca de imagem, ajustes) são gratuitas. Alterações estruturais ou novas funcionalidades têm valores acessíveis combinados previamente.</p>
-                    </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Manutenção tem custo adicional?<span class="faq-item__plus" aria-hidden="true"></span></summary>
+                        <p>Manutenções simples (alteração de texto, troca de imagem, ajustes) são gratuitas. Alterações estruturais ou novas funcionalidades têm valores acessíveis, combinados previamente.</p>
+                    </details>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA FINAL -->
-    <section class="cta-final" id="cta">
-        <div class="cta-final__bg">
-            <div class="hero__aurora"></div>
-            <div class="cta-final__orb cta-final__orb--1"></div>
-            <div class="cta-final__orb cta-final__orb--2"></div>
-        </div>
-        <div class="container cta-final__content" data-animate="fade-up">
-            <h2 class="cta-final__title">Pronto para colocar<br>seu negócio <span class="gradient-text">online</span>?</h2>
-            <p class="cta-final__text">Fale conosco agora mesmo e receba uma proposta personalizada. Sem compromisso.</p>
-            <div class="cta-final__actions">
-                <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20vim%20pela%20landing%20page%20e%20quero%20saber%20mais!" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    Chamar no WhatsApp
-                </a>
-                <a href="#servicos" class="btn btn--ghost btn--lg">Ver Planos</a>
+        <!-- CTA FINAL -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta__box" data-reveal="scale">
+                    <div class="cta__bg" aria-hidden="true">
+                        <div class="glow glow--green"></div>
+                        <div class="glow glow--blue"></div>
+                        <img src="assets/brand/logo-mark.png" alt="" class="cta__mark" width="176" height="240" loading="lazy">
+                    </div>
+                    <h2 class="cta__title">Pronto para ter um site que <em class="serif">vende?</em></h2>
+                    <p class="cta__text">Chame no WhatsApp e receba uma proposta personalizada. Sem compromisso.</p>
+                    <div class="cta__actions">
+                        <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20uma%20proposta!" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            Quero minha proposta
+                        </a>
+                        <a href="#planos" class="btn btn--glass btn--lg">Ver planos</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer__inner">
             <div class="footer__brand">
-                <a href="#" class="navbar__logo">
-                    <img src="assets/img/rodapéNegociosmart.png" alt="Negócios Smart" class="navbar__logo-img">
+                <a href="#topo" class="brand" aria-label="Negócios Smart — voltar ao topo">
+                    <img src="assets/brand/logo-mark.png" alt="" width="176" height="240" class="brand__mark" loading="lazy">
+                    <span class="brand__word">Negócios <b>Smart</b></span>
                 </a>
-                <p class="footer__tagline">Ajudando sua empresa a transmitir confiança online.</p>
+                <p>Ajudando sua empresa a transmitir confiança online.</p>
             </div>
-            <div class="footer__links">
-                <a href="#servicos">Serviços</a>
-                <a href="#como-funciona">Como Funciona</a>
-                <a href="#portfolios">Portfólio</a>
+            <nav class="footer__col" aria-label="Rodapé">
+                <h4>Navegação</h4>
+                <a href="#diferenciais">Diferenciais</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#planos">Planos</a>
                 <a href="#faq">FAQ</a>
+            </nav>
+            <div class="footer__col">
+                <h4>Contato</h4>
+                <a href="https://wa.me/5548991795646" target="_blank" rel="noopener">(48) 99179-5646</a>
+                <a href="mailto:negociosmartoficiall@gmail.com">negociosmartoficiall@gmail.com</a>
+                <a href="https://www.instagram.com/negociossmart/" target="_blank" rel="noopener">@negociossmart</a>
             </div>
-            <div class="footer__contact">
-                <p>negociosmartoficiall@gmail.com</p>
-                <div class="footer__socials">
-                    <a href="https://wa.me/5548991795646" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
-                        WhatsApp
-                    </a>
-                    <a href="https://www.instagram.com/negociossmart/" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
-                        Instagram
-                    </a>
-                </div>
+            <div class="footer__col">
+                <h4>Grupo Negócios Smart</h4>
+                <a href="https://financeiro.negociosmart.com.br" target="_blank" rel="noopener">Financeiro</a>
+                <a href="https://imoveis.negociosmart.com.br/" target="_blank" rel="noopener">Imóveis</a>
             </div>
         </div>
-        <div class="footer__bottom">
-            <p>&copy; 2026 Negócios Smart. Todos os direitos reservados.</p>
+        <div class="container footer__bottom">
+            <p>&copy; <span id="year">2026</span> Negócios Smart. Todos os direitos reservados.</p>
+            <p>Soluções inteligentes para impulsionar empresas.</p>
         </div>
     </footer>
 
-    <!-- BOTÃO WHATSAPP FLUTUANTE -->
-    <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20vim%20pela%20landing%20page!" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <!-- WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/5548991795646?text=Ol%C3%A1%2C%20vim%20pelo%20site!" class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
     </a>
+
+    <!-- ÍCONES -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.27-.2-.57-.34m-5.42 7.4h-.01a9.87 9.87 0 01-5.03-1.37l-.36-.22-3.74.99 1-3.65-.24-.38a9.86 9.86 0 01-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 012.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.81 11.81 0 0012.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 005.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 00-3.48-8.41z"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+        <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+        <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.5-3.2 8.3-7.5 9.5-4.3-1.2-7.5-5-7.5-9.5V6z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6.5-8 12-8 12s-8-5.5-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+        <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3.5" width="18" height="17" rx="2.5"/><path d="M3 8.5h18M8 12.5h8M8 16h5"/></symbol>
+        <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5.5A1.5 1.5 0 015.5 4h8A1.5 1.5 0 0115 5.5V21M15 10h3.5A1.5 1.5 0 0120 11.5V21M2.5 21h19M8 8h3M8 12h3M8 16h3"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.7 5.7 3.7 9s-1.2 6.3-3.7 9c-2.5-2.7-3.7-5.7-3.7-9S9.5 5.7 12 3z"/></symbol>
+        <symbol id="i-server" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="7" rx="2"/><rect x="3.5" y="13" width="17" height="7" rx="2"/><path d="M7.5 7.5h.01M7.5 16.5h.01"/></symbol>
+    </svg>
 
     <script src="assets/js/script.js"></script>
 </body>
