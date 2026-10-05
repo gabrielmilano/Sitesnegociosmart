@@ -1,15 +1,31 @@
+{%- comment -%}
+  Empresa (home). As outras páginas apontam para ela pelo @id.
+  Sem aggregateRating, review ou taxID. Endereço só com cidade/UF/país.
+{%- endcomment -%}
+{%- assign e = site.data.negocio.empresa -%}
+{%- assign f = site.data.negocio.fundador -%}
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
-        "name": "Negócios Smart",
-        "description": "Criação de sites, landing pages e perfis no Google Meu Negócio.",
-        "url": "https://sites.negociosmart.com.br/",
-        "logo": "https://sites.negociosmart.com.br/assets/brand/apple-touch-icon.png",
-        "image": "https://sites.negociosmart.com.br/assets/brand/og-image.jpg",
-        "telephone": "+55 48 99179-5646",
-        "email": "negociosmartoficiall@gmail.com",
-        "areaServed": "BR",
-        "sameAs": ["https://www.instagram.com/negociossmart/"]
+        "@id": "{{ '/#empresa' | absolute_url }}",
+        "name": {{ e.nome | jsonify }},
+        "description": "Criação de sites, landing pages e Perfil da Empresa no Google (Google Meu Negócio) em Criciúma e região.",
+        "url": "{{ '/' | absolute_url }}",
+        "logo": "{{ '/assets/brand/apple-touch-icon.png' | absolute_url }}",
+        "image": "{{ '/assets/brand/og-image.jpg' | absolute_url }}",
+        "telephone": {{ e.telefone_schema | jsonify }},
+        "email": {{ e.email | jsonify }},
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": {{ e.cidade | jsonify }},
+            "addressRegion": {{ e.uf | jsonify }},
+            "addressCountry": {{ e.pais | jsonify }}
+        },
+        "areaServed": {% include schema/cidades.html %},
+{%- if f.nome and f.nome != "" %}
+        "founder": { "@type": "Person", "name": {{ f.nome | jsonify }} },
+{%- endif %}
+        "sameAs": [{{ e.instagram_url | jsonify }}]
     }
     </script>

@@ -1,0 +1,3 @@
+{%- comment -%} Lista JSON de City: Criciúma + cidades_atendidas (vazias são ignoradas) {%- endcomment -%}
+[{ "@type": "City", "name": {{ site.data.negocio.empresa.cidade | jsonify }} }
+{%- for c in site.data.negocio.cidades_atendidas %}{% if c and c != "" %}, { "@type": "City", "name": {{ c | jsonify }} }{% endif %}{% endfor %}]

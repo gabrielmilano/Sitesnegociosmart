@@ -11,7 +11,22 @@
 # --- Empresa ---
 empresa:
   nome: "Negócios Smart"
+  # Sem rua: o atendimento é no local do cliente. Sem CNPJ/razão social no site.
+  cidade: "Criciúma"
+  uf: "SC"
+  pais: "BR"
   telefone: "(48) 99179-5646"
+  telefone_schema: "+55-48-99179-5646"
   whatsapp: "5548991795646"
+  email: "negociosmartoficiall@gmail.com"
   instagram_url: "https://www.instagram.com/negociossmart/"
   instagram_usuario: "@negociossmart"
+
+# [CIDADES ATENDIDAS] — além de Criciúma, que entra sempre.
+# Ex.: ["Içara", "Forquilhinha", "Cocal do Sul"]. Vazio = só Criciúma.
+cidades_atendidas: []
+
+# --- Quem faz os sites ---
+fundador:
+  # [SEU NOME] — vazio = sem "founder" nos dados estruturados
+  nome: ""
