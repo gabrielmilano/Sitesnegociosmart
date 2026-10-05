@@ -1,0 +1,54 @@
+{%- comment -%}
+  /google-meu-negocio-criciuma: Service (provider = empresa da home pelo @id),
+  FAQPage com o mesmo texto de page.faq e BreadcrumbList. offers só com [PREÇO GMN].
+{%- endcomment -%}
+{%- assign e = site.data.negocio.empresa -%}
+{%- assign preco = site.data.negocio.precos.google_meu_negocio -%}
+{%- assign url_pagina = page.url | absolute_url -%}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "{{ url_pagina }}#servico",
+                "name": "Google Meu Negócio em Criciúma",
+                "serviceType": "Criação e otimização de Perfil da Empresa no Google",
+                "description": {{ page.description | jsonify }},
+                "url": "{{ url_pagina }}",
+                "provider": {
+                    "@type": "ProfessionalService",
+                    "@id": "{{ '/#empresa' | absolute_url }}",
+                    "name": {{ e.nome | jsonify }},
+                    "url": "{{ '/' | absolute_url }}"
+                },
+{%- if preco and preco != "" %}
+                "offers": {
+                    "@type": "Offer",
+                    "priceCurrency": "BRL",
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "priceCurrency": "BRL",
+                        "minPrice": {{ preco | remove: "." | replace: ",", "." | jsonify }}
+                    }
+                },
+{%- endif %}
+                "areaServed": {% include schema/cidades.html %}
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "{{ url_pagina }}#faq",
+                "mainEntity": [
+{%- for item in page.faq %}
+                    {
+                        "@type": "Question",
+                        "name": {{ item.pergunta | jsonify }},
+                        "acceptedAnswer": { "@type": "Answer", "text": {{ item.resposta | jsonify }} }
+                    }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+                ]
+            },
+            {% include schema/breadcrumb.html %}
+        ]
+    }
+    </script>

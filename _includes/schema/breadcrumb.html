@@ -1,0 +1,8 @@
+{%- comment -%} BreadcrumbList: Início > page.breadcrumb (objeto para usar dentro de um @graph) {%- endcomment -%}
+{
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Início", "item": "{{ '/' | absolute_url }}" },
+                    { "@type": "ListItem", "position": 2, "name": {{ page.breadcrumb | jsonify }}, "item": "{{ page.url | absolute_url }}" }
+                ]
+            }

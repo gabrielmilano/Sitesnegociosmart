@@ -1,0 +1,230 @@
+---
+layout: base
+permalink: /google-meu-negocio-criciuma
+title: "Google Meu Negócio em Criciúma: Apareça no Maps | Negócios Smart"
+description: "Criamos e otimizamos o Perfil da sua empresa no Google para aparecer no Maps de Criciúma, receber ligações, rotas e mensagens. Atendimento presencial."
+schemas: [gmn]
+sitemap: true
+last_modified_at: 2026-10-05
+breadcrumb: "Google Meu Negócio em Criciúma"
+whatsapp_msg: "Olá! Quero colocar minha empresa no Google Maps."
+# Perguntas frequentes: o mesmo texto vai para a página e para o JSON-LD (FAQPage)
+faq:
+  - pergunta: "Preciso de CNPJ para ter Perfil no Google?"
+    resposta: "Não. Dá para criar como profissional ou negócio local."
+  - pergunta: "Quanto tempo leva para aparecer?"
+    resposta: "A verificação do Google pode levar alguns dias; depois disso, o Perfil já aparece nas buscas."
+  - pergunta: "Vocês compram avaliações?"
+    resposta: "Não. Ensinamos a pedir avaliações reais aos seus clientes, dentro das regras do Google."
+  - pergunta: "Preciso ter site?"
+    resposta: "Não é obrigatório, mas o site ajuda o Perfil a ranquear e converte melhor."
+---
+{%- assign preco = site.data.negocio.precos.google_meu_negocio %}
+{%- capture wa_link %}{% include wa.html msg=page.whatsapp_msg %}{% endcapture %}
+        <!-- TOPO -->
+        <section class="hero hero--page" id="topo">
+            <div class="hero__bg" aria-hidden="true">
+                <div class="hero__grid"></div>
+                <div class="glow glow--green"></div>
+                <div class="glow glow--blue"></div>
+            </div>
+
+            <div class="container hero__inner">
+                <div class="hero__copy">
+                    <nav class="crumbs" aria-label="Você está em" data-reveal>
+                        <ol>
+                            <li><a href="/">Início</a></li>
+                            <li aria-current="page">{{ page.breadcrumb }}</li>
+                        </ol>
+                    </nav>
+                    <span class="eyebrow" data-reveal>
+                        <span class="eyebrow__dot"></span>
+                        Perfil da Empresa no Google · Criciúma e região
+                    </span>
+                    <h1 class="hero__title hero__title--page" data-reveal style="--d:80ms">
+                        Sua empresa no Google Maps de Criciúma, pronta para receber clientes
+                    </h1>
+                    <p class="hero__lead" data-reveal style="--d:160ms">
+                        Criamos ou revisamos o Perfil da sua empresa no Google para você aparecer no Maps e nas
+                        buscas da região, com ligações, rotas e mensagens chegando direto para você.
+                        Atendimento presencial: vamos até o seu negócio.
+                    </p>
+                    <div class="hero__actions" data-reveal style="--d:240ms">
+                        <a href="{{ wa_link }}" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            Quero aparecer no Maps
+                        </a>
+                        <a href="#incluso" class="btn btn--glass btn--lg">
+                            O que está incluso
+                            <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero__visual hero__visual--gbp" data-reveal="scale" style="--d:200ms">
+                    <div class="gbp" aria-hidden="true">
+                        <div class="gbp__map">
+                            <span class="mock-label">Ilustração</span>
+                            <span class="gbp__pin"><svg class="icon" viewBox="0 0 24 24"><use href="#i-pin"/></svg></span>
+                        </div>
+                        <div class="gbp__body">
+                            <b class="gbp__name">Seu Negócio</b>
+                            <span class="gbp__meta">Categoria do seu negócio · Criciúma, SC</span>
+                            <span class="gbp__open">Aberto agora</span>
+                            <div class="gbp__actions">
+                                <span><i><svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#i-call"/></svg></i>Ligar</span>
+                                <span><i><svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#i-route"/></svg></i>Rotas</span>
+                                <span><i><svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#i-globe"/></svg></i>Site</span>
+                                <span><i><svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#i-message"/></svg></i>Mensagem</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- O QUE ESTÁ INCLUSO -->
+        <section class="section" id="incluso">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="tag">O que está incluso</span>
+                    <h2 class="section-title">Um Perfil completo, do jeito que o <em class="serif">Google</em> gosta.</h2>
+                    <p class="section-lead">Cuidamos de cada parte do Perfil para o cliente encontrar sua empresa, entender o que você faz e entrar em contato.</p>
+                </div>
+
+                <ul class="incl">
+                    <li class="incl__card incl__card--wide" data-reveal>
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-building"/></svg></span>
+                        <h3>Criação ou revisão do Perfil</h3>
+                        <p>Criamos o Perfil do zero ou revisamos o que você já tem: nome, contato, endereço ou área de atendimento e descrição do negócio.</p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:80ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tag"/></svg></span>
+                        <h3>Categorias</h3>
+                        <p>Categoria principal e secundárias escolhidas pelo que o cliente pesquisa.</p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:160ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-list"/></svg></span>
+                        <h3>Serviços</h3>
+                        <p>Lista dos seus serviços com descrição, para o Google entender o que você faz.</p>
+                    </li>
+                    <li class="incl__card" data-reveal>
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-camera"/></svg></span>
+                        <h3>Fotos</h3>
+                        <p>Fotos do negócio publicadas e organizadas: fachada, ambiente, equipe e trabalhos.</p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:80ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"/></svg></span>
+                        <h3>Horário</h3>
+                        <p>Horário de funcionamento certo, para o cliente saber quando pode chamar ou ir até você.</p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:160ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-link"/></svg></span>
+                        <h3>Link do site</h3>
+                        <p>O Perfil leva o cliente direto para o seu site ou para o seu WhatsApp.</p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:240ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star-line"/></svg></span>
+                        <h3>Avaliações</h3>
+                        <p>Orientação para pedir avaliações reais aos seus clientes, dentro das regras do Google.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- COMO FUNCIONA -->
+        <section class="section section--paper" id="como-funciona">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="tag">Como funciona</span>
+                    <h2 class="section-title">Em 3 passos, sua empresa <em class="serif">no Maps.</em></h2>
+                </div>
+
+                <ol class="steps steps--3">
+                    <li class="step" data-reveal>
+                        <span class="step__num">01</span>
+                        <h3>Visita ao seu negócio</h3>
+                        <p>Vamos até você, entendemos o que você faz e reunimos as informações do Perfil.</p>
+                    </li>
+                    <li class="step" data-reveal style="--d:80ms">
+                        <span class="step__num">02</span>
+                        <h3>Perfil pronto</h3>
+                        <p>Criamos ou revisamos o Perfil com categorias, serviços, fotos, horário e link do site, e acompanhamos a verificação do Google.</p>
+                    </li>
+                    <li class="step" data-reveal style="--d:160ms">
+                        <span class="step__num">03</span>
+                        <h3>No Maps</h3>
+                        <p>Com o Perfil verificado, sua empresa aparece nas buscas e no Maps. Você recebe a orientação para pedir avaliações aos clientes.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+{%- if preco and preco != "" %}
+
+        <!-- PREÇO (só com [PREÇO GMN] preenchido) -->
+        <section class="section section--dark section--price" id="preco">
+            <div class="section-bg" aria-hidden="true"><div class="glow glow--blue glow--center"></div></div>
+            <div class="container">
+                <div class="price-band" data-reveal>
+                    <div class="price-band__copy">
+                        <span class="tag tag--dark">Investimento</span>
+                        <h2 class="section-title">Google Meu Negócio</h2>
+                        <p class="section-lead">Criação ou revisão do Perfil, com tudo o que está na lista acima.</p>
+                    </div>
+                    <p class="plan__price price-band__value"><small>A partir de</small>R$ {{ preco }}</p>
+                    <a href="{{ wa_link }}" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                        Pedir orçamento
+                    </a>
+                </div>
+            </div>
+        </section>
+{%- endif %}
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+            <div class="container faq">
+                <div class="faq__aside" data-reveal>
+                    <span class="tag">Dúvidas frequentes</span>
+                    <h2 class="section-title">Perguntas <em class="serif">frequentes.</em></h2>
+                    <div class="faq__help">
+                        <p><b>Ficou alguma dúvida?</b> A gente responde no WhatsApp.</p>
+                        <a href="{% include wa.html msg='Olá! Tenho uma dúvida sobre o Google Meu Negócio.' %}" class="btn btn--dark btn--sm" target="_blank" rel="noopener">
+                            <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            Tirar dúvida
+                        </a>
+                    </div>
+                </div>
+
+                <div class="faq__list" data-reveal style="--d:80ms">
+                    {%- for item in page.faq %}
+                    <details class="faq-item"{% if forloop.first %} open{% endif %}>
+                        <summary>{{ item.pergunta }}<span class="faq-item__plus" aria-hidden="true"></span></summary>
+                        <p>{{ item.resposta }}</p>
+                    </details>
+                    {%- endfor %}
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAMADA FINAL -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta__box" data-reveal="scale">
+                    <div class="cta__bg" aria-hidden="true">
+                        <div class="glow glow--green"></div>
+                        <div class="glow glow--blue"></div>
+                        <img src="/assets/brand/logo-mark.png" alt="Símbolo da Negócios Smart" class="cta__mark" width="176" height="240" loading="lazy">
+                    </div>
+                    <h2 class="cta__title">Pronto para aparecer no <em class="serif">Maps?</em></h2>
+                    <p class="cta__text">Chame no WhatsApp: vamos até o seu negócio e deixamos o Perfil pronto para receber clientes.</p>
+                    <div class="cta__actions">
+                        <a href="{{ wa_link }}" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            Quero aparecer no Maps
+                        </a>
+                        <a href="/#planos" class="btn btn--glass btn--lg">Ver todos os planos</a>
+                    </div>
+                </div>
+            </div>
+        </section>
