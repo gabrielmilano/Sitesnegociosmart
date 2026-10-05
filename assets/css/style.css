@@ -475,7 +475,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
 .mock-search__result b { font-size: .98rem; font-weight: 600; color: #1a47b8; }
 .mock-search__site { display: flex; align-items: center; gap: 8px; color: var(--muted); }
 .mock-search__site i { width: 16px; height: 16px; border-radius: 50%; background: var(--grad); }
-.mock-search__stars { color: #f5a524; letter-spacing: 1px; }
+.mock-search__stars { display: flex; flex-wrap: wrap; align-items: center; gap: 1px; color: #f5a524; }
+.mock-search__stars .icon--star { width: 13px; height: 13px; }
 .mock-search__stars small { color: var(--muted); letter-spacing: 0; margin-left: 6px; }
 .mock-line { display: block; height: 8px; border-radius: 4px; background: #e8edf3; width: 80%; }
 .mock-line--short { width: 50%; margin-top: 6px; }
