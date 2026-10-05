@@ -1078,7 +1078,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
     .cta { padding-bottom: 88px; }
     .cta__box { padding: 64px 22px; border-radius: 28px; }
     .cta__actions .btn { flex: 1 1 100%; }
-    .footer__inner { grid-template-columns: 1fr; gap: 32px; }
+    .footer__inner { grid-template-columns: 1fr; gap: 32px; padding-bottom: 44px; }
+    .footer__bottom { padding-top: 24px; }
     .wa-float { right: 16px; bottom: 16px; width: 54px; height: 54px; }
 }
 
