@@ -21,8 +21,8 @@ empresa:
   # E-mail do rodapé e dos dados estruturados. Trocar por "contato@negociosmart.com.br"
   # só depois que a caixa existir (em 05/10/2026 o domínio ainda não tinha registro MX).
   email: "negociosmartoficiall@gmail.com"
-  instagram_url: "https://www.instagram.com/negociossmart/"
-  instagram_usuario: "@negociossmart"
+  instagram_url: "https://www.instagram.com/sites.negociossmart/"
+  instagram_usuario: "@sites.negociossmart"
 
 # [CIDADES ATENDIDAS] — além de Criciúma, que entra sempre.
 # Ex.: ["Içara", "Forquilhinha", "Cocal do Sul"]. Vazio = só Criciúma.
