@@ -50,3 +50,17 @@ fundador:
     - "Sou eu quem atende, vai até o seu negócio e cuida do site do começo ao fim: textos, visual, Google e WhatsApp."
     - "Você conversa direto com quem faz, sem intermediário."
     - "Faço sites porque um bom negócio merece ser encontrado no Google e receber clientes no WhatsApp."
+
+# --- Case Laundry Lounge (/cases/laundry-lounge) ---
+case_laundry:
+  # [PRINT ANTES] e [PRINT DEPOIS] — caminho das imagens (1600×1000, WebP).
+  # A seção "Antes e depois" só aparece com os dois preenchidos.
+  # Já existe um print real do site antigo (29/09/2026): "/assets/cases/laundry-antes.webp"
+  print_antes: ""
+  print_depois: ""
+  # [DADOS REAIS] — resultados medidos (Search Console, Perfil no Google, cliques no WhatsApp).
+  # Vazio = seção "Resultados" escondida. Formato de cada item:
+  #   - destaque: "+40%"
+  #     texto: "cliques vindos do Google"
+  #     fonte: "Google Search Console, set. a out. de 2026"
+  resultados: []

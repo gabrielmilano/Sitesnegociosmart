@@ -1,0 +1,227 @@
+---
+layout: base
+permalink: /cases/laundry-lounge
+title: "Case Laundry Lounge: SEO Local para Lavanderia em Criciúma | Negócios Smart"
+description: "Como estruturamos o site da Laundry Lounge, lavanderia no Centro de Criciúma: uma página por serviço, sitemap, Search Console, dados estruturados e endereço unificado."
+schemas: [case]
+sitemap: true
+last_modified_at: 2026-10-05
+breadcrumb: "Case Laundry Lounge"
+whatsapp_msg: "Olá! Quero um diagnóstico do meu negócio no Google."
+preload_image: /assets/cases/laundry.webp
+---
+{%- assign c = site.data.negocio.case_laundry %}
+{%- assign ll = "https://lavanderialaundrylounge.com.br" %}
+{%- capture wa_link %}{% include wa.html msg=page.whatsapp_msg %}{% endcapture %}
+        <!-- TOPO -->
+        <section class="hero hero--page" id="topo">
+            <div class="hero__bg" aria-hidden="true">
+                <div class="hero__grid"></div>
+                <div class="glow glow--green"></div>
+                <div class="glow glow--blue"></div>
+            </div>
+
+            <div class="container hero__inner">
+                <div class="hero__copy">
+                    <nav class="crumbs" aria-label="Você está em" data-reveal>
+                        <ol>
+                            <li><a href="/">Início</a></li>
+                            <li aria-current="page">{{ page.breadcrumb }}</li>
+                        </ol>
+                    </nav>
+                    <span class="eyebrow" data-reveal>
+                        <span class="eyebrow__dot"></span>
+                        Case · SEO local · Criciúma
+                    </span>
+                    <h1 class="hero__title hero__title--page" data-reveal style="--d:80ms">
+                        Como estruturamos o site da Laundry Lounge para aparecer no Google
+                    </h1>
+                    <p class="hero__lead" data-reveal style="--d:160ms">
+                        O site de uma página virou um site organizado para as buscas de Criciúma: uma página para
+                        cada serviço, sitemap, Search Console, dados estruturados e o mesmo endereço do Perfil no Google.
+                    </p>
+                    <div class="hero__actions" data-reveal style="--d:240ms">
+                        <a href="{{ wa_link }}" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            Quero um diagnóstico
+                        </a>
+                        <a href="{{ ll }}/" class="btn btn--glass btn--lg" target="_blank" rel="noopener">
+                            Ver o site no ar
+                            <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero__visual" data-reveal="scale" style="--d:200ms">
+                    <div class="browser browser--dark hero__browser">
+                        <div class="browser__bar" aria-hidden="true">
+                            <i></i><i></i><i></i>
+                            <span class="browser__url">lavanderialaundrylounge.com.br</span>
+                        </div>
+                        <img src="/assets/cases/laundry.webp" width="1600" height="1000" alt="Página inicial do site da Laundry Lounge, lavanderia no Centro de Criciúma" fetchpriority="high">
+                    </div>
+                    <div class="phone hero__phone">
+                        <img src="/assets/cases/laundry-mobile.webp" width="520" height="1125" alt="Site da Laundry Lounge aberto no celular">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- O NEGÓCIO -->
+        <section class="section section--case-intro" id="o-negocio">
+            <div class="container">
+                <div class="section-head section-head--split" data-reveal>
+                    <div>
+                        <span class="tag">O negócio</span>
+                        <h2 class="section-title">Uma lavanderia no <em class="serif">Centro de Criciúma.</em></h2>
+                    </div>
+                    <p class="section-lead">A Laundry Lounge atende no balcão e no self-service. Lava e passa roupas do dia a dia, edredons, cobertores e tapetes, e tem planos mensais.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- O PROBLEMA -->
+        <section class="section" id="o-problema">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="tag">O problema</span>
+                    <h2 class="section-title">O site existia, mas o Google <em class="serif">não entendia.</em></h2>
+                </div>
+
+                <ul class="incl">
+                    <li class="incl__card" data-reveal>
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-layout"/></svg></span>
+                        <h3>Site de uma página</h3>
+                        <p>Todos os serviços dividiam a mesma página, sem espaço para explicar cada um.</p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:80ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-file"/></svg></span>
+                        <h3>Sem sitemap</h3>
+                        <p>O Google não tinha a lista de páginas do site, e o Search Console não encontrava o sitemap.</p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:160ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg></span>
+                        <h3>Endereço antigo publicado</h3>
+                        <p>O mapa do site usava um endereço desatualizado, diferente do Perfil da empresa no Google.</p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:240ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-search"/></svg></span>
+                        <h3>Sem página por serviço</h3>
+                        <p>Tapetes, edredons e planos mensais não tinham página própria para aparecer na busca de cada serviço.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- O QUE FOI FEITO -->
+        <section class="section section--paper" id="o-que-foi-feito">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="tag">O que foi feito</span>
+                    <h2 class="section-title">Um site pensado para as <em class="serif">buscas locais.</em></h2>
+                </div>
+
+                <ul class="done" data-reveal>
+                    <li>
+                        <b>Uma página para cada serviço</b>
+                        <span><a href="{{ ll }}/lavagem-de-tapetes-criciuma" target="_blank" rel="noopener">Lavagem de tapetes</a>, <a href="{{ ll }}/lavagem-de-edredom-e-cobertor-criciuma" target="_blank" rel="noopener">edredom e cobertor</a>, <a href="{{ ll }}/lavar-e-passar-roupas-criciuma" target="_blank" rel="noopener">lavar e passar roupas</a> e <a href="{{ ll }}/planos-mensais-lavanderia" target="_blank" rel="noopener">planos mensais</a>, cada uma com perguntas frequentes próprias.</span>
+                    </li>
+                    <li>
+                        <b>Títulos e descrições para buscas locais</b>
+                        <span>Título, descrição e H1 de cada página escritos para buscas como “lavagem de tapetes em Criciúma”.</span>
+                    </li>
+                    <li>
+                        <b>Sitemap e Search Console</b>
+                        <span>sitemap.xml e robots.txt publicados, com o sitemap lido pelo Google no Search Console.</span>
+                    </li>
+                    <li>
+                        <b>Dados estruturados</b>
+                        <span>A lavanderia marcada com endereço, horário e telefone, e cada serviço com suas perguntas frequentes, no padrão schema.org.</span>
+                    </li>
+                    <li>
+                        <b>Endereço unificado</b>
+                        <span>O mesmo nome, endereço e telefone em todas as páginas, no mapa e no Perfil da empresa no Google.</span>
+                    </li>
+                    <li>
+                        <b>WhatsApp em cada serviço</b>
+                        <span>Botões de WhatsApp em todas as páginas, com os cliques medidos por serviço.</span>
+                    </li>
+                    <li>
+                        <b>Rápido no celular</b>
+                        <span>Fonte hospedada no próprio site e imagens otimizadas para a página abrir rápido.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+{%- if c.print_antes and c.print_antes != "" and c.print_depois and c.print_depois != "" %}
+
+        <!-- ANTES E DEPOIS (só com [PRINT ANTES] e [PRINT DEPOIS]) -->
+        <section class="section" id="antes-e-depois">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="tag">Antes e depois</span>
+                    <h2 class="section-title">O site <em class="serif">antes e depois.</em></h2>
+                </div>
+                <div class="ba" data-reveal>
+                    <figure class="ba__item">
+                        <div class="browser">
+                            <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">lavanderialaundrylounge.com.br</span></div>
+                            <img src="{{ c.print_antes }}" width="1600" height="1000" alt="Site da Laundry Lounge antes do trabalho" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption>Antes</figcaption>
+                    </figure>
+                    <figure class="ba__item">
+                        <div class="browser">
+                            <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">lavanderialaundrylounge.com.br</span></div>
+                            <img src="{{ c.print_depois }}" width="1600" height="1000" alt="Site da Laundry Lounge depois do trabalho" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption>Depois</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+{%- endif %}
+{%- if c.resultados.size > 0 %}
+
+        <!-- RESULTADOS (só com [DADOS REAIS]) -->
+        <section class="section section--dark" id="resultados">
+            <div class="section-bg" aria-hidden="true"><div class="glow glow--blue glow--center"></div></div>
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="tag tag--dark">Resultados</span>
+                    <h2 class="section-title">O que <em class="serif">mudou.</em></h2>
+                </div>
+                <ul class="results" data-reveal>
+                    {%- for r in c.resultados %}{% if r.destaque and r.destaque != "" %}
+                    <li class="results__item">
+                        <b>{{ r.destaque }}</b>
+                        <span>{{ r.texto }}</span>
+                        {%- if r.fonte and r.fonte != "" %}<small>Fonte: {{ r.fonte }}</small>{% endif %}
+                    </li>
+                    {%- endif %}{% endfor %}
+                </ul>
+            </div>
+        </section>
+{%- endif %}
+
+        <!-- CHAMADA FINAL -->
+        <section class="cta cta--spaced">
+            <div class="container">
+                <div class="cta__box" data-reveal="scale">
+                    <div class="cta__bg" aria-hidden="true">
+                        <div class="glow glow--green"></div>
+                        <div class="glow glow--blue"></div>
+                        <img src="/assets/brand/logo-mark.png" alt="Símbolo da Negócios Smart" class="cta__mark" width="176" height="240" loading="lazy">
+                    </div>
+                    <h2 class="cta__title">Quer um diagnóstico do seu negócio no <em class="serif">Google?</em></h2>
+                    <p class="cta__text">Chame no WhatsApp: olhamos o seu site e o seu Perfil no Google e mostramos o que dá para melhorar.</p>
+                    <div class="cta__actions">
+                        <a href="{{ wa_link }}" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            Quero um diagnóstico
+                        </a>
+                        <a href="/google-meu-negocio-criciuma" class="btn btn--glass btn--lg">Google Meu Negócio em Criciúma</a>
+                    </div>
+                </div>
+            </div>
+        </section>
