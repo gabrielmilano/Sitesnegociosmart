@@ -435,10 +435,20 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
 .bento__card--dark:hover { border-color: var(--ink-800); }
 .bento__card--dark p { color: var(--on-dark-muted); }
 
+/* Rótulo das ilustrações (deixa claro que não é cliente nem conversa real) */
+.mock-label {
+    display: table; margin: 0 0 12px auto;
+    padding: 3px 10px; border-radius: 999px;
+    font-size: .68rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--muted); background: rgba(255, 255, 255, .85); border: 1px solid var(--line);
+}
+.mock-label--dark { color: var(--on-dark-muted); background: rgba(255, 255, 255, .06); border-color: rgba(255, 255, 255, .1); }
+.mock-chat .mock-label { align-self: flex-end; margin: 0 0 2px; }
+
 /* Mock: busca Google */
 .mock-search {
     height: 230px;
-    padding: 28px 28px 0;
+    padding: 16px 28px 0;
     background:
         radial-gradient(120% 90% at 100% 0%, rgba(37, 99, 235, .08), transparent 60%),
         radial-gradient(100% 90% at 0% 100%, rgba(46, 196, 108, .08), transparent 60%),
@@ -562,6 +572,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
 .case__media:hover .case__phone { transform: translateY(-12px); }
 
 .case__kicker { font-size: .82rem; font-weight: 600; letter-spacing: .04em; color: var(--blue); }
+.case__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.case__badge {
+    padding: 4px 11px; border-radius: 999px;
+    font-size: .74rem; font-weight: 600; letter-spacing: .01em;
+    color: var(--ink-700);
+    background: linear-gradient(var(--white), var(--white)) padding-box, var(--grad) border-box;
+    border: 1px solid transparent;
+}
 .case__title { margin: 12px 0 16px; font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.5rem); font-weight: 700; letter-spacing: -.035em; }
 .case__info > p { color: var(--muted); font-size: 1.02rem; }
 .case__tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 28px; }
