@@ -145,6 +145,36 @@ last_modified_at: 2026-10-05
             </div>
         </section>
 
+        <!-- ATENDIMENTO PRESENCIAL -->
+        {%- assign cidades = site.data.negocio.cidades_atendidas %}
+        <section class="section section--local" id="atendimento">
+            <div class="container">
+                <div class="local" data-reveal>
+                    <div class="local__copy">
+                        <span class="tag">Atendimento presencial</span>
+                        <h2 class="section-title">Atendimento presencial em <em class="serif">Criciúma e região.</em></h2>
+                        <p class="section-lead">Vamos até o seu negócio, entendemos o que você faz e entregamos o site pronto para aparecer no Google e receber clientes no WhatsApp.</p>
+                        {%- if cidades.size > 0 %}
+                        <div class="local__cities">
+                            <span class="local__cities-label">Cidades atendidas</span>
+                            <ul class="local__list">
+                                <li><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>{{ site.data.negocio.empresa.cidade }}</li>
+                                {%- for c in cidades %}{% if c and c != "" %}
+                                <li><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>{{ c }}</li>
+                                {%- endif %}{% endfor %}
+                            </ul>
+                        </div>
+                        {%- endif %}
+                    </div>
+                    <ul class="local__steps">
+                        <li><span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg></span>Visita ao seu negócio</li>
+                        <li><span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-search"/></svg></span>Site pronto para o Google</li>
+                        <li><span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>Clientes direto no WhatsApp</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <!-- PROJETOS -->
         <section class="section" id="projetos">
             <div class="container">
