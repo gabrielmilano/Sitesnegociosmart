@@ -705,6 +705,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
     transition: gap .3s var(--ease);
 }
 .link-arrow:hover { gap: 12px; }
+.case__links { display: flex; flex-wrap: wrap; gap: 14px 28px; }
+
+.plan__more {
+    margin: -14px 0 18px; align-self: center;
+    font-size: .9rem; font-weight: 500; color: #7dd3fc;
+    text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(125, 211, 252, .4);
+}
+.plan__more:hover { text-decoration-color: currentColor; }
 
 /* === PLANOS === */
 .plans { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
