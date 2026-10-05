@@ -26,7 +26,16 @@ empresa:
 # Ex.: ["Içara", "Forquilhinha", "Cocal do Sul"]. Vazio = só Criciúma.
 cidades_atendidas: []
 
-# --- Quem faz os sites ---
+# --- Quem faz os sites (seção "Quem faz" da home) ---
 fundador:
-  # [SEU NOME] — vazio = sem "founder" nos dados estruturados
+  # [SEU NOME] — vazio = seção "Quem faz" escondida e sem "founder" nos dados estruturados
   nome: ""
+  # [FOTO] — caminho da foto, ex.: "/assets/brand/quem-faz.webp" (quadrada, 800×800).
+  # Vazio = a seção aparece com a inicial do nome no lugar da foto.
+  foto: ""
+  # 2 ou 3 frases verdadeiras sobre quem faz e por quê (sem tempo de mercado nem números).
+  # RASCUNHO: revise antes de preencher o nome, porque o texto vai ao ar junto com ele.
+  texto:
+    - "Sou eu quem atende, vai até o seu negócio e cuida do site do começo ao fim: textos, visual, Google e WhatsApp."
+    - "Você conversa direto com quem faz, sem intermediário."
+    - "Faço sites porque um bom negócio merece ser encontrado no Google e receber clientes no WhatsApp."

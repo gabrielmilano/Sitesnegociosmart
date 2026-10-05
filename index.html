@@ -399,6 +399,36 @@ last_modified_at: 2026-10-05
             </div>
         </section>
 
+        <!-- QUEM FAZ (só com [SEU NOME] preenchido) -->
+        {%- assign f = site.data.negocio.fundador %}
+        {%- if f.nome and f.nome != "" %}
+        <section class="section section--about" id="quem-faz">
+            <div class="container">
+                <div class="about" data-reveal>
+                    <div class="about__media">
+                        {%- if f.foto and f.foto != "" %}
+                        <img src="{{ f.foto }}" alt="Foto de {{ f.nome }}, que faz os sites da Negócios Smart" width="800" height="800" class="about__photo" loading="lazy" decoding="async">
+                        {%- else %}
+                        <span class="about__mono" aria-hidden="true">{{ f.nome | slice: 0 }}</span>
+                        {%- endif %}
+                    </div>
+                    <div class="about__copy">
+                        <span class="tag">Quem faz</span>
+                        <h2 class="section-title">Quem <em class="serif">faz</em> o seu site.</h2>
+                        <h3 class="about__name">{{ f.nome }}</h3>
+                        {%- for paragrafo in f.texto %}{% if paragrafo and paragrafo != "" %}
+                        <p>{{ paragrafo }}</p>
+                        {%- endif %}{% endfor %}
+                        <a href="{% include wa.html msg='Olá! Vi o site da Negócios Smart e quero conversar sobre um site.' %}" class="btn btn--dark btn--sm about__cta" target="_blank" rel="noopener">
+                            <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            Falar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {%- endif %}
+
         <!-- CTA FINAL -->
         <section class="cta">
             <div class="container">
