@@ -1,0 +1,6 @@
+{%- comment -%}
+  Link do WhatsApp com mensagem pronta. Uso: {% include wa.html msg="Olá! ..." %}
+  (arquivo sem quebra de linha no fim para não sujar o href)
+{%- endcomment -%}
+{%- assign _msg = include.msg | default: "Olá, vim pelo site!" -%}
+https://wa.me/{{ site.data.negocio.empresa.whatsapp }}?text={{ _msg | url_encode | replace: "+", "%20" }}

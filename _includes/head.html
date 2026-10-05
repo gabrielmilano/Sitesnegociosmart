@@ -1,0 +1,39 @@
+{%- comment -%}
+  Title, description, canonical e Open Graph a partir do front matter da página.
+  og_title/og_description são opcionais (padrão: title/description).
+  "schemas" lista os arquivos de _includes/schema/ que a página usa.
+{%- endcomment -%}
+{%- assign url_canonica = page.url | absolute_url -%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description | escape }}">
+    <link rel="canonical" href="{{ url_canonica }}">
+    <meta name="theme-color" content="#070B14">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="{{ site.data.negocio.empresa.nome }}">
+    <meta property="og:url" content="{{ url_canonica }}">
+    <meta property="og:title" content="{{ page.og_title | default: page.title | escape }}">
+    <meta property="og:description" content="{{ page.og_description | default: page.description | escape }}">
+    <meta property="og:image" content="{{ '/assets/brand/og-image.jpg' | absolute_url }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/brand/favicon-64.png">
+    <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Inter+Tight:wght@500..800&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+{%- if page.preload_image %}
+    <link rel="preload" as="image" href="{{ page.preload_image }}">
+{%- endif %}
+
+    <script>document.documentElement.classList.add('js');</script>
+{%- for s in page.schemas %}
+{% include schema/{{ s }}.html %}
+{%- endfor %}

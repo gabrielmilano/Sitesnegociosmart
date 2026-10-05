@@ -1,0 +1,25 @@
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header__pill">
+            <a href="/#topo" class="brand" aria-label="Negócios Smart — início">
+                <img src="/assets/brand/logo-mark.png" alt="" width="176" height="240" class="brand__mark">
+                <span class="brand__word">Negócios <b>Smart</b></span>
+            </a>
+            <nav class="header__nav" id="headerNav" aria-label="Principal">
+                <a href="/#diferenciais">Diferenciais</a>
+                <a href="/#projetos">Projetos</a>
+                <a href="/#planos">Planos</a>
+                <a href="/#processo">Processo</a>
+                <a href="/#faq">FAQ</a>
+                <a href="{% include wa.html msg='Olá, vim pelo site e quero saber mais!' %}" class="btn btn--primary btn--sm header__nav-cta" target="_blank" rel="noopener">Falar no WhatsApp</a>
+            </nav>
+            <a href="{% include wa.html msg='Olá, vim pelo site e quero saber mais!' %}" class="btn btn--primary btn--sm header__cta" target="_blank" rel="noopener">
+                Falar no WhatsApp
+            </a>
+            <button class="header__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="headerNav">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>

@@ -1,0 +1,8 @@
+# Configuração do Jekyll (o GitHub Pages monta o site com ele a cada push no main).
+# Dados da empresa e marcadores pendentes ficam em _data/negocio.yml.
+# Se o site mudar de domínio, troque "url" aqui e o arquivo CNAME.
+
+url: "https://sites.negociosmart.com.br"
+baseurl: ""
+lang: pt-BR
+timezone: America/Sao_Paulo

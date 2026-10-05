@@ -1,0 +1,17 @@
+# =====================================================================
+#  DADOS DO SITE — Negócios Smart (sites.negociosmart.com.br)
+#  Único arquivo para preencher e atualizar dados da empresa.
+#
+#  Regra: campo vazio ("" ou []) = a frase ou seção que depende dele
+#  NÃO aparece no site. O nome de cada marcador está no comentário,
+#  entre colchetes; nunca escreva texto entre colchetes nos valores.
+#  Depois de editar, faça commit no main: o GitHub Pages reconstrói sozinho.
+# =====================================================================
+
+# --- Empresa ---
+empresa:
+  nome: "Negócios Smart"
+  telefone: "(48) 99179-5646"
+  whatsapp: "5548991795646"
+  instagram_url: "https://www.instagram.com/negociossmart/"
+  instagram_usuario: "@negociossmart"
