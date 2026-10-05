@@ -1,0 +1,17 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- comment -%}
+  Gerado pelo Jekyll: entra só a página que tiver "sitemap: true" no front matter
+  (canônica e indexável). lastmod = last_modified_at; atualize ao editar a página.
+{%- endcomment -%}
+{%- assign paginas = site.html_pages | where_exp: "p", "p.sitemap == true" | sort: "url" %}
+{%- for p in paginas %}
+  <url>
+    <loc>{{ p.url | absolute_url | xml_escape }}</loc>
+    <lastmod>{{ p.last_modified_at | date: "%Y-%m-%d" }}</lastmod>
+  </url>
+{%- endfor %}
+</urlset>
