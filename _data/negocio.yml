@@ -26,6 +26,15 @@ empresa:
 # Ex.: ["Içara", "Forquilhinha", "Cocal do Sul"]. Vazio = só Criciúma.
 cidades_atendidas: []
 
+# --- Preços (só o valor, como deve aparecer: "490" ou "1.490") ---
+# Plano vazio = o card fica como hoje, sem preço. Preenchido = "A partir de R$ ..."
+precos:
+  google_meu_negocio: ""   # [PREÇO GMN] — card da home e página /google-meu-negocio-criciuma
+  landing_page: ""         # [PREÇO] Landing Page
+  site_institucional: ""   # [PREÇO] Site Institucional
+  dominio_ano: "50"
+  hospedagem_mes: "60"
+
 # --- Quem faz os sites (seção "Quem faz" da home) ---
 fundador:
   # [SEU NOME] — vazio = seção "Quem faz" escondida e sem "founder" nos dados estruturados

@@ -270,6 +270,7 @@ last_modified_at: 2026-10-05
                         <span class="plan__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg></span>
                         <h3 class="plan__name">Google Meu Negócio</h3>
                         <p class="plan__desc">Para ser encontrado no Maps e nas buscas da sua região.</p>
+                        {%- include preco.html valor=site.data.negocio.precos.google_meu_negocio %}
                         <ul class="plan__list">
                             <li>Perfil completo no Google</li>
                             <li>Localização verificada</li>
@@ -281,10 +282,11 @@ last_modified_at: 2026-10-05
                     </article>
 
                     <article class="plan plan--featured" data-reveal style="--d:80ms">
-                        <span class="plan__badge">Mais vendido</span>
+                        <span class="plan__badge">Recomendado</span>
                         <span class="plan__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-layout"/></svg></span>
                         <h3 class="plan__name">Landing Page</h3>
                         <p class="plan__desc">Uma página certeira para transformar visitas em conversas.</p>
+                        {%- include preco.html valor=site.data.negocio.precos.landing_page %}
                         <ul class="plan__list">
                             <li>Página única focada em conversão</li>
                             <li>Várias chamadas para ação</li>
@@ -301,6 +303,7 @@ last_modified_at: 2026-10-05
                         <span class="plan__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-building"/></svg></span>
                         <h3 class="plan__name">Site Institucional</h3>
                         <p class="plan__desc">Presença completa para contar sua história e passar credibilidade.</p>
+                        {%- include preco.html valor=site.data.negocio.precos.site_institucional %}
                         <ul class="plan__list">
                             <li>Site com várias páginas</li>
                             <li>História e serviços da empresa</li>
@@ -317,12 +320,12 @@ last_modified_at: 2026-10-05
                     <div class="extra">
                         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe"/></svg>
                         <div><b>Domínio próprio</b><span>Registro do seu .com.br</span></div>
-                        <strong>R$ 50<small>/ano</small></strong>
+                        <strong>R$ {{ site.data.negocio.precos.dominio_ano }}<small>/ano</small></strong>
                     </div>
                     <div class="extra">
                         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-server"/></svg>
                         <div><b>Hospedagem</b><span>Com manutenção simples inclusa</span></div>
-                        <strong>R$ 60<small>/mês</small></strong>
+                        <strong>R$ {{ site.data.negocio.precos.hospedagem_mes }}<small>/mês</small></strong>
                     </div>
                     <p class="plans__note">Parcelamento em até 12x no cartão · PIX ou transferência</p>
                 </div>
@@ -385,7 +388,7 @@ last_modified_at: 2026-10-05
                     </details>
                     <details class="faq-item">
                         <summary>Preciso ter domínio e hospedagem?<span class="faq-item__plus" aria-hidden="true"></span></summary>
-                        <p>Se você já tem, ótimo! Se não tiver, cuidamos de tudo: domínio (R$ 50/ano) e hospedagem (R$ 60/mês). Entregamos tudo funcionando.</p>
+                        <p>Se você já tem, ótimo! Se não tiver, cuidamos de tudo: domínio (R$ {{ site.data.negocio.precos.dominio_ano }}/ano) e hospedagem (R$ {{ site.data.negocio.precos.hospedagem_mes }}/mês). Entregamos tudo funcionando.</p>
                     </details>
                     <details class="faq-item">
                         <summary>Posso editar o site depois de pronto?<span class="faq-item__plus" aria-hidden="true"></span></summary>

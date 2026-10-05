@@ -1,0 +1,7 @@
+{%- comment -%}
+  "A partir de R$ X" de um plano. Uso: {% include preco.html valor=site.data.negocio.precos.landing_page %}
+  Valor vazio = não mostra nada.
+{%- endcomment -%}
+{%- if include.valor and include.valor != "" %}
+                        <p class="plan__price"><small>A partir de</small>R$ {{ include.valor }}</p>
+{%- endif -%}

@@ -620,6 +620,12 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
 }
 .plan__name { font-size: 1.45rem; font-weight: 650; color: #fff; }
 .plan__desc { margin-top: 8px; font-size: .95rem; color: var(--on-dark-muted); min-height: 3em; }
+.plan__price {
+    margin-top: 20px;
+    font-family: var(--font-display); font-size: 2rem; font-weight: 700; line-height: 1.1; letter-spacing: -.03em;
+    color: #fff;
+}
+.plan__price small { display: block; margin-bottom: 4px; font-family: var(--font); font-size: .8rem; font-weight: 500; letter-spacing: 0; color: var(--on-dark-muted); }
 .plan__list { flex: 1; display: flex; flex-direction: column; gap: 12px; margin: 26px 0 32px; padding-top: 26px; border-top: 1px solid var(--line-dark); }
 .plan__list li { position: relative; padding-left: 28px; font-size: .95rem; color: var(--on-dark); }
 .plan__list li::before {
