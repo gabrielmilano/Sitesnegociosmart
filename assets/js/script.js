@@ -11,15 +11,25 @@
     const hero = document.querySelector('.hero');
 
     // === HEADER + WHATSAPP FLUTUANTE ===
-    const onScroll = () => {
-        const y = window.scrollY;
-        header.classList.toggle('is-scrolled', y > 24);
-        if (waFloat && hero) {
-            waFloat.classList.toggle('is-visible', y > hero.offsetHeight * 0.6);
-        }
+    // Marcos invisíveis + IntersectionObserver: nada de ler scrollY/offsetHeight (evita reflow forçado).
+    const marco = (pai, topo) => {
+        const m = document.createElement('div');
+        m.setAttribute('aria-hidden', 'true');
+        m.style.cssText = `position:absolute;top:${topo};left:0;width:1px;height:1px;pointer-events:none;visibility:hidden`;
+        pai.appendChild(m);
+        return m;
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    const passou = (fn) => new IntersectionObserver(([e]) => fn(!e.isIntersecting && e.boundingClientRect.top < 0));
+
+    if ('IntersectionObserver' in window) {
+        // cabeçalho com fundo depois de rolar 24px
+        passou((sim) => header.classList.toggle('is-scrolled', sim)).observe(marco(document.body, '24px'));
+        // WhatsApp flutuante depois de rolar 60% do topo
+        if (waFloat && hero) passou((sim) => waFloat.classList.toggle('is-visible', sim)).observe(marco(hero, '60%'));
+    } else {
+        header.classList.add('is-scrolled');
+        if (waFloat) waFloat.classList.add('is-visible');
+    }
 
     // === MENU MOBILE ===
     const setMenu = (open) => {
