@@ -39,16 +39,14 @@ precos:
 
 # --- Quem faz os sites (seção "Quem faz" da home) ---
 fundador:
-  # [SEU NOME] — vazio = seção "Quem faz" escondida e sem "founder" nos dados estruturados
-  nome: ""
-  # [FOTO] — caminho da foto, ex.: "/assets/brand/quem-faz.webp" (quadrada, 800×800).
-  # Vazio = a seção aparece com a inicial do nome no lugar da foto.
-  foto: ""
+  # Vazio = seção "Quem faz" escondida e sem "founder" nos dados estruturados
+  nome: "Gabriel Milano Alves"
+  # Foto quadrada (a do perfil do GitHub, 396×396). Vazio = mostra a inicial do nome.
+  foto: "/assets/brand/gabriel-milano-alves.webp"
   # 2 ou 3 frases verdadeiras sobre quem faz e por quê (sem tempo de mercado nem números).
-  # RASCUNHO: revise antes de preencher o nome, porque o texto vai ao ar junto com ele.
   texto:
-    - "Sou eu quem atende, vai até o seu negócio e cuida do site do começo ao fim: textos, visual, Google e WhatsApp."
-    - "Você conversa direto com quem faz, sem intermediário."
+    - "Moro em Criciúma e cuido de cada site do começo ao fim: textos, visual, Google e WhatsApp."
+    - "Na região de Criciúma, a reunião pode ser presencial; de qualquer outra cidade, fazemos tudo por videochamada, pelo Google Meet. Em todos os casos, você fala direto com quem faz o site."
     - "Faço sites porque um bom negócio merece ser encontrado no Google e receber clientes no WhatsApp."
 
 # --- Case Laundry Lounge (/cases/laundry-lounge) ---
