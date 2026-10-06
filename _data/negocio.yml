@@ -18,8 +18,7 @@ empresa:
   telefone: "(48) 99179-5646"
   telefone_schema: "+55-48-99179-5646"
   whatsapp: "5548991795646"
-  # E-mail do rodapé e dos dados estruturados. Trocar por "contato@negociosmart.com.br"
-  # só depois que a caixa existir (em 05/10/2026 o domínio ainda não tinha registro MX).
+  # E-mail oficial da Negócios Smart (rodapé e dados estruturados), confirmado em 05/10/2026.
   email: "negociosmartoficiall@gmail.com"
   instagram_url: "https://www.instagram.com/sites.negociossmart/"
   instagram_usuario: "@sites.negociossmart"
