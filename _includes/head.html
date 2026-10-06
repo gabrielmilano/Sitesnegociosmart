@@ -33,7 +33,8 @@
     <link rel="preload" href="/assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/style.css">
 {%- if page.preload_image %}
-    <link rel="preload" as="image" href="{{ page.preload_image }}">
+    {%- comment -%} Só no computador: no celular a imagem do topo fica abaixo do texto (o LCP é o texto) {%- endcomment %}
+    <link rel="preload" as="image" href="{{ page.preload_image }}" imagesrcset="{{ page.preload_image | replace: '.webp', '-800.webp' }} 800w, {{ page.preload_image }} 1600w" imagesizes="660px" media="(min-width: 1081px)">
 {%- endif %}
 
     <script>document.documentElement.classList.add('js');</script>
