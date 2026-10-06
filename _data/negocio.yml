@@ -24,8 +24,13 @@ empresa:
   instagram_url: "https://www.instagram.com/sites.negociossmart/"
   instagram_usuario: "@sites.negociossmart"
 
-# [CIDADES ATENDIDAS] — além de Criciúma, que entra sempre.
-# Ex.: ["Içara", "Forquilhinha", "Cocal do Sul"]. Vazio = só Criciúma.
+# Atendimento: presencial na região de Criciúma; online (Google Meet) de qualquer cidade.
+# País do atendimento online: entra no areaServed dos dados estruturados. Vazio = não entra.
+atendimento_online_pais: "Brasil"
+
+# [CIDADES ATENDIDAS] — opcional: cidades da região onde a reunião pode ser presencial,
+# além de Criciúma (que entra sempre). Ex.: ["Içara", "Forquilhinha", "Cocal do Sul"].
+# Vazio = a lista "Reunião presencial em" não aparece.
 cidades_atendidas: []
 
 # --- Preços (só o valor, como deve aparecer: "490" ou "1.490") ---
