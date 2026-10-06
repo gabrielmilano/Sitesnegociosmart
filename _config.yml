@@ -2,7 +2,7 @@
 # Dados da empresa e marcadores pendentes ficam em _data/negocio.yml.
 # Se o site mudar de domínio, troque "url" aqui e o arquivo CNAME.
 
-url: "https://sites.negociosmart.com.br"
+url: "https://negociosmart.com.br"
 baseurl: ""
 lang: pt-BR
 timezone: America/Sao_Paulo
