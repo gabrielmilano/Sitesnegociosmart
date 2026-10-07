@@ -10,7 +10,7 @@
                 <p>Ajudando sua empresa a transmitir confiança online.</p>
             </div>
             <nav class="footer__col" aria-label="Rodapé">
-                <h4>Navegação</h4>
+                <h2 class="footer__title">Navegação</h2>
                 <a href="/#diferenciais">Diferenciais</a>
                 <a href="/#projetos">Projetos</a>
                 <a href="/#planos">Planos</a>
@@ -19,13 +19,13 @@
                 <a href="/cases/laundry-lounge">Case Laundry Lounge</a>
             </nav>
             <div class="footer__col">
-                <h4>Contato</h4>
+                <h2 class="footer__title">Contato</h2>
                 <a href="https://wa.me/{{ e.whatsapp }}" target="_blank" rel="noopener">{{ e.telefone }}</a>
                 <a href="mailto:{{ e.email }}">{{ e.email }}</a>
                 <a href="{{ e.instagram_url }}" target="_blank" rel="noopener">{{ e.instagram_usuario }}</a>
             </div>
             <div class="footer__col">
-                <h4>Produtos</h4>
+                <h2 class="footer__title">Produtos</h2>
                 <a href="https://financeiro.negociosmart.com.br" target="_blank" rel="noopener">Financeiro</a>
                 <a href="https://imoveis.negociosmart.com.br/" target="_blank" rel="noopener">Imóveis</a>
             </div>
@@ -34,9 +34,10 @@
             <p>&copy; <span id="year">{{ site.time | date: "%Y" }}</span> Negócios Smart. Todos os direitos reservados.</p>
             <p>Soluções inteligentes para impulsionar empresas.</p>
         </div>
+
+        <!-- WHATSAPP FLUTUANTE (dentro do rodapé: fica numa região da página para leitores de tela) -->
+        <a href="{% include wa.html msg='Olá, vim pelo site!' %}" class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+        </a>
     </footer>
 
-    <!-- WHATSAPP FLUTUANTE -->
-    <a href="{% include wa.html msg='Olá, vim pelo site!' %}" class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-    </a>
