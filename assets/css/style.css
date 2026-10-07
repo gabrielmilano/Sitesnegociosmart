@@ -582,7 +582,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
 
 /* Mock: busca Google */
 .mock-search {
-    height: 230px;
+    height: 250px;
+    /* o 2º resultado some em degradê (antes era cortado seco, como uma tira solta) */
+    -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent);
+    mask-image: linear-gradient(to bottom, #000 78%, transparent);
     padding: 16px 28px 0;
     background:
         radial-gradient(120% 90% at 100% 0%, rgba(37, 99, 235, .08), transparent 60%),
@@ -618,7 +621,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
 
 /* Mock: chat WhatsApp */
 .mock-chat {
-    height: 230px;
+    height: 250px;
     display: flex; flex-direction: column; justify-content: center; gap: 10px;
     padding: 28px;
     background:
@@ -833,11 +836,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
 }
 .step h3 { font-size: 1.15rem; font-weight: 650; margin-bottom: 8px; }
 .step p { font-size: .94rem; color: var(--muted); }
-.step:not(:last-child)::after {
-    content: ''; position: absolute; top: 52px; right: -13px; z-index: 1;
-    width: 10px; height: 10px; border-radius: 50%;
-    background: var(--white); border: 2px solid var(--teal);
-}
 
 /* === FAQ === */
 .faq { display: grid; grid-template-columns: 1fr 1.5fr; gap: 72px; align-items: start; }
@@ -1046,7 +1044,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
     .steps.steps--3 { grid-template-columns: 1fr; }
     .done, .ba { grid-template-columns: 1fr; }
     .cta.cta--spaced { padding-top: 88px; }
-    .step:not(:last-child)::after { display: none; }
 }
 
 @media (max-width: 600px) {
@@ -1073,6 +1070,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
     .bento { grid-template-columns: 1fr; }
     .bento__card, .bento__card--wide { grid-column: auto; }
     .mock-search, .mock-chat { height: auto; padding: 22px; }
+    .mock-search { -webkit-mask-image: none; mask-image: none; }
     .bento__text { padding: 22px 22px 24px; }
     .bento__card:not(.bento__card--wide) { padding: 24px; }
     .bento__icon { margin-bottom: 22px; }
