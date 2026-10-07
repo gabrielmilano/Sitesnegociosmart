@@ -883,16 +883,25 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
 /* === QUEM FAZ === */
 .section--about { padding-top: 0; }
 .about {
-    display: grid; grid-template-columns: 260px 1fr; align-items: center; gap: 56px;
+    display: grid; grid-template-columns: 300px 1fr; align-items: center; gap: 56px;
     padding: 48px;
     border-radius: var(--r-lg);
     background: var(--paper);
     border: 1px solid var(--line);
 }
-.about__photo, .about__mono {
-    width: 100%; aspect-ratio: 1; border-radius: var(--r);
-    object-fit: cover;
+/* Foto sem fundo sobre um painel com o degradê da marca */
+.about__media {
+    border-radius: var(--r); overflow: hidden;
+    background:
+        radial-gradient(110% 80% at 0% 100%, rgba(46, 196, 108, .30), transparent 62%),
+        radial-gradient(110% 80% at 100% 0%, rgba(37, 99, 235, .26), transparent 62%),
+        linear-gradient(160deg, #ffffff, #eef3fb);
+    border: 1px solid var(--line);
     box-shadow: var(--shadow);
+}
+.about__photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: contain; object-position: bottom; }
+.about__mono {
+    width: 100%; aspect-ratio: 1; border-radius: var(--r);
 }
 .about__mono {
     display: grid; place-items: center;
@@ -998,7 +1007,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
     .local { grid-template-columns: 1fr; gap: 36px; padding: 44px; }
     .gbp { margin: 0 auto; }
     .incl { grid-template-columns: 1fr 1fr; }
-    .about { grid-template-columns: 200px 1fr; gap: 40px; padding: 40px; }
+    .about { grid-template-columns: 220px 1fr; gap: 40px; padding: 40px; }
     .footer__inner { grid-template-columns: 1fr 1fr; }
 }
 
@@ -1086,7 +1095,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
     .plan__price.price-band__value { font-size: 2.2rem; }
     .price-band .btn { flex: 1 1 100%; }
     .about { grid-template-columns: 1fr; gap: 28px; padding: 30px 20px; border-radius: var(--r); }
-    .about__media { width: 148px; }
+    .about__media { width: 160px; }
+    .about__photo { aspect-ratio: 1; }
     .about__mono { font-size: 4.5rem; }
 
     .cases { gap: 80px; }

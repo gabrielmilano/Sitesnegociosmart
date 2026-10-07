@@ -24,7 +24,7 @@
         },
         "areaServed": {% include schema/cidades.html %},
 {%- if f.nome and f.nome != "" %}
-        "founder": { "@type": "Person", "name": {{ f.nome | jsonify }} },
+        "founder": { "@type": "Person", "name": {{ f.nome | jsonify }}{% if f.foto_celular and f.foto_celular != "" %}, "image": "{{ f.foto_celular | absolute_url }}"{% endif %} },
 {%- endif %}
         "sameAs": [{{ e.instagram_url | jsonify }}]
     }

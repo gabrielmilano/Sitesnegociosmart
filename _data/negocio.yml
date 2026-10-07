@@ -45,8 +45,12 @@ precos:
 fundador:
   # Vazio = seção "Quem faz" escondida e sem "founder" nos dados estruturados
   nome: "Gabriel Milano Alves"
-  # Foto quadrada (a do perfil do GitHub, 396×396). Vazio = mostra a inicial do nome.
-  foto: "/assets/brand/gabriel-milano-alves.webp"
+  # Foto de terno, sem fundo (Identidade Visual/Fotos/FotoGabrielMILANOalves.png), sobre o
+  # degradê da marca. "foto": recorte 4:5 da cintura para cima (448×560) para computador e tablet;
+  # "foto_celular": rosto e ombros (420×420) para o celular e para os dados estruturados.
+  # Vazio = mostra a inicial do nome.
+  foto: "/assets/brand/gabriel-milano-alves-terno.webp"
+  foto_celular: "/assets/brand/gabriel-milano-alves-rosto.webp"
   # 2 ou 3 frases verdadeiras sobre quem faz e por quê (sem tempo de mercado nem números).
   texto:
     - "Moro em Criciúma e cuido de cada site do começo ao fim: textos, visual, Google e WhatsApp."
