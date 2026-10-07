@@ -357,7 +357,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
     color: #fff; background: var(--grad);
 }
 .chip__icon--wa { background: #25d366; }
-.hero__chip-wa { top: 12%; right: -18px; animation: float 6s ease-in-out -2s infinite; }
+.hero__chip-wa { top: 12%; right: 0; animation: float 6s ease-in-out -2s infinite; }
 .hero__chip-seo { bottom: 6%; right: 8%; animation: float 8s ease-in-out -4s infinite; }
 
 @keyframes float {
@@ -437,6 +437,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
 .section--case-intro { padding-bottom: 0; }
 .section--case-intro .section-head { margin-bottom: 0; }
 .done { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.done li:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .done li {
     position: relative;
     padding: 22px 24px 22px 62px;
@@ -885,7 +886,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
 .section--about { padding-top: 0; }
 .about {
     display: grid; grid-template-columns: 260px 1fr; align-items: center; gap: 56px;
-    max-width: 980px; margin: 0 auto;
     padding: 48px;
     border-radius: var(--r-lg);
     background: var(--paper);
@@ -940,6 +940,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
     padding-bottom: 56px;
     border-bottom: 1px solid var(--line-dark);
 }
+/* Conteúdo e divisória na mesma largura (1152px), alinhados à grade das seções */
+.footer .container { width: calc(100% - 48px); max-width: 1152px; padding-inline: 0; }
 .footer__brand p { margin-top: 16px; max-width: 280px; font-size: .95rem; }
 .footer__col { display: flex; flex-direction: column; gap: 12px; font-size: .93rem; }
 .footer__col h4 {
@@ -990,6 +992,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
     .hero__browser { transform: none; }
     .case { grid-template-columns: 1fr; gap: 40px; }
     .case--reverse .case__media { order: 0; }
+    .case__phone { right: 0; }
+    .case--reverse .case__phone { left: 0; }
     .case__media { max-width: 820px; }
     .faq { grid-template-columns: 1fr; gap: 40px; }
     .faq__aside { position: static; }
@@ -1032,8 +1036,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
     .section { padding: 88px 0; }
     .section-head { margin-bottom: 40px; }
     .section-head--split { flex-direction: column; align-items: flex-start; gap: 0; }
-    .bento { grid-template-columns: 1fr 1fr; }
-    .bento__card, .bento__card--wide { grid-column: span 1; }
+    .bento__card { grid-column: span 2; }
     .bento__card--wide { grid-column: 1 / -1; }
     .plans { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
     .plans__extras { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
@@ -1058,7 +1061,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
     .hero__trust { flex-direction: column; gap: 10px; }
     .hero__visual { padding: 0 0 36px 24px; }
     .hero__phone { width: 32%; }
-    .hero__chip-wa { top: auto; bottom: 34%; right: -6px; }
+    .hero__chip-wa { top: auto; bottom: 34%; right: 0; }
     .hero__chip-seo { display: none; }
     .chip { padding: 8px 12px 8px 8px; }
     .chip__icon { width: 30px; height: 30px; }
@@ -1090,8 +1093,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
 
     .cases { gap: 80px; }
     .case__media { padding-bottom: 28px; }
-    .case__phone { right: -8px; width: 26%; }
-    .case--reverse .case__phone { left: -8px; }
+    .case__phone { right: 0; width: 26%; }
+    .case--reverse .case__phone { left: 0; }
 
     .plan { padding: 28px 22px 24px; }
     .plan__badge { top: 24px; right: 20px; }
@@ -1104,6 +1107,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
     .cta { padding-bottom: 88px; }
     .cta__box { padding: 64px 22px; border-radius: 28px; }
     .cta__actions .btn { flex: 1 1 100%; }
+    .footer .container { width: calc(100% - 40px); }
     .footer__inner { grid-template-columns: 1fr; gap: 32px; padding-bottom: 44px; }
     .footer__bottom { padding-top: 24px; }
     .wa-float { right: 16px; bottom: 16px; width: 54px; height: 54px; }
