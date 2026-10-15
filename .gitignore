@@ -1,3 +1,5 @@
 *.exe
 *.txt
 !robots.txt
+# arquivos .txt das demos em Next.js são necessários para a navegação
+!demos/**/*.txt

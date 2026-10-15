@@ -6,3 +6,7 @@ url: "https://negociosmart.com.br"
 baseurl: ""
 lang: pt-BR
 timezone: America/Sao_Paulo
+
+# Demos em Next.js (demos/*) guardam o código em pastas "_next", que o Jekyll ignoraria.
+include:
+  - _next
