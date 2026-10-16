@@ -54,7 +54,7 @@
             hero.addEventListener('pointermove', (e) => {
                 const r = hero.getBoundingClientRect();
                 const nx = (e.clientX - r.left) / r.width - .5, ny = (e.clientY - r.top) / r.height - .5;
-                ry(nx * 10); rx(-ny * 7);
+                ry(nx * 7); rx(-ny * 5);
                 camadas.forEach(([, f], i) => { pos[i].ax = nx * f; pos[i].ay = ny * f; });
             });
             hero.addEventListener('pointerleave', () => { ry(0); rx(0); pos.forEach((p) => { p.ax = 0; p.ay = 0; }); });

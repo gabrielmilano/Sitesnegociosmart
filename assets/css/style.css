@@ -1146,7 +1146,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
 .rolagem img { transition: none !important; position: absolute; left: 0; top: 0; width: 100%; height: auto !important; aspect-ratio: auto !important; border-radius: 0 !important; will-change: transform; }
 
 /* herói em 3D, acompanhando o mouse */
-.hero__visual.is-3d { transform-style: preserve-3d; will-change: transform; }
+/* o conjunto inclina como uma peça só (sem preserve-3d): o celular nunca atravessa o computador */
+.hero__visual.is-3d { transform-style: flat; will-change: transform; }
+.hero__visual .hero__browser { position: relative; z-index: 1; }
+.hero__visual .hero__phone { z-index: 3; }
+.hero__visual .chip { z-index: 4; }
 
 /* notificação que troca de mensagem */
 .hero__chip-wa small { display: block; min-height: 1.25em; }
