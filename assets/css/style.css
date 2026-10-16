@@ -1132,3 +1132,38 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
     .hero__phone, .hero__chip-wa, .hero__chip-seo, .wa-float::before { animation: none; }
     .js [data-reveal], .js [data-reveal="scale"] { transform: none; transition: opacity .6s ease; transition-delay: var(--d, 0ms); }
 }
+
+/* ========================================
+   MOVIMENTO (assets/js/motion.js) — carregado depois da 1ª tela, só no computador
+   ======================================== */
+
+/* telas que rolam dentro dos aparelhos */
+.browser { position: relative; } /* .phone do herói e do portfólio já é absolute */
+.rolagem { position: absolute; left: 0; right: 0; bottom: 0; overflow: hidden; opacity: 0; transition: opacity .8s var(--ease); pointer-events: none; }
+.browser .rolagem { top: 34px; }
+.phone .rolagem { inset: 6px; border-radius: 24px; }
+.rolagem.is-on { opacity: 1; }
+.rolagem img { transition: none !important; position: absolute; left: 0; top: 0; width: 100%; height: auto !important; aspect-ratio: auto !important; border-radius: 0 !important; will-change: transform; }
+
+/* herói em 3D, acompanhando o mouse */
+.hero__visual.is-3d { transform-style: preserve-3d; will-change: transform; }
+
+/* notificação que troca de mensagem */
+.hero__chip-wa small { display: block; min-height: 1.25em; }
+.hero__chip-wa .chip__icon--wa { position: relative; }
+.hero__chip-wa .chip__icon--wa::after { content: ""; position: absolute; top: -3px; right: -3px; width: 10px; height: 10px; border-radius: 50%; background: #ef4444; box-shadow: 0 0 0 2px #fff; transform: scale(0); transition: transform .3s var(--ease); }
+.hero__chip-wa.is-novo .chip__icon--wa::after { transform: scale(1); }
+
+/* portfólio com rolagem travada */
+.cases__progresso { display: none; }
+.cases.is-pinned { position: relative; display: block; height: min(700px, calc(100vh - 190px)); }
+.cases.is-pinned .case { position: absolute; inset: 0; margin: 0; }
+.cases.is-pinned .case[data-reveal] { opacity: 1; transform: none; transition: none; }
+.cases.is-pinned .cases__progresso {
+    display: flex; align-items: center; gap: 12px;
+    position: absolute; left: 0; bottom: -8px; z-index: 5;
+    font-size: .9rem; color: var(--muted); font-variant-numeric: tabular-nums;
+}
+.cases__num { font-size: 1.5rem; font-weight: 700; color: var(--text); letter-spacing: -.02em; }
+.cases__barra { display: block; position: relative; width: 160px; height: 3px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.cases__barra i { position: absolute; inset: 0; background: var(--grad); transform-origin: left; transform: scaleX(0); }

@@ -50,19 +50,19 @@ last_modified_at: 2026-10-05
                 </div>
 
                 <div class="hero__visual">
-                    <div class="browser browser--dark hero__browser">
+                    <div class="browser browser--dark hero__browser" data-rolagem="/assets/cases/rolagem/imoveis-desktop.webp">
                         <div class="browser__bar" aria-hidden="true">
                             <i></i><i></i><i></i>
                             <span class="browser__url">imoveis.negociosmart.com.br</span>
                         </div>
                         <img src="assets/cases/imoveis.webp" srcset="/assets/cases/imoveis-800.webp 800w, /assets/cases/imoveis.webp 1600w" sizes="(max-width: 1080px) calc(100vw - 48px), 660px" width="1600" height="1000" alt="Plataforma Imóveis, produto da Negócios Smart, aberta no computador" fetchpriority="high">
                     </div>
-                    <div class="phone hero__phone">
+                    <div class="phone hero__phone" data-rolagem="/assets/cases/rolagem/financeiro-celular.webp">
                         <img src="assets/cases/financeiro-mobile.webp" srcset="/assets/cases/financeiro-mobile-260.webp 260w, /assets/cases/financeiro-mobile.webp 520w" sizes="(max-width: 600px) 32vw, 180px" width="520" height="1125" alt="Aplicativo Financeiro aberto no celular">
                     </div>
                     <div class="chip chip--wa hero__chip-wa" aria-hidden="true">
                         <span class="chip__icon chip__icon--wa"><svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg></span>
-                        <span><b>Exemplo de contato</b><small>“Oi! Vi o site de vocês…”</small></span>
+                        <span><b>Exemplo de contato</b><small data-notif>“Oi! Vi o site de vocês…”</small></span>
                     </div>
                     <div class="chip hero__chip-seo" aria-hidden="true">
                         <span class="chip__icon"><svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#i-search"/></svg></span>
@@ -189,8 +189,9 @@ last_modified_at: 2026-10-05
                 </div>
 
                 <div class="cases">
+                    <div class="cases__progresso" aria-hidden="true"><b class="cases__num">01</b><span>/ 04</span><i class="cases__barra"><i></i></i></div>
                     <article class="case" data-reveal>
-                        <a class="case__media" href="https://imoveis.negociosmart.com.br/" target="_blank" rel="noopener" aria-label="Abrir o site Imóveis">
+                        <a class="case__media" data-desk="/assets/cases/rolagem/imoveis-desktop.webp" data-cel="/assets/cases/rolagem/imoveis-celular.webp" href="https://imoveis.negociosmart.com.br/" target="_blank" rel="noopener" aria-label="Abrir o site Imóveis">
                             <div class="browser">
                                 <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">imoveis.negociosmart.com.br</span></div>
                                 <img src="assets/cases/imoveis.webp" srcset="/assets/cases/imoveis-800.webp 800w, /assets/cases/imoveis.webp 1600w" sizes="(max-width: 1080px) calc(100vw - 48px), 660px" width="1600" height="1000" alt="Página inicial da plataforma Imóveis" loading="lazy" decoding="async">
@@ -212,7 +213,7 @@ last_modified_at: 2026-10-05
                     </article>
 
                     <article class="case case--reverse" data-reveal>
-                        <a class="case__media" href="https://lavanderialaundrylounge.com.br" target="_blank" rel="noopener" aria-label="Abrir o site da Laundry Lounge">
+                        <a class="case__media" data-desk="/assets/cases/rolagem/laundry-desktop.webp" data-cel="/assets/cases/rolagem/laundry-celular.webp" href="https://lavanderialaundrylounge.com.br" target="_blank" rel="noopener" aria-label="Abrir o site da Laundry Lounge">
                             <div class="browser">
                                 <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">lavanderialaundrylounge.com.br</span></div>
                                 <img src="assets/cases/laundry.webp" srcset="/assets/cases/laundry-800.webp 800w, /assets/cases/laundry.webp 1600w" sizes="(max-width: 1080px) calc(100vw - 48px), 660px" width="1600" height="1000" alt="Página inicial do site da Laundry Lounge, lavanderia no Centro de Criciúma" loading="lazy" decoding="async">
@@ -234,7 +235,7 @@ last_modified_at: 2026-10-05
                     </article>
 
                     <article class="case" data-reveal>
-                        <a class="case__media" href="https://financeiro.negociosmart.com.br" target="_blank" rel="noopener" aria-label="Abrir o aplicativo Financeiro">
+                        <a class="case__media" data-desk="/assets/cases/rolagem/financeiro-desktop.webp" data-cel="/assets/cases/rolagem/financeiro-celular.webp" href="https://financeiro.negociosmart.com.br" target="_blank" rel="noopener" aria-label="Abrir o aplicativo Financeiro">
                             <div class="browser">
                                 <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">financeiro.negociosmart.com.br</span></div>
                                 <img src="assets/cases/financeiro.webp" srcset="/assets/cases/financeiro-800.webp 800w, /assets/cases/financeiro.webp 1600w" sizes="(max-width: 1080px) calc(100vw - 48px), 660px" width="1600" height="1000" alt="Página do aplicativo Financeiro" loading="lazy" decoding="async">
@@ -252,6 +253,30 @@ last_modified_at: 2026-10-05
                             <p>App de controle financeiro pessoal e familiar com lançamentos pelo WhatsApp e Telegram, assinaturas via Mercado Pago e plano Família para até 4 pessoas.</p>
                             <ul class="case__tags"><li>PWA</li><li>WhatsApp</li><li>Assinaturas</li><li>Mercado Pago</li></ul>
                             <a class="link-arrow" href="https://financeiro.negociosmart.com.br" target="_blank" rel="noopener">Visitar projeto <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+                        </div>
+                    </article>
+                    <article class="case case--reverse" data-reveal>
+                        <a class="case__media" data-desk="/assets/cases/rolagem/clinica-desktop.webp" data-cel="/assets/cases/rolagem/clinica-celular.webp" href="/demos/clinica/" target="_blank" rel="noopener" aria-label="Abrir a demonstração Clínica Sorriso Sereno">
+                            <div class="browser">
+                                <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">negociosmart.com.br/demos/clinica</span></div>
+                                <img src="assets/cases/clinica.webp" srcset="/assets/cases/clinica-800.webp 800w, /assets/cases/clinica.webp 1600w" sizes="(max-width: 1080px) calc(100vw - 48px), 660px" width="1600" height="1000" alt="Painel da recepção da demonstração Clínica Sorriso Sereno, com pedidos de consulta e alertas de saúde" loading="lazy" decoding="async">
+                            </div>
+                            <div class="phone case__phone">
+                                <img src="assets/cases/clinica-mobile.webp" srcset="/assets/cases/clinica-mobile-260.webp 260w, /assets/cases/clinica-mobile.webp 520w" sizes="(max-width: 600px) 32vw, 180px" width="520" height="1125" alt="Agendamento da demonstração Clínica Sorriso Sereno aberto no celular" loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                        <div class="case__info">
+                            <div class="case__meta">
+                                <span class="case__kicker">04 · Site com agendamento</span>
+                                <span class="case__badge">Demonstração</span>
+                            </div>
+                            <h3 class="case__title">Clínica Sorriso Sereno</h3>
+                            <p>Clínica fictícia criada para mostrar um site de agendamento que qualquer pessoa consegue usar: letras grandes, uma pergunta por tela, condições de saúde do paciente e um painel da recepção que recebe o pedido na hora.</p>
+                            <ul class="case__tags"><li>Next.js</li><li>Agendamento</li><li>Painel da recepção</li><li>Acessível</li></ul>
+                            <div class="case__links">
+                                <a class="link-arrow" href="/demos/clinica/" target="_blank" rel="noopener">Testar como paciente <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+                                <a class="link-arrow" href="/demos/clinica/admin/" target="_blank" rel="noopener">Ver o painel da clínica <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+                            </div>
                         </div>
                     </article>
                 </div>

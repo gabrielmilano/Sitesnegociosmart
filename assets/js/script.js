@@ -79,6 +79,22 @@
         });
     });
 
+    // === MOVIMENTO (herói vivo + portfólio travado) ===
+    // Só em telas a partir de 901px e só depois que a página terminou de abrir: não pesa na 1ª tela.
+    if (document.querySelector('.hero__visual, .cases') && matchMedia('(min-width: 901px)').matches) {
+        const carregar = (src) => new Promise((ok, erro) => {
+            const s = document.createElement('script');
+            s.src = src; s.onload = ok; s.onerror = erro;
+            document.head.appendChild(s);
+        });
+        const iniciar = () => carregar('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js')
+            .then(() => carregar('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js'))
+            .then(() => carregar('/assets/js/motion.js'))
+            .catch(() => {});
+        const ocioso = () => ('requestIdleCallback' in window ? requestIdleCallback(iniciar, { timeout: 2500 }) : setTimeout(iniciar, 1200));
+        if (document.readyState === 'complete') ocioso(); else window.addEventListener('load', ocioso, { once: true });
+    }
+
     // === ANO NO RODAPÉ ===
     const year = document.getElementById('year');
     if (year) year.textContent = new Date().getFullYear();
