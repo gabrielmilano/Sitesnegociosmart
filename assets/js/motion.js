@@ -81,12 +81,32 @@
     /* ---------- PORTFÓLIO COM ROLAGEM TRAVADA (só telas largas) ---------- */
     const cases = $('.cases');
     if (!cases) return;
+
+    // Qualquer mudança de altura da página depois do cálculo (imagem, fonte, CSS em cache,
+    // extensão do navegador) deixava o ponto de travar desatualizado, e o portfólio "travava"
+    // por cima das seções de cima. Agora as posições são recalculadas sempre que a altura muda.
+    let alturaCalculada = 0, aguardando;
+    ScrollTrigger.addEventListener('refresh', () => { alturaCalculada = document.documentElement.scrollHeight; });
+    new ResizeObserver(() => {
+        if (Math.abs(document.documentElement.scrollHeight - alturaCalculada) < 2) return;
+        clearTimeout(aguardando);
+        aguardando = setTimeout(() => ScrollTrigger.refresh(), 150);
+    }).observe(document.body);
+
     const mm = gsap.matchMedia();
     mm.add('(min-width: 1081px)', () => {
         const itens = $$('.case', cases);
         const n = itens.length;
         const num = $('.cases__num', cases), barra = $('.cases__barra i', cases);
         cases.classList.add('is-pinned');
+        // bloco do tamanho do maior projeto quando a tela é baixa (senão o projeto vaza para cima)
+        const ajustarAltura = () => {
+            cases.style.height = '';
+            const maior = Math.max(...itens.map((c) => c.scrollHeight));
+            if (maior > cases.clientHeight) cases.style.height = maior + 'px';
+        };
+        ajustarAltura();
+        ScrollTrigger.addEventListener('refreshInit', ajustarAltura);
         gsap.set(itens, { autoAlpha: 0 });
         gsap.set(itens[0], { autoAlpha: 1 });
 
@@ -133,6 +153,8 @@
 
         return () => { // telas estreitas: volta ao layout normal
             st.kill(); tl.kill();
+            ScrollTrigger.removeEventListener('refreshInit', ajustarAltura);
+            cases.style.height = '';
             cases.classList.remove('is-pinned');
             gsap.set(itens, { clearProps: 'all' });
             gsap.set($$('.case__media, .case__info', cases), { clearProps: 'all' });

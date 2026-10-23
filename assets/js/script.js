@@ -4,6 +4,8 @@
    ======================================== */
 
 (() => {
+    // versão do deploy (vem do <script data-versao>): o motion.js baixado é sempre o do mesmo deploy
+    const versao = (document.currentScript && document.currentScript.dataset.versao) || '';
     const header = document.getElementById('header');
     const toggle = document.getElementById('navToggle');
     const nav = document.getElementById('headerNav');
@@ -89,7 +91,7 @@
         });
         const iniciar = () => carregar('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js')
             .then(() => carregar('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js'))
-            .then(() => carregar('/assets/js/motion.js'))
+            .then(() => carregar('/assets/js/motion.js' + (versao ? '?v=' + versao : '')))
             .catch(() => {});
         const ocioso = () => ('requestIdleCallback' in window ? requestIdleCallback(iniciar, { timeout: 2500 }) : setTimeout(iniciar, 1200));
         if (document.readyState === 'complete') ocioso(); else window.addEventListener('load', ocioso, { once: true });

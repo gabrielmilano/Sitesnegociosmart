@@ -15,6 +15,6 @@
 
 {% include icons.html %}
 
-    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/script.js?v={{ site.time | date: '%s' }}" data-versao="{{ site.time | date: '%s' }}"></script>
 </body>
 </html>
