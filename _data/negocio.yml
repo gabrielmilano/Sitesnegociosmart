@@ -38,8 +38,8 @@ precos:
   google_meu_negocio: ""   # [PREÇO GMN] — card da home e página /google-meu-negocio-criciuma
   landing_page: ""         # [PREÇO] Landing Page
   site_institucional: ""   # [PREÇO] Site Institucional
-  dominio_ano: "50"
-  hospedagem_mes: "60"
+  dominio_ano: ""           # vazio = sem preço no card "Domínio próprio" (era 50)
+  hospedagem_mes: ""        # vazio = sem preço no card "Hospedagem" (era 60)
 
 # --- Quem faz os sites (seção "Quem faz" da home) ---
 fundador:
