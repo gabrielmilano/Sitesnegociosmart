@@ -81,6 +81,40 @@
         });
     });
 
+    // === EQUIPE: abas do mini site ===
+    const perfis = document.querySelector('[data-perfis]');
+    if (perfis) {
+        const abas = [...perfis.querySelectorAll('[role="tab"]')];
+        const urlPerfil = perfis.querySelector('[data-perfil-url]');
+        const ativar = (aba, focar) => {
+            abas.forEach((a) => {
+                const sim = a === aba;
+                a.classList.toggle('is-ativa', sim);
+                a.setAttribute('aria-selected', String(sim));
+                a.tabIndex = sim ? 0 : -1;
+                document.getElementById(a.getAttribute('aria-controls')).classList.toggle('is-ativo', sim);
+            });
+            if (urlPerfil) urlPerfil.textContent = aba.dataset.slug;
+            if (focar) aba.focus();
+        };
+        abas.forEach((aba, i) => {
+            aba.addEventListener('click', () => {
+                ativar(aba);
+                history.replaceState(null, '', '#perfil-' + aba.dataset.slug); // link direto para o perfil
+            });
+            aba.addEventListener('keydown', (e) => {
+                const destino = { ArrowRight: abas[(i + 1) % abas.length], ArrowLeft: abas[(i - 1 + abas.length) % abas.length], Home: abas[0], End: abas[abas.length - 1] }[e.key];
+                if (destino) { e.preventDefault(); ativar(destino, true); }
+            });
+        });
+        const peloEndereco = () => {
+            const aba = abas.find((a) => location.hash === '#perfil-' + a.dataset.slug);
+            if (aba) ativar(aba);
+        };
+        peloEndereco();
+        window.addEventListener('hashchange', peloEndereco);
+    }
+
     // === MOVIMENTO (herói vivo + portfólio travado) ===
     // Só em telas a partir de 901px e só depois que a página terminou de abrir: não pesa na 1ª tela.
     if (document.querySelector('.hero__visual, .cases') && matchMedia('(min-width: 901px)').matches) {

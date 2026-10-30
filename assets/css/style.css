@@ -882,39 +882,87 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
 .faq-item[open] .faq-item__plus::after { opacity: 0; }
 .faq-item p { padding: 0 24px 24px; color: var(--muted); max-width: 62ch; }
 
-/* === QUEM FAZ === */
-.section--about { padding-top: 0; }
-.about {
-    display: grid; grid-template-columns: 300px 1fr; align-items: center; gap: 56px;
-    padding: 48px;
-    border-radius: var(--r-lg);
-    background: var(--paper);
-    border: 1px solid var(--line);
+/* === EQUIPE: um pequeno site dentro da página === */
+.mini {
+    border-radius: var(--r-lg); overflow: hidden;
+    background: var(--ink-900); color: var(--on-dark);
+    border: 1px solid rgba(255, 255, 255, .08);
+    box-shadow: var(--shadow-lg);
 }
-/* Foto sem fundo sobre um painel com o degradê da marca */
-.about__media {
-    border-radius: var(--r); overflow: hidden;
+.mini__bar { display: flex; align-items: flex-end; gap: 20px; padding: 12px 18px 0; background: #151f36; }
+.mini__pontos { display: flex; gap: 7px; padding-bottom: 20px; }
+.mini__pontos i { width: 11px; height: 11px; border-radius: 50%; background: #ff6159; }
+.mini__pontos i:nth-child(2) { background: #ffbd2e; }
+.mini__pontos i:nth-child(3) { background: #28c940; }
+.mini__abas { flex: 1; min-width: 0; display: flex; gap: 4px; }
+.mini__aba {
+    flex: 0 1 220px; min-width: 0; min-height: 52px;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 7px 16px; text-align: left; line-height: 1.25;
+    border-radius: 12px 12px 0 0;
+    color: var(--on-dark-muted);
+    transition: background-color .25s, color .25s;
+}
+.mini__aba b { font-family: var(--font-display); font-size: .95rem; font-weight: 650; }
+.mini__aba small { font-size: .75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mini__aba:hover { color: #fff; background: rgba(255, 255, 255, .05); }
+.mini__aba.is-ativa { color: #fff; background: var(--ink-900); }
+.mini__aba:focus-visible { outline-offset: -3px; }
+html:not(.js) .mini__bar { display: none; }
+.mini__endereco {
+    display: flex; align-items: center; gap: 8px;
+    margin: 12px 18px 0; padding: 8px 14px;
+    border-radius: 999px;
+    font-size: .8rem; color: var(--on-dark-muted);
+    background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .08);
+    overflow: hidden; white-space: nowrap;
+}
+.mini__endereco span { overflow: hidden; text-overflow: ellipsis; }
+.mini__endereco b { font-weight: 600; color: #fff; }
+html:not(.js) .mini__endereco { display: none; }
+
+/* com JS, os perfis ocupam a mesma célula: trocar de aba não faz a página pular */
+.js .mini__paginas { display: grid; }
+.js .perfil { grid-area: 1 / 1; visibility: hidden; opacity: 0; transform: translateY(12px); transition: opacity .35s ease, transform .5s var(--ease), visibility 0s .35s; }
+.js .perfil.is-ativo { visibility: visible; opacity: 1; transform: none; transition: opacity .35s ease .05s, transform .5s var(--ease) .05s, visibility 0s; }
+
+.perfil { --acc: var(--green); position: relative; isolation: isolate; display: flex; flex-direction: column; gap: 32px; padding: 44px; overflow: hidden; min-width: 0; }
+.perfil--guilherme { --acc: var(--teal); }
+.perfil--arthur { --acc: var(--blue-bright); }
+.perfil::before {
+    content: ''; position: absolute; z-index: -1; top: -220px; right: -160px;
+    width: 560px; height: 560px; border-radius: 50%;
+    background: var(--acc); opacity: .16; filter: blur(90px); pointer-events: none;
+}
+.perfil__topo { display: grid; grid-template-columns: 1fr 260px; align-items: center; gap: 48px; }
+.perfil__area { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--acc); }
+.perfil--arthur .perfil__area { color: #7db0fb; }
+.perfil__nome { margin-top: 12px; font-size: clamp(1.8rem, 1.3rem + 2vw, 2.8rem); font-weight: 700; line-height: 1.08; letter-spacing: -.03em; color: #fff; }
+.perfil__cargo { margin-top: 10px; font-size: 1.08rem; font-weight: 500; color: #fff; }
+.perfil__texto { margin-top: 12px; max-width: 58ch; color: var(--on-dark-muted); }
+.perfil__media { border-radius: var(--r); overflow: hidden; }
+.perfil--gabriel .perfil__media {
     background:
         radial-gradient(110% 80% at 0% 100%, rgba(46, 196, 108, .30), transparent 62%),
         radial-gradient(110% 80% at 100% 0%, rgba(37, 99, 235, .26), transparent 62%),
         linear-gradient(160deg, #ffffff, #eef3fb);
-    border: 1px solid var(--line);
-    box-shadow: var(--shadow);
 }
-.about__photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: contain; object-position: bottom; }
-.about__mono {
-    width: 100%; aspect-ratio: 1; border-radius: var(--r);
+.perfil__foto { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: contain; object-position: bottom; }
+.perfil__inicial {
+    display: grid; place-items: center; aspect-ratio: 4 / 5;
+    font-family: var(--font-serif); font-style: italic; font-size: 7.5rem; line-height: 1; color: #fff;
+    background: linear-gradient(150deg, var(--acc), var(--ink-700));
+    border: 1px solid rgba(255, 255, 255, .1); border-radius: inherit;
 }
-.about__mono {
-    display: grid; place-items: center;
-    font-family: var(--font-serif); font-style: italic; font-size: 7rem; line-height: 1;
-    color: #fff; background: var(--grad);
+.perfil__servicos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.perfil__servicos li {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 18px; border-radius: var(--r-sm);
+    background: rgba(255, 255, 255, .04); border: 1px solid var(--line-dark);
 }
-.about .section-title { font-size: clamp(1.8rem, 1.3rem + 2vw, 2.6rem); }
-.about__name { margin: 20px 0 10px; font-size: 1.25rem; font-weight: 650; }
-.about__copy p { color: var(--muted); max-width: 58ch; }
-.about__copy p + p { margin-top: 10px; }
-.about__cta { margin-top: 26px; }
+.perfil__servicos b { font-family: var(--font-display); font-weight: 650; color: #fff; }
+.perfil__servicos span { font-size: .9rem; line-height: 1.45; color: var(--on-dark-muted); }
+.perfil__acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: auto; }
 
 /* === CTA === */
 .cta { padding: 0 0 120px; }
@@ -1008,7 +1056,9 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
     .local { grid-template-columns: 1fr; gap: 36px; padding: 44px; }
     .gbp { margin: 0 auto; }
     .incl { grid-template-columns: 1fr 1fr; }
-    .about { grid-template-columns: 220px 1fr; gap: 40px; padding: 40px; }
+    .perfil { padding: 36px; }
+    .perfil__topo { grid-template-columns: 1fr 200px; gap: 32px; }
+    .perfil__servicos { grid-template-columns: 1fr 1fr; }
     .footer__inner { grid-template-columns: 1fr 1fr; }
 }
 
@@ -1101,10 +1151,23 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spac
     .done li::before { left: 18px; top: 19px; }
     .plan__price.price-band__value { font-size: 2.2rem; }
     .price-band .btn { flex: 1 1 100%; }
-    .about { grid-template-columns: 1fr; gap: 28px; padding: 30px 20px; border-radius: var(--r); }
-    .about__media { width: 160px; }
-    .about__photo { aspect-ratio: 1; }
-    .about__mono { font-size: 4.5rem; }
+    .mini { border-radius: var(--r); }
+    /* no celular cada perfil tem a própria altura (as abas ficam acima, nada pula de lugar) */
+    .js .perfil { display: none; }
+    .js .perfil.is-ativo { display: flex; }
+    .mini__bar { padding: 8px 8px 0; }
+    .mini__pontos { display: none; }
+    .mini__aba { flex: 1 1 0; padding: 7px 8px; text-align: center; align-items: center; }
+    .mini__aba small { display: none; }
+    .mini__endereco { margin: 10px 12px 0; font-size: .75rem; }
+    .perfil { gap: 22px; padding: 24px 18px; }
+    .perfil__topo { grid-template-columns: 1fr; gap: 20px; }
+    .perfil__media { order: -1; width: 128px; }
+    .perfil__foto, .perfil__inicial { aspect-ratio: 1; }
+    .perfil__inicial { font-size: 4.5rem; }
+    .perfil__servicos { grid-template-columns: 1fr; gap: 8px; }
+    .perfil__servicos li { padding: 13px 14px; }
+    .perfil__acoes .btn { flex: 1 1 100%; }
 
     .cases { gap: 80px; }
     .case__media { padding-bottom: 28px; }

@@ -1,0 +1,77 @@
+        <!-- EQUIPE: um pequeno site dentro da página, com uma "aba" para cada perfil -->
+        <section class="section" id="equipe">
+            <div class="container">
+                <div class="section-head section-head--split" data-reveal>
+                    <div>
+                        <span class="tag">Equipe</span>
+                        <h2 class="section-title">Quem faz o seu negócio <em class="serif">aparecer.</em></h2>
+                    </div>
+                    <p class="section-lead">Site, vídeo e tráfego pago com quem faz de verdade. Navegue pelos perfis.</p>
+                </div>
+
+                <div class="mini" data-perfis data-reveal>
+                    <div class="mini__bar">
+                        <span class="mini__pontos" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <div class="mini__abas" role="tablist" aria-label="Perfis da equipe">
+                            {%- for p in site.data.negocio.equipe %}
+                            <button class="mini__aba{% if forloop.first %} is-ativa{% endif %}" type="button" role="tab" id="aba-{{ p.slug }}" aria-controls="perfil-{{ p.slug }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %} data-slug="{{ p.slug }}">
+                                <b>{{ p.aba }}</b><small>{{ p.area }}</small>
+                            </button>
+                            {%- endfor %}
+                        </div>
+                    </div>
+                    <div class="mini__endereco" aria-hidden="true">
+                        <svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#i-lock"/></svg>
+                        <span>negociosmart.com.br/equipe/<b data-perfil-url>{{ site.data.negocio.equipe[0].slug }}</b></span>
+                    </div>
+
+                    <div class="mini__paginas">
+                        {%- for p in site.data.negocio.equipe %}
+                        <article class="perfil perfil--{{ p.slug }}{% if forloop.first %} is-ativo{% endif %}" role="tabpanel" id="perfil-{{ p.slug }}" aria-labelledby="aba-{{ p.slug }}">
+                            <div class="perfil__topo">
+                                <div class="perfil__copy">
+                                    <span class="perfil__area">{{ p.area }}</span>
+                                    <h3 class="perfil__nome">{{ p.nome }}</h3>
+                                    <p class="perfil__cargo">{{ p.cargo }}</p>
+                                    {%- for paragrafo in p.texto %}
+                                    <p class="perfil__texto">{{ paragrafo }}</p>
+                                    {%- endfor %}
+                                </div>
+                                <div class="perfil__media">
+                                    {%- if p.foto and p.foto != "" %}
+                                    <picture>
+                                        {%- if p.foto_celular and p.foto_celular != "" %}
+                                        <source media="(max-width: 600px)" srcset="{{ p.foto_celular }}" width="420" height="420">
+                                        {%- endif %}
+                                        <img src="{{ p.foto }}" alt="Foto de {{ p.nome }}, da equipe da Negócios Smart" width="448" height="560" class="perfil__foto" loading="lazy" decoding="async">
+                                    </picture>
+                                    {%- else %}
+                                    <span class="perfil__inicial" aria-hidden="true">{{ p.nome | slice: 0 }}</span>
+                                    {%- endif %}
+                                </div>
+                            </div>
+
+                            <ul class="perfil__servicos">
+                                {%- for s in p.servicos %}
+                                <li><b>{{ s.titulo }}</b><span>{{ s.texto }}</span></li>
+                                {%- endfor %}
+                            </ul>
+
+                            <div class="perfil__acoes">
+                                <a href="{% include wa.html msg=p.whatsapp_msg %}" class="btn btn--primary" target="_blank" rel="noopener">
+                                    <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                                    {{ p.whatsapp_rotulo }}
+                                </a>
+                                {%- if p.instagram_url and p.instagram_url != "" %}
+                                <a href="{{ p.instagram_url }}" class="btn btn--glass" target="_blank" rel="noopener">
+                                    <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-instagram"/></svg>
+                                    {{ p.instagram_rotulo }}
+                                </a>
+                                {%- endif %}
+                            </div>
+                        </article>
+                        {%- endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>

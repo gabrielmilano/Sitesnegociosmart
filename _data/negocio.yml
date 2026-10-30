@@ -41,9 +41,9 @@ precos:
   dominio_ano: ""           # vazio = sem preço no card "Domínio próprio" (era 50)
   hospedagem_mes: ""        # vazio = sem preço no card "Hospedagem" (era 60)
 
-# --- Quem faz os sites (seção "Quem faz" da home) ---
+# --- Fundador (dados estruturados) ---
 fundador:
-  # Vazio = seção "Quem faz" escondida e sem "founder" nos dados estruturados
+  # Vazio = sem "founder" nos dados estruturados
   nome: "Gabriel Milano Alves"
   # Foto de terno, sem fundo (Identidade Visual/Fotos/FotoGabrielMILANOalves.png), sobre o
   # degradê da marca. "foto": recorte 4:5 da cintura para cima (448×560) para computador e tablet;
@@ -51,11 +51,71 @@ fundador:
   # Vazio = mostra a inicial do nome.
   foto: "/assets/brand/gabriel-milano-alves-terno.webp"
   foto_celular: "/assets/brand/gabriel-milano-alves-rosto.webp"
-  # 2 ou 3 frases verdadeiras sobre quem faz e por quê (sem tempo de mercado nem números).
-  texto:
-    - "Moro em Criciúma e cuido de cada site do começo ao fim: textos, visual, Google e WhatsApp."
-    - "Na região de Criciúma, a reunião pode ser presencial; de qualquer outra cidade, fazemos tudo por videochamada, pelo Google Meet. Em todos os casos, você fala direto com quem faz o site."
-    - "Faço sites porque um bom negócio merece ser encontrado no Google e receber clientes no WhatsApp."
+
+# --- Equipe (seção "Equipe" da home: um mini site com uma aba para cada perfil) ---
+# Para acrescentar serviços, basta somar itens em "servicos". Foto vazia = mostra a inicial
+# do nome; foto nova: WebP 4:5 (448×560) em /assets/brand/. Instagram vazio = sem o botão.
+equipe:
+  - slug: "gabriel"
+    nome: "Gabriel Milano Alves"
+    aba: "Gabriel"
+    area: "Sites e sistemas"
+    cargo: "Desenvolvedor de sites e sistemas"
+    foto: "/assets/brand/gabriel-milano-alves-terno.webp"
+    foto_celular: "/assets/brand/gabriel-milano-alves-rosto.webp"
+    texto:
+      - "Moro em Criciúma, curso Engenharia de Software e cuido de cada site e sistema do começo ao fim."
+      - "Na região de Criciúma, a reunião pode ser presencial; de qualquer outra cidade, fazemos tudo pelo Google Meet. Você fala direto com quem faz."
+    servicos:
+      - { titulo: "Sites e landing pages", texto: "Rápidos, bonitos no celular e prontos para o Google." }
+      - { titulo: "Sistemas sob medida", texto: "Plataformas web feitas para o seu processo." }
+      - { titulo: "Google Meu Negócio", texto: "Perfil completo para aparecer no Maps." }
+      - { titulo: "Medição e integrações", texto: "Analytics, Search Console, Pixel e tag do Google Ads." }
+    whatsapp_msg: "Olá! Vi o site da Negócios Smart e quero conversar sobre um site."
+    whatsapp_rotulo: "Falar sobre meu site"
+    instagram_url: ""
+    instagram_rotulo: ""
+
+  - slug: "guilherme"
+    nome: "Guilherme Alves de Souza"
+    aba: "Guilherme"
+    area: "Vídeo e foto"
+    cargo: "Videomaker e editor de vídeo e fotos"
+    foto: ""          # [FOTO GUILHERME]
+    foto_celular: ""
+    texto:
+      - "Guilherme cuida da imagem do seu negócio: grava, edita e deixa vídeos e fotos prontos para publicar."
+      - "Atende em Criciúma/SC. Os trabalhos dele estão no Instagram."
+    # [SERVIÇOS GUILHERME] lista provisória, a partir do perfil do Instagram
+    servicos:
+      - { titulo: "Gravação de vídeo", texto: "Captação no seu negócio." }
+      - { titulo: "Edição de vídeo", texto: "Vídeos prontos para as redes." }
+      - { titulo: "Edição de fotos", texto: "Tratamento das imagens do seu negócio." }
+      - { titulo: "Social media", texto: "Conteúdo para as redes sociais." }
+    whatsapp_msg: "Olá! Vi o site da Negócios Smart e quero falar sobre vídeos e fotos com o Guilherme."
+    whatsapp_rotulo: "Falar sobre vídeos"
+    instagram_url: "https://www.instagram.com/guilhermealvesdsouza/"
+    instagram_rotulo: "Ver trabalhos no Instagram"
+
+  - slug: "arthur"
+    nome: "Arthur da Silva Rodrigues"
+    aba: "Arthur"
+    area: "Tráfego pago"
+    cargo: "Gestor de tráfego pago"
+    foto: ""          # [FOTO ARTHUR]
+    foto_celular: ""
+    texto:
+      - "Arthur cuida do tráfego pago do começo ao fim, com tudo bem documentado para o cliente acompanhar."
+    # [SERVIÇOS ARTHUR] confirmar com ele
+    servicos:
+      - { titulo: "Planejamento", texto: "Objetivo e público de cada campanha." }
+      - { titulo: "Criação das campanhas", texto: "Configuração e publicação dos anúncios." }
+      - { titulo: "Acompanhamento", texto: "Ajustes ao longo da campanha." }
+      - { titulo: "Documentação", texto: "Cada etapa registrada para você acompanhar." }
+    whatsapp_msg: "Olá! Vi o site da Negócios Smart e quero falar sobre tráfego pago com o Arthur."
+    whatsapp_rotulo: "Falar sobre tráfego pago"
+    instagram_url: ""  # [INSTAGRAM ARTHUR]
+    instagram_rotulo: "Ver no Instagram"
 
 # --- Case Laundry Lounge (/cases/laundry-lounge) ---
 case_laundry:

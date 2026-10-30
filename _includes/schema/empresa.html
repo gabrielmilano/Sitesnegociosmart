@@ -26,6 +26,11 @@
 {%- if f.nome and f.nome != "" %}
         "founder": { "@type": "Person", "name": {{ f.nome | jsonify }}{% if f.foto_celular and f.foto_celular != "" %}, "image": "{{ f.foto_celular | absolute_url }}"{% endif %} },
 {%- endif %}
+        "member": [
+{%- for p in site.data.negocio.equipe %}
+            { "@type": "Person", "name": {{ p.nome | jsonify }}, "jobTitle": {{ p.cargo | jsonify }}{% if p.instagram_url and p.instagram_url != "" %}, "sameAs": [{{ p.instagram_url | jsonify }}]{% endif %} }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+        ],
         "sameAs": [{{ e.instagram_url | jsonify }}]
     }
     </script>
