@@ -81,8 +81,8 @@ equipe:
     aba: "Guilherme"
     area: "Vídeo e foto"
     cargo: "Videomaker e editor de vídeo e fotos"
-    foto: ""          # [FOTO GUILHERME]
-    foto_celular: ""
+    foto: "/assets/brand/guilherme-alves-de-souza.webp"
+    foto_celular: "/assets/brand/guilherme-alves-de-souza-rosto.webp"
     texto:
       - "Guilherme cuida da imagem do seu negócio: grava, edita e deixa vídeos e fotos prontos para publicar."
       - "Atende em Criciúma/SC. Os trabalhos dele estão no Instagram."
