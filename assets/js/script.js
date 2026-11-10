@@ -115,9 +115,50 @@
         window.addEventListener('hashchange', peloEndereco);
     }
 
-    // === MOVIMENTO (herói vivo + portfólio travado) ===
+    // === PORTFÓLIO ===
+    // Faixas inclinadas: andam com a rolagem da página (vale também com "reduzir movimento",
+    // porque quem move é o próprio visitante). Só calcula enquanto as faixas estão na tela.
+    const faixas = document.querySelector('.faixas');
+    if (faixas) {
+        let visivel = false, pedido = false;
+        const mover = () => {
+            pedido = false;
+            const r = faixas.getBoundingClientRect();
+            const p = Math.min(1, Math.max(0, (window.innerHeight - r.top) / (window.innerHeight + r.height)));
+            faixas.style.setProperty('--rolagem', (p * window.innerWidth * .3).toFixed(1));
+        };
+        const pedir = () => { if (visivel && !pedido) { pedido = true; requestAnimationFrame(mover); } };
+        new IntersectionObserver(([e]) => { visivel = e.isIntersecting; pedir(); }).observe(faixas);
+        window.addEventListener('scroll', pedir, { passive: true });
+    }
+    // Telas dos projetos: no computador, a página inteira do projeto rola dentro do navegador
+    // ao passar o mouse. A imagem da página inteira só carrega quando o card chega perto.
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        const montar = (m) => {
+            if (m.dataset.montado) return;
+            m.dataset.montado = '1';
+            const tela = m.querySelector('.proj__tela');
+            if (!tela) return;
+            const img = new Image();
+            img.className = 'proj__inteira';
+            img.alt = '';
+            img.decoding = 'async';
+            img.setAttribute('aria-hidden', 'true');
+            img.onload = () => { tela.appendChild(img); requestAnimationFrame(() => m.classList.add('tem-inteira')); };
+            img.src = tela.clientWidth * (window.devicePixelRatio || 1) > 820 ? m.dataset.inteiraGrande : m.dataset.inteira;
+        };
+        const perto = new IntersectionObserver((es) => es.forEach((e) => {
+            if (e.isIntersecting) { montar(e.target); perto.unobserve(e.target); }
+        }), { rootMargin: '400px 0px' });
+        document.querySelectorAll('.proj__media[data-inteira]').forEach((m) => {
+            perto.observe(m);
+            m.addEventListener('pointerenter', () => montar(m), { once: true });
+        });
+    }
+
+    // === MOVIMENTO (herói vivo) ===
     // Só em telas a partir de 901px e só depois que a página terminou de abrir: não pesa na 1ª tela.
-    if (document.querySelector('.hero__visual, .cases') && matchMedia('(min-width: 901px)').matches) {
+    if (document.querySelector('.hero__visual') && matchMedia('(min-width: 901px)').matches) {
         const carregar = (src) => new Promise((ok, erro) => {
             const s = document.createElement('script');
             s.src = src; s.onload = ok; s.onerror = erro;

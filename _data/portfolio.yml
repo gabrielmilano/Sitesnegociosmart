@@ -1,0 +1,132 @@
+# =====================================================================
+#  PORTFÓLIO da home (seção #projetos) — _includes/portfolio.html
+#
+#  Cada projeto entra num grupo pelo "status":
+#    cliente  = site de cliente, no ar        (grupo "Clientes no ar")
+#    sistema  = sistema/produto da Negócios Smart (grupo "Sistemas próprios")
+#    demo     = demonstração com dados fictícios  (grupo "Demonstração")
+#  "destaque: true" = card largo, no topo do grupo (um por grupo).
+#
+#  Prints (nomes fixos a partir do "slug"), tirados com o capturar.js:
+#    /assets/cases/<slug>.webp (1600×1000) + <slug>-800.webp
+#    /assets/cases/<slug>-mobile.webp (520×1125) + <slug>-mobile-260.webp
+#    /assets/cases/rolagem/<slug>-desktop.webp (1600×3000) + -desktop-800.webp
+#  Não inventar números nem resultados: só o que está no ar.
+# =====================================================================
+
+# Faixas que cruzam no topo da seção (o que já foi entregue e para quem)
+faixa_entregas:
+  - "Páginas por serviço"
+  - "SEO local"
+  - "Pedido pelo WhatsApp"
+  - "Agendamento online"
+  - "Dados estruturados"
+  - "Search Console"
+  - "Painel com login"
+  - "Busca com mapa"
+  - "Assinaturas"
+  - "Domínio próprio"
+faixa_segmentos:
+  - "Som automotivo"
+  - "Películas"
+  - "Podologia"
+  - "Lavanderia"
+  - "Corretores de imóveis"
+  - "Finanças pessoais"
+  - "Clínicas e consultórios"
+
+grupos:
+  - status: "cliente"
+    titulo: "Clientes no ar"
+    texto: "Sites que trabalham todos os dias para negócios de Criciúma."
+  - status: "sistema"
+    titulo: "Sistemas próprios"
+    texto: "Plataformas que a Negócios Smart construiu e mantém."
+  - status: "demo"
+    titulo: "Demonstração"
+    texto: "Para testar antes de ter o seu."
+
+projetos:
+  - slug: "salame"
+    fundo: "#17140f"   # cor de fundo atrás dos aparelhos (da identidade do projeto)
+    cor: "#f5c518"     # detalhe de destaque
+    status: "cliente"
+    destaque: true
+    nome: "Salame Som e Películas"
+    segmento: "Som automotivo e películas"
+    url: "https://salamesomepeliculas.com.br"
+    url_curta: "salamesomepeliculas.com.br"
+    texto: "Loja de som automotivo, multimídia e películas na Av. Centenário, em Criciúma. Site com a identidade do letreiro da loja, um carro interativo onde o cliente monta o som e escolhe o tom da película, e uma página para cada serviço, do som ao insulfilm (com a regra do Contran vidro por vidro). Cada pedido chega pronto no WhatsApp."
+    tags: ["Carro interativo", "Páginas por serviço", "Pedido pelo WhatsApp", "Domínio próprio"]
+    alt_desk: "Página inicial do site da Salame Som e Películas, som automotivo e insulfilm na Av. Centenário, em Criciúma"
+    alt_cel: "Site da Salame Som e Películas aberto no celular"
+
+  - slug: "podocri"
+    fundo: "#0e3f44"   # cor de fundo atrás dos aparelhos (da identidade do projeto)
+    cor: "#c4a265"     # detalhe de destaque
+    status: "cliente"
+    nome: "Podocri"
+    segmento: "Podologia clínica"
+    url: "https://podocri.com.br"
+    url_curta: "podocri.com.br"
+    texto: "Clínica de podologia no Centro de Criciúma. A fachada da clínica abre o site, cada tratamento tem a própria página e um pé interativo monta a mensagem de agendamento no WhatsApp."
+    tags: ["Páginas por tratamento", "Agendamento pelo WhatsApp", "SEO local"]
+    alt_desk: "Página inicial do site da Podocri, com a fachada da clínica de podologia no Centro de Criciúma"
+    alt_cel: "Site da Podocri aberto no celular"
+
+  - slug: "laundry"
+    fundo: "#1d3a8f"   # cor de fundo atrás dos aparelhos (da identidade do projeto)
+    cor: "#60a5fa"     # detalhe de destaque
+    status: "cliente"
+    nome: "Laundry Lounge"
+    segmento: "Lavanderia"
+    url: "https://lavanderialaundrylounge.com.br"
+    url_curta: "lavanderialaundrylounge.com.br"
+    texto: "Lavanderia no Centro de Criciúma. O site de uma página ganhou uma página para cada serviço, sitemap, Search Console e o mesmo endereço do Perfil no Google em todo o site."
+    tags: ["Páginas por serviço", "Search Console", "Dados estruturados"]
+    case: "/cases/laundry-lounge"
+    alt_desk: "Página inicial do site da Laundry Lounge, lavanderia no Centro de Criciúma"
+    alt_cel: "Site da Laundry Lounge aberto no celular"
+
+  - slug: "vitrine"
+    fundo: "#1b2540"   # cor de fundo atrás dos aparelhos (da identidade do projeto)
+    cor: "#8fa6e0"     # detalhe de destaque
+    status: "sistema"
+    nome: "Vitrine de Corretores"
+    segmento: "Plataforma imobiliária"
+    url: "https://vitrine-corretores.vercel.app/"
+    url_curta: "vitrine-corretores.vercel.app"
+    texto: "Vitrine coletiva para corretores autônomos de Criciúma e região: busca com filtros e mapa, página de cada imóvel e de cada corretor, e um painel com login onde cada um cadastra os imóveis e recebe os contatos."
+    tags: ["Painel com login", "Banco de dados", "Mapa", "Next.js"]
+    alt_desk: "Página inicial da Vitrine de Corretores, com busca e filtros de imóveis"
+    alt_cel: "Vitrine de Corretores aberta no celular"
+
+  - slug: "financeiro"
+    fundo: "#1f4fd6"   # cor de fundo atrás dos aparelhos (da identidade do projeto)
+    cor: "#93c5fd"     # detalhe de destaque
+    status: "sistema"
+    nome: "Financeiro"
+    segmento: "Aplicativo web (PWA)"
+    url: "https://financeiro.negociosmart.com.br"
+    url_curta: "financeiro.negociosmart.com.br"
+    texto: "Controle financeiro pessoal e familiar com lançamentos pelo WhatsApp e pelo Telegram, assinaturas pelo Mercado Pago e plano Família para até 4 pessoas."
+    tags: ["PWA", "WhatsApp", "Assinaturas", "Mercado Pago"]
+    alt_desk: "Página do aplicativo Financeiro"
+    alt_cel: "Aplicativo Financeiro aberto no celular"
+
+  - slug: "clinica"
+    fundo: "#0f4f45"   # cor de fundo atrás dos aparelhos (da identidade do projeto)
+    cor: "#e07a5f"     # detalhe de destaque
+    status: "demo"
+    destaque: true
+    nome: "Site com autoagendamento"
+    segmento: "Clínicas e consultórios"
+    url: "/demos/clinica/"
+    url_curta: "negociosmart.com.br/demos/clinica"
+    texto: "O paciente marca a consulta sozinho, pelo celular, em 4 toques: motivo, condições de saúde, dia e horário. A recepção recebe o pedido na hora e confirma pelo WhatsApp. Letra grande e uma pergunta por tela. Demonstração com uma clínica fictícia."
+    tags: ["Autoagendamento", "Painel da recepção", "Avisos em tempo real"]
+    rotulo_link: "Testar o autoagendamento"
+    link2: "/demos/clinica/admin/"
+    link2_rotulo: "Ver o painel da clínica"
+    alt_desk: "Página inicial da Clínica Sorriso Sereno, clínica fictícia com autoagendamento de consulta (demonstração)"
+    alt_cel: "Autoagendamento de consulta aberto no celular (demonstração)"

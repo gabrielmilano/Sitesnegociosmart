@@ -1,0 +1,108 @@
+{%- comment -%}
+  Portfólio da home (#projetos). Dados em _data/portfolio.yml.
+  Grupos por status (clientes no ar → sistemas próprios → demonstração), faixas cruzadas
+  com o que já foi entregue e, no computador, a página do projeto rola dentro da tela
+  ao passar o mouse (script.js, data-inteira). No celular, cada grupo vira um carrossel.
+{%- endcomment -%}
+{%- assign port = site.data.portfolio %}
+{%- assign n_cliente = port.projetos | where: "status", "cliente" | size %}
+{%- assign n_sistema = port.projetos | where: "status", "sistema" | size %}
+{%- assign n_demo = port.projetos | where: "status", "demo" | size %}
+{%- assign num = 0 %}
+        <!-- PROJETOS -->
+        <section class="section section--projetos" id="projetos">
+            <div class="container">
+                <div class="section-head section-head--split" data-reveal>
+                    <div>
+                        <span class="tag">Portfólio</span>
+                        <h2 class="section-title">Projetos reais, <em class="serif">no ar</em> agora.</h2>
+                    </div>
+                    <div class="port__resumo">
+                        <p class="section-lead">Clique e navegue: todos estão publicados e funcionando, do celular ao computador.</p>
+                        <ul class="port__contagem">
+                            {%- if n_cliente > 0 %}<li><b>{{ n_cliente }}</b> {% if n_cliente == 1 %}site de cliente{% else %}sites de clientes{% endif %}</li>{% endif %}
+                            {%- if n_sistema > 0 %}<li><b>{{ n_sistema }}</b> {% if n_sistema == 1 %}sistema próprio{% else %}sistemas próprios{% endif %}</li>{% endif %}
+                            {%- if n_demo > 0 %}<li><b>{{ n_demo }}</b> {% if n_demo == 1 %}demonstração{% else %}demonstrações{% endif %}</li>{% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faixas">
+                <div class="faixa faixa--marca">
+                    <div class="faixa__trilho">
+                        {%- for volta in (1..4) %}
+                        <ul class="faixa__lista"{% if volta > 1 %} aria-hidden="true"{% else %} aria-label="O que já entregamos"{% endif %}>
+                            {%- for item in port.faixa_entregas %}<li>{{ item }}</li>{% endfor %}
+                        </ul>
+                        {%- endfor %}
+                    </div>
+                </div>
+                <div class="faixa faixa--escura">
+                    <div class="faixa__trilho">
+                        {%- for volta in (1..4) %}
+                        <ul class="faixa__lista"{% if volta > 1 %} aria-hidden="true"{% else %} aria-label="Segmentos atendidos"{% endif %}>
+                            {%- for item in port.faixa_segmentos %}<li>{{ item }}</li>{% endfor %}
+                        </ul>
+                        {%- endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                {%- for g in port.grupos %}
+                {%- assign itens = port.projetos | where: "status", g.status %}
+                {%- if itens.size > 0 %}
+                <div class="port-grupo port-grupo--{{ g.status }}" data-reveal>
+                    <div class="port-grupo__head">
+                        <h3 class="port-grupo__titulo"><span class="status status--{{ g.status }}">{{ g.titulo }}</span></h3>
+                        <p>{{ g.texto }}</p>
+                    </div>
+                    <div class="port-grupo__lista{% if itens.size > 1 %} port-grupo__lista--carrossel{% endif %}">
+                        {%- for p in itens %}
+                        {%- assign num = num | plus: 1 %}
+                        <article class="proj{% if p.destaque %} proj--destaque{% endif %}" style="--fundo: {{ p.fundo }}; --cor: {{ p.cor }}">
+                            <a class="proj__media" href="{{ p.url }}" target="_blank" rel="noopener" data-inteira="/assets/cases/rolagem/{{ p.slug }}-desktop-800.webp" data-inteira-grande="/assets/cases/rolagem/{{ p.slug }}-desktop.webp">
+                                <div class="browser">
+                                    <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">{{ p.url_curta }}</span></div>
+                                    <div class="proj__tela">
+                                        <img src="/assets/cases/{{ p.slug }}-800.webp" srcset="/assets/cases/{{ p.slug }}-800.webp 800w, /assets/cases/{{ p.slug }}.webp 1600w" sizes="{% if p.destaque %}(max-width: 760px) 80vw, (max-width: 1080px) calc(100vw - 96px), 640px{% else %}(max-width: 760px) 80vw, (max-width: 1200px) 46vw, 540px{% endif %}" width="1600" height="1000" alt="{{ p.alt_desk }}" loading="lazy" decoding="async">
+                                    </div>
+                                </div>
+                                <div class="phone proj__phone">
+                                    <img src="/assets/cases/{{ p.slug }}-mobile-260.webp" srcset="/assets/cases/{{ p.slug }}-mobile-260.webp 260w, /assets/cases/{{ p.slug }}-mobile.webp 520w" sizes="{% if p.destaque %}(max-width: 760px) 22vw, 150px{% else %}(max-width: 760px) 20vw, 120px{% endif %}" width="520" height="1125" alt="{{ p.alt_cel }}" loading="lazy" decoding="async">
+                                </div>
+                                {%- if num == 1 %}
+                                <span class="proj__dica" aria-hidden="true">Passe o mouse para rolar a página</span>
+                                {%- endif %}
+                            </a>
+                            <div class="proj__info">
+                                <div class="proj__meta">
+                                    <span class="proj__num">{% if num < 10 %}0{% endif %}{{ num }}</span>
+                                    <span class="proj__segmento">{{ p.segmento }}</span>
+                                    {%- if g.status == "cliente" %}<span class="proj__aovivo">No ar</span>{% endif %}
+                                </div>
+                                <h4 class="proj__nome">{{ p.nome }}</h4>
+                                <p>{{ p.texto }}</p>
+                                <ul class="proj__tags">{% for t in p.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+                                <div class="proj__links">
+                                    {%- if p.case %}
+                                    <a class="link-arrow" href="{{ p.case }}">Ver o case <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+                                    {%- endif %}
+                                    <a class="link-arrow" href="{{ p.url }}" target="_blank" rel="noopener">{{ p.rotulo_link | default: "Visitar o site" }} <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+                                    {%- if p.link2 %}
+                                    <a class="link-arrow" href="{{ p.link2 }}" target="_blank" rel="noopener">{{ p.link2_rotulo }} <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+                                    {%- endif %}
+                                </div>
+                            </div>
+                        </article>
+                        {%- endfor %}
+                    </div>
+                    {%- if itens.size > 1 %}
+                    <p class="port__dica" aria-hidden="true">Arraste para o lado →</p>
+                    {%- endif %}
+                </div>
+                {%- endif %}
+                {%- endfor %}
+            </div>
+        </section>
