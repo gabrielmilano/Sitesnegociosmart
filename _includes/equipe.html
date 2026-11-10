@@ -27,7 +27,7 @@
 
                     <div class="mini__paginas">
                         {%- for p in site.data.negocio.equipe %}
-                        <article class="perfil perfil--{{ p.slug }}{% if forloop.first %} is-ativo{% endif %}" role="tabpanel" id="perfil-{{ p.slug }}" aria-labelledby="aba-{{ p.slug }}">
+                        <div class="perfil perfil--{{ p.slug }}{% if forloop.first %} is-ativo{% endif %}" role="tabpanel" id="perfil-{{ p.slug }}" aria-labelledby="aba-{{ p.slug }}">
                             <div class="perfil__topo">
                                 <div class="perfil__copy">
                                     <span class="perfil__area">{{ p.area }}</span>
@@ -69,7 +69,7 @@
                                 </a>
                                 {%- endif %}
                             </div>
-                        </article>
+                        </div>
                         {%- endfor %}
                     </div>
                 </div>
