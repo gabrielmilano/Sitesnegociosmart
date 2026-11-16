@@ -1,0 +1,46 @@
+{%- comment -%}
+  Páginas de serviço por segmento (/sites-para-...): Service (provider = empresa da home pelo @id),
+  FAQPage com o mesmo texto de page.faq e BreadcrumbList.
+  Front matter: servico_nome, servico_tipo, publico (opcional), faq.
+{%- endcomment -%}
+{%- assign e = site.data.negocio.empresa -%}
+{%- assign url_pagina = page.url | absolute_url -%}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "{{ url_pagina }}#servico",
+                "name": {{ page.servico_nome | jsonify }},
+                "serviceType": {{ page.servico_tipo | jsonify }},
+                "description": {{ page.description | jsonify }},
+                "url": "{{ url_pagina }}",
+{%- if page.publico %}
+                "audience": { "@type": "BusinessAudience", "name": {{ page.publico | jsonify }} },
+{%- endif %}
+                "provider": {
+                    "@type": "ProfessionalService",
+                    "@id": "{{ '/#empresa' | absolute_url }}",
+                    "name": {{ e.nome | jsonify }},
+                    "url": "{{ '/' | absolute_url }}"
+                },
+                "areaServed": {% include schema/cidades.html %}
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "{{ url_pagina }}#faq",
+                "mainEntity": [
+{%- for item in page.faq %}
+                    {
+                        "@type": "Question",
+                        "name": {{ item.pergunta | jsonify }},
+                        "acceptedAnswer": { "@type": "Answer", "text": {{ item.resposta | jsonify }} }
+                    }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+                ]
+            },
+            {% include schema/breadcrumb.html %}
+        ]
+    }
+    </script>

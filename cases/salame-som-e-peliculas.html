@@ -1,0 +1,193 @@
+---
+layout: base
+permalink: /cases/salame-som-e-peliculas
+title: "Case Salame: Site de Som e Películas | Negócios Smart"
+description: "Como criamos o site da Salame Som e Películas, em Criciúma: carro interativo, simulador de película e uma página por serviço, do som ao insulfilm."
+schemas: [case]
+sitemap: true
+last_modified_at: 2026-11-16
+breadcrumb: "Case Salame Som e Películas"
+whatsapp_msg: "Olá! Vi o case da Salame e quero um site para o meu negócio."
+preload_image: /assets/cases/salame.webp
+---
+{%- assign sl = "https://salamesomepeliculas.com.br" %}
+{%- capture wa_link %}{% include wa.html msg=page.whatsapp_msg %}{% endcapture %}
+        <!-- TOPO -->
+        <section class="hero hero--page" id="topo">
+            <div class="hero__bg" aria-hidden="true">
+                <div class="hero__grid"></div>
+                <div class="glow glow--green"></div>
+                <div class="glow glow--blue"></div>
+            </div>
+
+            <div class="container hero__inner">
+                <div class="hero__copy">
+                    <nav class="crumbs" aria-label="Você está em">
+                        <ol>
+                            <li><a href="/">Início</a></li>
+                            <li aria-current="page">{{ page.breadcrumb }}</li>
+                        </ol>
+                    </nav>
+                    <span class="eyebrow">
+                        <span class="eyebrow__dot"></span>
+                        Case · Som automotivo e películas · Criciúma
+                    </span>
+                    <h1 class="hero__title hero__title--page">
+                        O site da Salame Som e Películas, do letreiro da loja para o Google
+                    </h1>
+                    <p class="hero__lead">
+                        A loja da Av. Centenário não tinha site. Hoje tem uma página para cada serviço, um carro
+                        onde o cliente monta o próprio som e um simulador de película. O pedido chega pronto no WhatsApp.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="{{ wa_link }}" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            Quero um site assim
+                        </a>
+                        <a href="{{ sl }}/" class="btn btn--glass btn--lg" target="_blank" rel="noopener">
+                            Ver o site no ar
+                            <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero__visual">
+                    <div class="browser browser--dark hero__browser">
+                        <div class="browser__bar" aria-hidden="true">
+                            <i></i><i></i><i></i>
+                            <span class="browser__url">salamesomepeliculas.com.br</span>
+                        </div>
+                        <img src="/assets/cases/salame.webp" srcset="/assets/cases/salame-800.webp 800w, /assets/cases/salame.webp 1600w" sizes="(max-width: 1080px) calc(100vw - 48px), 660px" width="1600" height="1000" alt="Página inicial do site da Salame Som e Películas, na Av. Centenário, em Criciúma" fetchpriority="high">
+                    </div>
+                    <div class="phone hero__phone">
+                        <img src="/assets/cases/salame-mobile.webp" srcset="/assets/cases/salame-mobile-260.webp 260w, /assets/cases/salame-mobile.webp 520w" sizes="(max-width: 600px) 32vw, 180px" width="520" height="1125" alt="Site da Salame Som e Películas aberto no celular">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- O NEGÓCIO -->
+        <section class="section section--case-intro" id="o-negocio">
+            <div class="container">
+                <div class="section-head section-head--split" data-reveal>
+                    <div>
+                        <span class="tag">O negócio</span>
+                        <h2 class="section-title">Uma loja de som e películas na <em class="serif">Av. Centenário.</em></h2>
+                    </div>
+                    <p class="section-lead">A Salame instala som automotivo e central multimídia e aplica insulfilm em carros e película em vidros de casas e empresas, no bairro Santo Antônio, em Criciúma.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- O PROBLEMA -->
+        <section class="section" id="o-problema">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="tag">O ponto de partida</span>
+                    <h2 class="section-title">Muito movimento na loja, <em class="serif">nada no Google.</em></h2>
+                </div>
+
+                <ul class="incl">
+                    <li class="incl__card" data-reveal>
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe"/></svg></span>
+                        <h3>Sem site</h3>
+                        <p>Quem procurava som ou insulfilm em Criciúma encontrava só o Perfil no Google, sem os serviços explicados.</p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:80ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-message"/></svg></span>
+                        <h3>Orçamento no escuro</h3>
+                        <p>O cliente chamava no WhatsApp sem saber o que pedir: qual som, qual tom de película, para qual vidro.</p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:160ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield"/></svg></span>
+                        <h3>Dúvida sobre a lei</h3>
+                        <p>Película escura demais dá multa. Ninguém explicava a regra do Contran vidro por vidro.</p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:240ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-building"/></svg></span>
+                        <h3>Serviço escondido</h3>
+                        <p>A película para vidros de casas e empresas, que pouca gente sabia que a loja fazia, não aparecia em lugar nenhum.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- O QUE FOI FEITO -->
+        <section class="section section--paper" id="o-que-foi-feito">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="tag">O que foi feito</span>
+                    <h2 class="section-title">Um site com a cara da loja e <em class="serif">uma página por serviço.</em></h2>
+                </div>
+
+                <ul class="done" data-reveal>
+                    <li>
+                        <b>A identidade do letreiro</b>
+                        <span>O amarelo, o vermelho e o grafite da fachada viraram o site, para o cliente reconhecer a loja na hora.</span>
+                    </li>
+                    <li>
+                        <b>Uma página para cada serviço</b>
+                        <span><a href="{{ sl }}/som-automotivo/" target="_blank" rel="noopener">Som automotivo</a>, <a href="{{ sl }}/central-multimidia/" target="_blank" rel="noopener">central multimídia</a>, <a href="{{ sl }}/insulfilm-automotivo/" target="_blank" rel="noopener">insulfilm automotivo</a> e <a href="{{ sl }}/peliculas-para-vidros/" target="_blank" rel="noopener">película para vidros</a>, cada uma com perguntas frequentes e título pensado para a busca em Criciúma.</span>
+                    </li>
+                    <li>
+                        <b>Carro interativo</b>
+                        <span>No “Monte o seu”, o cliente escolhe o som e o tom da película sobre a foto de um carro atendido na loja. O pedido sai pronto no WhatsApp.</span>
+                    </li>
+                    <li>
+                        <b>Simulador de película para vidros</b>
+                        <span>Uma fachada de dia e de noite mostra como fica cada tipo de película antes de o cliente pedir o orçamento.</span>
+                    </li>
+                    <li>
+                        <b>A regra do Contran explicada</b>
+                        <span>A página de insulfilm mostra o mínimo de luz de cada vidro, para o cliente sair da loja sem risco de multa.</span>
+                    </li>
+                    <li>
+                        <b>Fotos reais da loja</b>
+                        <span>Carros atendidos, antes e depois do insulfilm e vídeos de película em vidros de casas e empresas.</span>
+                    </li>
+                    <li>
+                        <b>Domínio próprio, sitemap e Search Console</b>
+                        <span>salamesomepeliculas.com.br no nome do dono, com dados estruturados e o mesmo endereço do Perfil no Google.</span>
+                    </li>
+                    <li>
+                        <b>Rápido no celular</b>
+                        <span>Nota 99 de 100 no teste de desempenho do Google no celular, com fonte e imagens otimizadas.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- RESULTADO -->
+        <section class="section" id="resultado">
+            <div class="container">
+                <div class="section-head section-head--split" data-reveal>
+                    <div>
+                        <span class="tag">Primeiros dias</span>
+                        <h2 class="section-title">No Google para o que o cliente <em class="serif">procura.</em></h2>
+                    </div>
+                    <p class="section-lead">Nos primeiros dias no ar, o site já apareceu nas buscas por “som automotivo criciúma” e “película automotiva criciúma”, além das buscas pelo nome da loja.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAMADA FINAL -->
+        <section class="cta cta--spaced">
+            <div class="container">
+                <div class="cta__box" data-reveal="scale">
+                    <div class="cta__bg" aria-hidden="true">
+                        <div class="glow glow--green"></div>
+                        <div class="glow glow--blue"></div>
+                        <img src="/assets/brand/logo-mark.webp" alt="Símbolo da Negócios Smart" class="cta__mark" width="176" height="240" loading="lazy">
+                    </div>
+                    <h2 class="cta__title">Tem uma oficina ou loja <em class="serif">automotiva?</em></h2>
+                    <p class="cta__text">Chame no WhatsApp: montamos uma prévia do site com a cara do seu negócio antes de você decidir.</p>
+                    <div class="cta__actions">
+                        <a href="{{ wa_link }}" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            Quero uma prévia
+                        </a>
+                        <a href="/sites-para-oficinas-e-estetica-automotiva-criciuma" class="btn btn--glass btn--lg">Sites para o ramo automotivo</a>
+                    </div>
+                </div>
+            </div>
+        </section>

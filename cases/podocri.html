@@ -1,0 +1,185 @@
+---
+layout: base
+permalink: /cases/podocri
+title: "Case Podocri: Site de Clínica de Podologia | Negócios Smart"
+description: "Como criamos o site da Podocri, clínica de podologia no Centro de Criciúma: uma página por tratamento, agendamento pelo WhatsApp e domínio próprio."
+schemas: [case]
+sitemap: true
+last_modified_at: 2026-11-16
+breadcrumb: "Case Podocri"
+whatsapp_msg: "Olá! Vi o case da Podocri e quero um site para a minha clínica."
+preload_image: /assets/cases/podocri.webp
+---
+{%- assign pc = "https://podocri.com.br" %}
+{%- capture wa_link %}{% include wa.html msg=page.whatsapp_msg %}{% endcapture %}
+        <!-- TOPO -->
+        <section class="hero hero--page" id="topo">
+            <div class="hero__bg" aria-hidden="true">
+                <div class="hero__grid"></div>
+                <div class="glow glow--green"></div>
+                <div class="glow glow--blue"></div>
+            </div>
+
+            <div class="container hero__inner">
+                <div class="hero__copy">
+                    <nav class="crumbs" aria-label="Você está em">
+                        <ol>
+                            <li><a href="/">Início</a></li>
+                            <li aria-current="page">{{ page.breadcrumb }}</li>
+                        </ol>
+                    </nav>
+                    <span class="eyebrow">
+                        <span class="eyebrow__dot"></span>
+                        Case · Clínica de saúde · Criciúma
+                    </span>
+                    <h1 class="hero__title hero__title--page">
+                        O site da Podocri: cada tratamento com página própria e agendamento pelo WhatsApp
+                    </h1>
+                    <p class="hero__lead">
+                        A clínica de podologia do Centro de Criciúma tinha um domínio antigo que não abria mais.
+                        Hoje tem site próprio, uma página para cada tratamento e uma mensagem de agendamento que o paciente monta em poucos toques.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="{{ wa_link }}" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            Quero um site assim
+                        </a>
+                        <a href="{{ pc }}/" class="btn btn--glass btn--lg" target="_blank" rel="noopener">
+                            Ver o site no ar
+                            <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero__visual">
+                    <div class="browser browser--dark hero__browser">
+                        <div class="browser__bar" aria-hidden="true">
+                            <i></i><i></i><i></i>
+                            <span class="browser__url">podocri.com.br</span>
+                        </div>
+                        <img src="/assets/cases/podocri.webp" srcset="/assets/cases/podocri-800.webp 800w, /assets/cases/podocri.webp 1600w" sizes="(max-width: 1080px) calc(100vw - 48px), 660px" width="1600" height="1000" alt="Página inicial do site da Podocri, com a fachada da clínica de podologia no Centro de Criciúma" fetchpriority="high">
+                    </div>
+                    <div class="phone hero__phone">
+                        <img src="/assets/cases/podocri-mobile.webp" srcset="/assets/cases/podocri-mobile-260.webp 260w, /assets/cases/podocri-mobile.webp 520w" sizes="(max-width: 600px) 32vw, 180px" width="520" height="1125" alt="Site da Podocri aberto no celular">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- O NEGÓCIO -->
+        <section class="section section--case-intro" id="o-negocio">
+            <div class="container">
+                <div class="section-head section-head--split" data-reveal>
+                    <div>
+                        <span class="tag">O negócio</span>
+                        <h2 class="section-title">Podologia clínica no <em class="serif">Centro de Criciúma.</em></h2>
+                    </div>
+                    <p class="section-lead">A Podocri trata unha encravada, fungos, verrugas, rachaduras e pés diabéticos, com podólogas e um médico parceiro. O paciente quase sempre chega com dor e quer marcar rápido.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- O PROBLEMA -->
+        <section class="section" id="o-problema">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="tag">O ponto de partida</span>
+                    <h2 class="section-title">Ótimas avaliações, <em class="serif">mas sem site.</em></h2>
+                </div>
+
+                <ul class="incl">
+                    <li class="incl__card" data-reveal>
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe"/></svg></span>
+                        <h3>Domínio antigo fora do ar</h3>
+                        <p>O endereço que ainda aparecia no Google tinha expirado e não abria.</p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:80ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-search"/></svg></span>
+                        <h3>Tratamentos sem página</h3>
+                        <p>Quem procurava “unha encravada em Criciúma” não tinha onde ler sobre o tratamento da clínica.</p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:160ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-message"/></svg></span>
+                        <h3>Agendamento solto</h3>
+                        <p>As mensagens chegavam sem dizer o problema nem o melhor horário, e a conversa começava do zero.</p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:240ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield"/></svg></span>
+                        <h3>Regras da saúde</h3>
+                        <p>Site de clínica não pode prometer resultado, e foto de paciente só entra com autorização.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- O QUE FOI FEITO -->
+        <section class="section section--paper" id="o-que-foi-feito">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="tag">O que foi feito</span>
+                    <h2 class="section-title">Um site que acolhe o paciente e <em class="serif">já marca a consulta.</em></h2>
+                </div>
+
+                <ul class="done" data-reveal>
+                    <li>
+                        <b>A fachada e a equipe no topo</b>
+                        <span>O paciente vê onde fica a clínica e quem vai atender antes de chamar.</span>
+                    </li>
+                    <li>
+                        <b>Uma página para cada tratamento</b>
+                        <span><a href="{{ pc }}/unha-encravada/" target="_blank" rel="noopener">Unha encravada</a>, <a href="{{ pc }}/fungos-nas-unhas/" target="_blank" rel="noopener">fungos nas unhas</a>, <a href="{{ pc }}/verruga-plantar/" target="_blank" rel="noopener">verruga plantar</a> e <a href="{{ pc }}/rachaduras-nos-pes/" target="_blank" rel="noopener">rachaduras nos pés</a>, com sinais, como é o atendimento e perguntas frequentes.</span>
+                    </li>
+                    <li>
+                        <b>Agendamento “monte sua mensagem”</b>
+                        <span>O paciente marca o que sente, o período e o nome. A mensagem chega pronta no WhatsApp da clínica.</span>
+                    </li>
+                    <li>
+                        <b>“Aberto agora” no próprio site</b>
+                        <span>O horário de atendimento mostra na hora se a clínica está aberta.</span>
+                    </li>
+                    <li>
+                        <b>Casos com autorização</b>
+                        <span>Fotos de tratamentos só com autorização das pacientes, com desfoque e sem promessa de resultado.</span>
+                    </li>
+                    <li>
+                        <b>Domínio próprio</b>
+                        <span>podocri.com.br, da própria clínica, com sitemap, Search Console e dados estruturados de clínica.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- RESULTADO -->
+        <section class="section" id="resultado">
+            <div class="container">
+                <div class="section-head section-head--split" data-reveal>
+                    <div>
+                        <span class="tag">Primeiros dias</span>
+                        <h2 class="section-title">Encontrada por quem procura <em class="serif">podóloga.</em></h2>
+                    </div>
+                    <p class="section-lead">Nos primeiros dias no ar, o site já apareceu nas buscas por “podóloga criciúma” e “podologia criciúma”, além das buscas pelo nome da clínica.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAMADA FINAL -->
+        <section class="cta cta--spaced">
+            <div class="container">
+                <div class="cta__box" data-reveal="scale">
+                    <div class="cta__bg" aria-hidden="true">
+                        <div class="glow glow--green"></div>
+                        <div class="glow glow--blue"></div>
+                        <img src="/assets/brand/logo-mark.webp" alt="Símbolo da Negócios Smart" class="cta__mark" width="176" height="240" loading="lazy">
+                    </div>
+                    <h2 class="cta__title">Tem uma clínica ou <em class="serif">consultório?</em></h2>
+                    <p class="cta__text">Chame no WhatsApp: montamos uma prévia do site com a identidade da sua clínica antes de você decidir.</p>
+                    <div class="cta__actions">
+                        <a href="{{ wa_link }}" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            Quero uma prévia
+                        </a>
+                        <a href="/sites-para-clinicas-criciuma" class="btn btn--glass btn--lg">Sites para clínicas</a>
+                    </div>
+                </div>
+            </div>
+        </section>

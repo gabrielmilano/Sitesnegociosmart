@@ -58,6 +58,7 @@ projetos:
     url_curta: "salamesomepeliculas.com.br"
     texto: "Loja de som automotivo, multimídia e películas na Av. Centenário, em Criciúma. Site com a identidade do letreiro da loja, um carro interativo onde o cliente monta o som e escolhe o tom da película, e uma página para cada serviço, do som ao insulfilm (com a regra do Contran vidro por vidro). Cada pedido chega pronto no WhatsApp."
     tags: ["Carro interativo", "Páginas por serviço", "Pedido pelo WhatsApp", "Domínio próprio"]
+    case: "/cases/salame-som-e-peliculas"
     alt_desk: "Página inicial do site da Salame Som e Películas, som automotivo e insulfilm na Av. Centenário, em Criciúma"
     alt_cel: "Site da Salame Som e Películas aberto no celular"
 
@@ -71,6 +72,7 @@ projetos:
     url_curta: "podocri.com.br"
     texto: "Clínica de podologia no Centro de Criciúma. A fachada da clínica abre o site, cada tratamento tem a própria página e um pé interativo monta a mensagem de agendamento no WhatsApp."
     tags: ["Páginas por tratamento", "Agendamento pelo WhatsApp", "SEO local"]
+    case: "/cases/podocri"
     alt_desk: "Página inicial do site da Podocri, com a fachada da clínica de podologia no Centro de Criciúma"
     alt_cel: "Site da Podocri aberto no celular"
 
