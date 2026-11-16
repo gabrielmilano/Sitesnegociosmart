@@ -1,0 +1,332 @@
+---
+layout: base
+permalink: /diagnostico
+title: "Diagnóstico de presença digital | Negócios Smart"
+description: "Responda em cerca de 8 minutos e receba um mapa do que faz sentido para atrair clientes, aparecer no Google e organizar o atendimento da sua empresa."
+noindex: true
+sitemap: false
+---
+{%- assign zap = site.data.negocio.empresa.whatsapp -%}
+<style>
+  .diag { background: var(--paper); padding: calc(var(--header-h) + 48px) 0 96px; }
+  .diag-wrap { width: min(760px, 100% - 32px); margin: 0 auto; }
+  .diag-cab h1 { font: 700 clamp(30px, 4.6vw, 46px)/1.08 var(--font-display); letter-spacing: -.02em; color: var(--text); margin: 0 0 14px; }
+  .diag-cab p { color: var(--muted); font-size: 17px; margin: 0 0 8px; }
+  .diag-barra { display: flex; align-items: center; gap: 14px; margin: 26px 0 18px; font-size: 14px; color: var(--muted); }
+  .diag-trilho { flex: 1; height: 8px; background: #fff; border: 1px solid var(--line); border-radius: 99px; overflow: hidden; }
+  .diag-trilho i { display: block; height: 100%; width: 20%; background: var(--grad); border-radius: 99px; transition: width .45s var(--ease); }
+  .diag-etapa { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 30px; box-shadow: var(--shadow-sm); }
+  .diag-etapa[hidden] { display: none; }
+  .diag-etapa h2 { font: 700 24px/1.2 var(--font-display); margin: 0 0 4px; color: var(--text); }
+  .diag-etapa > p { margin: 0 0 22px; color: var(--muted); }
+  .q { border: 0; margin: 0 0 24px; padding: 0; min-width: 0; }
+  .q > legend, .q > label > span { display: block; font-weight: 600; color: var(--text); margin-bottom: 8px; font-size: 16px; }
+  .q small { display: block; color: var(--muted); font-size: 14px; margin: -4px 0 10px; font-weight: 400; }
+  .q .obr { color: #c2410c; }
+  .q input[type=text], .q input[type=tel], .q textarea { width: 100%; border: 1.5px solid var(--line); border-radius: var(--r-sm); padding: 13px 14px; font: 400 16px var(--font); color: var(--text); background: #fff; transition: border-color .2s; }
+  .q textarea { min-height: 96px; resize: vertical; }
+  .q input:focus, .q textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(27, 101, 210, .15); }
+  .ops { display: flex; flex-wrap: wrap; gap: 8px; }
+  .ops label { position: relative; }
+  .ops input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+  .ops span { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border: 1.5px solid var(--line); border-radius: 99px; font-size: 15px; color: var(--text); background: #fff; transition: border-color .2s, background-color .2s, color .2s; }
+  .ops input:hover + span { border-color: var(--blue-bright); }
+  .ops input:checked + span { background: var(--blue); border-color: var(--blue); color: #fff; }
+  .ops input:focus-visible + span { outline: 3px solid rgba(27, 101, 210, .35); outline-offset: 2px; }
+  .q.erro .ops span, .q.erro input, .q.erro textarea { border-color: #dc2626; }
+  .q .msg-erro { display: none; color: #b91c1c; font-size: 14px; margin-top: 6px; }
+  .q.erro .msg-erro { display: block; }
+  .diag-acoes { display: flex; justify-content: space-between; gap: 12px; margin-top: 8px; flex-wrap: wrap; }
+  .diag-btn { min-height: 52px; padding: 0 26px; border-radius: 99px; border: 1.5px solid var(--line); background: #fff; font: 600 16px var(--font); color: var(--text); cursor: pointer; }
+  .diag-btn.prim { background: var(--blue); border-color: var(--blue); color: #fff; margin-left: auto; }
+  .diag-btn.zap { background: #15803d; border-color: #15803d; color: #fff; margin-left: auto; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+  .diag-btn:hover { filter: brightness(.96); }
+  .diag-fim { text-align: center; }
+  .diag-fim p { max-width: 520px; margin: 0 auto 18px; color: var(--muted); }
+  .diag .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .ops .aut span { border-radius: var(--r-sm); padding: 12px 16px; line-height: 1.45; }
+  .diag-priv { font-size: 13.5px; color: var(--muted); margin-top: 18px; text-align: center; }
+  @media (max-width: 560px) { .diag-etapa { padding: 22px 18px; } .diag-btn { flex: 1; } .diag-btn.prim, .diag-btn.zap { margin-left: 0; } }
+</style>
+
+<section class="diag">
+  <div class="diag-wrap">
+    <header class="diag-cab">
+      <h1>Diagnóstico de presença digital</h1>
+      <p>Antes da nossa conversa, queremos entender como a sua empresa funciona hoje. Com as respostas, a gente chega com um mapa do que faz sentido: onde atrair mais clientes, como aparecer melhor no Google e como organizar o atendimento.</p>
+      <p>Leva uns 8 minutos. Não existe resposta certa: responda do jeito que é hoje.</p>
+    </header>
+
+    <div class="diag-barra" aria-hidden="true"><div class="diag-trilho"><i id="barra"></i></div><span id="passo-txt">Etapa 1 de 5</span></div>
+
+    <form id="diag" novalidate>
+      <!-- 1 -->
+      <section class="diag-etapa" data-etapa="1" aria-labelledby="e1">
+        <h2 id="e1">Sobre você e a empresa</h2>
+        <p>O básico para a gente se conhecer.</p>
+        <div class="q" data-obr><label><span>Seu nome <b class="obr">*</b></span><input type="text" name="Nome" autocomplete="name"></label><p class="msg-erro">Escreva o seu nome.</p></div>
+        <div class="q" data-obr data-tel><label><span>Seu WhatsApp com DDD <b class="obr">*</b></span><input type="tel" name="WhatsApp" autocomplete="tel" placeholder="(48) 99999-9999"></label><p class="msg-erro">Escreva o WhatsApp com DDD.</p></div>
+        <div class="q" data-obr><label><span>Nome da empresa <b class="obr">*</b></span><input type="text" name="Empresa" autocomplete="organization"></label><p class="msg-erro">Escreva o nome da empresa.</p></div>
+        <div class="q"><label><span>Site ou Instagram da empresa</span><input type="text" name="Site ou Instagram" placeholder="Link ou @"></label></div>
+        <div class="q" data-obr><label><span>Qual o segmento? <b class="obr">*</b></span><small>Ex.: estética, oficina, clínica, imobiliária, loja de roupas, serralheria.</small><input type="text" name="Segmento"></label><p class="msg-erro">Conte o segmento da empresa.</p></div>
+        <div class="q" data-obr><label><span>Cidade e bairro onde atendem <b class="obr">*</b></span><input type="text" name="Cidade e bairro"></label><p class="msg-erro">Escreva a cidade e o bairro.</p></div>
+        <div class="q" data-obr><label><span>O que a empresa vende e para quem? <b class="obr">*</b></span><small>Os principais produtos ou serviços e quem é o cliente.</small><textarea name="O que vende e para quem"></textarea></label><p class="msg-erro">Conte rapidinho o que vocês vendem.</p></div>
+        <fieldset class="q" data-obr><legend>Qual a sua função na empresa? <b class="obr">*</b></legend><div class="ops">
+          <label><input type="radio" name="Função" value="Dono ou sócio"><span>Dono ou sócio</span></label>
+          <label><input type="radio" name="Função" value="Gerente"><span>Gerente</span></label>
+          <label><input type="radio" name="Função" value="Responsável por marketing ou atendimento"><span>Marketing ou atendimento</span></label>
+          <label><input type="radio" name="Função" value="Outra"><span>Outra</span></label>
+        </div><p class="msg-erro">Escolha uma opção.</p></fieldset>
+        <fieldset class="q"><legend>Há quanto tempo a empresa existe?</legend><div class="ops">
+          <label><input type="radio" name="Tempo de empresa" value="Menos de 1 ano"><span>Menos de 1 ano</span></label>
+          <label><input type="radio" name="Tempo de empresa" value="1 a 3 anos"><span>1 a 3 anos</span></label>
+          <label><input type="radio" name="Tempo de empresa" value="3 a 10 anos"><span>3 a 10 anos</span></label>
+          <label><input type="radio" name="Tempo de empresa" value="Mais de 10 anos"><span>Mais de 10 anos</span></label>
+        </div></fieldset>
+        <fieldset class="q"><legend>Quantas pessoas trabalham na empresa?</legend><div class="ops">
+          <label><input type="radio" name="Equipe" value="Só eu"><span>Só eu</span></label>
+          <label><input type="radio" name="Equipe" value="2 a 5"><span>2 a 5</span></label>
+          <label><input type="radio" name="Equipe" value="6 a 15"><span>6 a 15</span></label>
+          <label><input type="radio" name="Equipe" value="16 a 50"><span>16 a 50</span></label>
+          <label><input type="radio" name="Equipe" value="Mais de 50"><span>Mais de 50</span></label>
+        </div></fieldset>
+        <div class="q"><label><span>Quanto, em média, um cliente gasta com vocês?</span><small>Por compra ou por mês. Ex.: R$ 150 por atendimento.</small><input type="text" name="Ticket médio"></label></div>
+      </section>
+
+      <!-- 2 -->
+      <section class="diag-etapa" data-etapa="2" aria-labelledby="e2" hidden>
+        <h2 id="e2">Como os clientes chegam hoje</h2>
+        <p>Onde a empresa já aparece e onde pode estar perdendo cliente.</p>
+        <fieldset class="q" data-obr><legend>Por onde os clientes chegam? <b class="obr">*</b></legend><small>Marque todos que acontecem.</small><div class="ops">
+          <label><input type="checkbox" name="Canais" value="Indicação"><span>Indicação</span></label>
+          <label><input type="checkbox" name="Canais" value="Instagram"><span>Instagram</span></label>
+          <label><input type="checkbox" name="Canais" value="Google ou Maps"><span>Google ou Maps</span></label>
+          <label><input type="checkbox" name="Canais" value="WhatsApp"><span>WhatsApp</span></label>
+          <label><input type="checkbox" name="Canais" value="Passando na frente"><span>Passando na frente</span></label>
+          <label><input type="checkbox" name="Canais" value="Anúncios pagos"><span>Anúncios pagos</span></label>
+          <label><input type="checkbox" name="Canais" value="Marketplace ou aplicativo"><span>Marketplace ou app</span></label>
+        </div><p class="msg-erro">Marque pelo menos um.</p></fieldset>
+        <fieldset class="q" data-obr><legend>A empresa tem site? <b class="obr">*</b></legend><div class="ops">
+          <label><input type="radio" name="Site" value="Tem e funciona bem"><span>Tem e funciona bem</span></label>
+          <label><input type="radio" name="Site" value="Tem, mas está desatualizado"><span>Tem, mas está desatualizado</span></label>
+          <label><input type="radio" name="Site" value="Só o link na bio"><span>Só o link na bio</span></label>
+          <label><input type="radio" name="Site" value="Não tem"><span>Não tem</span></label>
+        </div><p class="msg-erro">Escolha uma opção.</p></fieldset>
+        <fieldset class="q" data-obr><legend>Aparece no Google Maps? <b class="obr">*</b></legend><div class="ops">
+          <label><input type="radio" name="Google Maps" value="Sim, e cuidamos do perfil"><span>Sim, e cuidamos</span></label>
+          <label><input type="radio" name="Google Maps" value="Sim, mas está abandonado"><span>Sim, mas abandonado</span></label>
+          <label><input type="radio" name="Google Maps" value="Não sei"><span>Não sei</span></label>
+          <label><input type="radio" name="Google Maps" value="Não aparece"><span>Não aparece</span></label>
+        </div><p class="msg-erro">Escolha uma opção.</p></fieldset>
+        <fieldset class="q"><legend>Investem em anúncios pagos?</legend><div class="ops">
+          <label><input type="radio" name="Anúncios" value="Não"><span>Não</span></label>
+          <label><input type="radio" name="Anúncios" value="Já tentei, sem resultado"><span>Já tentei, sem resultado</span></label>
+          <label><input type="radio" name="Anúncios" value="Até R$ 500 por mês"><span>Até R$ 500/mês</span></label>
+          <label><input type="radio" name="Anúncios" value="R$ 500 a R$ 2.000 por mês"><span>R$ 500 a 2.000/mês</span></label>
+          <label><input type="radio" name="Anúncios" value="Mais de R$ 2.000 por mês"><span>Mais de R$ 2.000/mês</span></label>
+        </div></fieldset>
+        <fieldset class="q"><legend>Quem cuida das redes sociais hoje?</legend><div class="ops">
+          <label><input type="radio" name="Redes sociais" value="Eu mesmo"><span>Eu mesmo(a)</span></label>
+          <label><input type="radio" name="Redes sociais" value="Alguém da equipe"><span>Alguém da equipe</span></label>
+          <label><input type="radio" name="Redes sociais" value="Agência ou freelancer"><span>Agência ou freelancer</span></label>
+          <label><input type="radio" name="Redes sociais" value="Ninguém"><span>Ninguém, no momento</span></label>
+        </div></fieldset>
+      </section>
+
+      <!-- 3 -->
+      <section class="diag-etapa" data-etapa="3" aria-labelledby="e3" hidden>
+        <h2 id="e3">Atendimento e vendas</h2>
+        <p>Como o cliente compra ou marca, e onde trava.</p>
+        <fieldset class="q"><legend>Como o cliente fecha ou marca horário?</legend><div class="ops">
+          <label><input type="checkbox" name="Como fecha" value="WhatsApp"><span>WhatsApp</span></label>
+          <label><input type="checkbox" name="Como fecha" value="Telefone"><span>Telefone</span></label>
+          <label><input type="checkbox" name="Como fecha" value="Pessoalmente"><span>Pessoalmente</span></label>
+          <label><input type="checkbox" name="Como fecha" value="Agenda online"><span>Agenda online</span></label>
+          <label><input type="checkbox" name="Como fecha" value="Loja virtual"><span>Loja virtual</span></label>
+        </div></fieldset>
+        <fieldset class="q"><legend>Quanto tempo levam para responder no WhatsApp?</legend><div class="ops">
+          <label><input type="radio" name="Tempo de resposta" value="Na hora"><span>Na hora</span></label>
+          <label><input type="radio" name="Tempo de resposta" value="Até 1 hora"><span>Até 1 hora</span></label>
+          <label><input type="radio" name="Tempo de resposta" value="Algumas horas"><span>Algumas horas</span></label>
+          <label><input type="radio" name="Tempo de resposta" value="No dia seguinte ou mais"><span>No dia seguinte</span></label>
+        </div></fieldset>
+        <fieldset class="q"><legend>Sente que perde clientes por demora ou falta de informação?</legend><div class="ops">
+          <label><input type="radio" name="Perde clientes" value="Quase nunca"><span>Quase nunca</span></label>
+          <label><input type="radio" name="Perde clientes" value="De vez em quando"><span>De vez em quando</span></label>
+          <label><input type="radio" name="Perde clientes" value="Toda semana"><span>Toda semana</span></label>
+        </div></fieldset>
+        <div class="q" data-obr><label><span>Hoje, qual o maior problema para vender mais ou atender melhor? <b class="obr">*</b></span><textarea name="Maior problema"></textarea></label><p class="msg-erro">Conte qual é o maior problema hoje.</p></div>
+      </section>
+
+      <!-- 4 -->
+      <section class="diag-etapa" data-etapa="4" aria-labelledby="e4" hidden>
+        <h2 id="e4">O que você quer e o que precisa orçar</h2>
+        <p>Assim a proposta já vem com o que faz sentido para você.</p>
+        <fieldset class="q" data-obr><legend>O que você quer conquistar nos próximos 6 meses? <b class="obr">*</b></legend><small>Marque até três.</small><div class="ops" data-max="3">
+          <label><input type="checkbox" name="Objetivos" value="Mais clientes novos"><span>Mais clientes novos</span></label>
+          <label><input type="checkbox" name="Objetivos" value="Aparecer no Google"><span>Aparecer no Google</span></label>
+          <label><input type="checkbox" name="Objetivos" value="Passar mais confiança"><span>Passar mais confiança</span></label>
+          <label><input type="checkbox" name="Objetivos" value="Organizar atendimento e agenda"><span>Organizar atendimento</span></label>
+          <label><input type="checkbox" name="Objetivos" value="Vender pela internet"><span>Vender pela internet</span></label>
+          <label><input type="checkbox" name="Objetivos" value="Vídeos para as redes"><span>Vídeos para as redes</span></label>
+          <label><input type="checkbox" name="Objetivos" value="Anúncios com retorno"><span>Anúncios com retorno</span></label>
+        </div><p class="msg-erro">Marque de um a três objetivos.</p></fieldset>
+        <fieldset class="q" data-obr><legend>O que você quer que a gente orce? <b class="obr">*</b></legend><small>Pode marcar mais de um. Se não souber, marque "quero uma indicação".</small><div class="ops">
+          <label><input type="checkbox" name="Orçar" value="Site da empresa"><span>Site da empresa</span></label>
+          <label><input type="checkbox" name="Orçar" value="Página para anúncios"><span>Página para anúncios</span></label>
+          <label><input type="checkbox" name="Orçar" value="Perfil no Google (Maps)"><span>Perfil no Google (Maps)</span></label>
+          <label><input type="checkbox" name="Orçar" value="Gestão de anúncios (tráfego pago)"><span>Gestão de anúncios</span></label>
+          <label><input type="checkbox" name="Orçar" value="Vídeos e fotos para as redes"><span>Vídeos e fotos</span></label>
+          <label><input type="checkbox" name="Orçar" value="Sistema de agendamento ou atendimento"><span>Agendamento ou sistema</span></label>
+          <label><input type="checkbox" name="Orçar" value="Quero uma indicação"><span>Quero uma indicação</span></label>
+        </div><p class="msg-erro">Marque pelo menos um item.</p></fieldset>
+        <div class="q"><label><span>Quantos clientes novos por mês fariam diferença?</span><input type="text" name="Clientes por mês" placeholder="Ex.: 10, 30, 100"></label></div>
+        <fieldset class="q" data-obr><legend>Para quando você precisa? <b class="obr">*</b></legend><div class="ops">
+          <label><input type="radio" name="Prazo" value="O quanto antes"><span>O quanto antes</span></label>
+          <label><input type="radio" name="Prazo" value="Ainda este mês"><span>Ainda este mês</span></label>
+          <label><input type="radio" name="Prazo" value="Nos próximos 3 meses"><span>Nos próximos 3 meses</span></label>
+          <label><input type="radio" name="Prazo" value="Só estou pesquisando"><span>Só pesquisando</span></label>
+        </div><p class="msg-erro">Escolha uma opção.</p></fieldset>
+        <div class="q"><label><span>Já tentou algo que não funcionou?</span><small>Ex.: site que ninguém visitava, anúncio que só gastou, agência que sumiu.</small><textarea name="Já tentou"></textarea></label></div>
+        <div class="q"><label><span>Alguma empresa cuja presença online você admira?</span><input type="text" name="Referência" placeholder="Nome, site ou Instagram"></label></div>
+      </section>
+
+      <!-- 5 -->
+      <section class="diag-etapa" data-etapa="5" aria-labelledby="e5" hidden>
+        <h2 id="e5">Orçamento e próximos passos</h2>
+        <p>Só faixas: servem para a proposta caber no momento da empresa.</p>
+        <fieldset class="q" data-obr><legend>Quanto faria sentido investir para começar (valor único)? <b class="obr">*</b></legend><small>Criação de site, página ou perfil.</small><div class="ops">
+          <label><input type="radio" name="Investimento inicial" value="Até R$ 300"><span>Até R$ 300</span></label>
+          <label><input type="radio" name="Investimento inicial" value="R$ 300 a R$ 800"><span>R$ 300 a 800</span></label>
+          <label><input type="radio" name="Investimento inicial" value="R$ 800 a R$ 2.000"><span>R$ 800 a 2.000</span></label>
+          <label><input type="radio" name="Investimento inicial" value="Acima de R$ 2.000"><span>Acima de R$ 2.000</span></label>
+          <label><input type="radio" name="Investimento inicial" value="Prefiro conversar"><span>Prefiro conversar</span></label>
+        </div><p class="msg-erro">Escolha uma faixa.</p></fieldset>
+        <fieldset class="q" data-obr><legend>E por mês, para manter e evoluir? <b class="obr">*</b></legend><small>Hospedagem, ajustes e acompanhamento. Não conta a verba de anúncios.</small><div class="ops">
+          <label><input type="radio" name="Investimento mensal" value="Até R$ 100"><span>Até R$ 100</span></label>
+          <label><input type="radio" name="Investimento mensal" value="R$ 100 a R$ 300"><span>R$ 100 a 300</span></label>
+          <label><input type="radio" name="Investimento mensal" value="R$ 300 a R$ 700"><span>R$ 300 a 700</span></label>
+          <label><input type="radio" name="Investimento mensal" value="Acima de R$ 700"><span>Acima de R$ 700</span></label>
+          <label><input type="radio" name="Investimento mensal" value="Prefiro conversar"><span>Prefiro conversar</span></label>
+        </div><p class="msg-erro">Escolha uma faixa.</p></fieldset>
+        <fieldset class="q"><legend>Se for anunciar, quanto pensa em colocar de verba por mês?</legend><small>A verba vai direto para o Google ou para o Instagram, no seu cartão.</small><div class="ops">
+          <label><input type="radio" name="Verba de anúncios" value="Não pretendo anunciar agora"><span>Não agora</span></label>
+          <label><input type="radio" name="Verba de anúncios" value="Até R$ 500"><span>Até R$ 500</span></label>
+          <label><input type="radio" name="Verba de anúncios" value="R$ 500 a R$ 1.500"><span>R$ 500 a 1.500</span></label>
+          <label><input type="radio" name="Verba de anúncios" value="Acima de R$ 1.500"><span>Acima de R$ 1.500</span></label>
+        </div></fieldset>
+        <fieldset class="q" data-obr><legend>Quem decide sobre esse investimento? <b class="obr">*</b></legend><div class="ops">
+          <label><input type="radio" name="Quem decide" value="Eu decido"><span>Eu decido</span></label>
+          <label><input type="radio" name="Quem decide" value="Eu e um sócio"><span>Eu e um sócio</span></label>
+          <label><input type="radio" name="Quem decide" value="Outra pessoa"><span>Outra pessoa</span></label>
+        </div><p class="msg-erro">Escolha uma opção.</p></fieldset>
+        <fieldset class="q"><legend>O que vocês já têm pronto?</legend><div class="ops">
+          <label><input type="checkbox" name="Já tem" value="Logo"><span>Logo</span></label>
+          <label><input type="checkbox" name="Já tem" value="Fotos dos trabalhos"><span>Fotos dos trabalhos</span></label>
+          <label><input type="checkbox" name="Já tem" value="Fotos da fachada"><span>Fotos da fachada</span></label>
+          <label><input type="checkbox" name="Já tem" value="Vídeos"><span>Vídeos</span></label>
+          <label><input type="checkbox" name="Já tem" value="Domínio .com.br"><span>Domínio .com.br</span></label>
+        </div></fieldset>
+        <fieldset class="q"><legend>Melhor período para a nossa conversa</legend><div class="ops">
+          <label><input type="radio" name="Melhor período" value="Manhã"><span>Manhã</span></label>
+          <label><input type="radio" name="Melhor período" value="Tarde"><span>Tarde</span></label>
+          <label><input type="radio" name="Melhor período" value="Fim do dia"><span>Fim do dia</span></label>
+          <label><input type="radio" name="Melhor período" value="Tanto faz"><span>Tanto faz</span></label>
+        </div></fieldset>
+        <div class="q"><label><span>Quer contar mais alguma coisa?</span><textarea name="Observações"></textarea></label></div>
+        <fieldset class="q" data-obr><legend class="sr-only">Autorização</legend><div class="ops">
+          <label class="aut"><input type="checkbox" name="Autorização" value="Sim"><span>Autorizo a Negócios Smart a usar estas respostas para preparar a proposta e a falar comigo pelo WhatsApp informado.</span></label>
+        </div><p class="msg-erro">Precisamos da sua autorização para enviar.</p></fieldset>
+      </section>
+
+      <!-- fim -->
+      <section class="diag-etapa diag-fim" data-etapa="6" hidden>
+        <h2>Pronto! Falta só enviar</h2>
+        <p>As suas respostas vão organizadas para o WhatsApp da Negócios Smart. É só tocar em enviar quando a conversa abrir.</p>
+        <a class="diag-btn zap" id="enviar-zap" href="#" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>
+        <p class="diag-priv">Nada fica salvo neste site. As respostas só saem do seu aparelho quando você envia a mensagem.</p>
+      </section>
+
+      <div class="diag-acoes">
+        <button type="button" class="diag-btn" id="voltar" hidden>Voltar</button>
+        <button type="button" class="diag-btn prim" id="avancar">Avançar</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+(() => {
+  const ZAP = "{{ zap }}";
+  const form = document.getElementById("diag");
+  const etapas = [...form.querySelectorAll(".diag-etapa")];
+  const voltar = document.getElementById("voltar"), avancar = document.getElementById("avancar");
+  const barra = document.getElementById("barra"), passoTxt = document.getElementById("passo-txt");
+  let atual = 0;
+
+  function mostrar(i) {
+    etapas.forEach((e, k) => { e.hidden = k !== i; });
+    atual = i;
+    const fim = i === etapas.length - 1;
+    voltar.hidden = i === 0;
+    avancar.hidden = fim;
+    avancar.textContent = i === etapas.length - 2 ? "Revisar e enviar" : "Avançar";
+    barra.style.width = ((Math.min(i + 1, 5)) / 5 * 100) + "%";
+    passoTxt.textContent = fim ? "Tudo pronto" : "Etapa " + (i + 1) + " de 5";
+    window.scrollTo({ top: form.getBoundingClientRect().top + scrollY - 140, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  }
+
+  function valido(q) {
+    const campo = q.querySelector("input[type=text], input[type=tel], textarea");
+    let ok;
+    if (campo) {
+      const v = campo.value.trim();
+      ok = q.hasAttribute("data-tel") ? v.replace(/\D/g, "").length >= 10 : v.length >= 2;
+    } else {
+      const marcados = q.querySelectorAll("input:checked").length;
+      const max = +(q.querySelector("[data-max]")?.dataset.max || 99);
+      ok = marcados >= 1 && marcados <= max;
+    }
+    q.classList.toggle("erro", !ok);
+    return ok;
+  }
+
+  function validarEtapa(i) {
+    const qs = [...etapas[i].querySelectorAll(".q[data-obr]")];
+    const ruins = qs.filter((q) => !valido(q));
+    if (ruins.length) { const f = ruins[0].querySelector("input, textarea"); if (f) f.focus(); return false; }
+    return true;
+  }
+
+  form.addEventListener("input", (e) => { const q = e.target.closest(".q.erro"); if (q) valido(q); });
+
+  // limite de três objetivos
+  form.querySelectorAll("[data-max]").forEach((g) => g.addEventListener("change", (e) => {
+    const max = +g.dataset.max, marcados = g.querySelectorAll("input:checked");
+    if (marcados.length > max) e.target.checked = false;
+  }));
+
+  function mensagem() {
+    const dados = new FormData(form);
+    const grupos = {};
+    for (const [k, v] of dados.entries()) { if (!v.trim() || k === "Autorização") continue; (grupos[k] = grupos[k] || []).push(v.trim()); }
+    const secoes = [["Empresa", 1], ["Como os clientes chegam", 2], ["Atendimento", 3], ["Objetivos e o que orçar", 4], ["Orçamento", 5]];
+    let txt = "*Diagnóstico Negócios Smart*\n";
+    secoes.forEach(([titulo, n]) => {
+      const nomes = [...new Set([...etapas[n - 1].querySelectorAll("[name]")].map((el) => el.name))].filter((nm) => grupos[nm] && nm !== "Autorização");
+      if (!nomes.length) return;
+      txt += "\n*" + titulo + "*\n" + nomes.map((nm) => nm + ": " + grupos[nm].join(", ")).join("\n") + "\n";
+    });
+    txt += "\nAutorizo o contato pelo WhatsApp informado.";
+    return txt;
+  }
+
+  avancar.addEventListener("click", () => {
+    if (!validarEtapa(atual)) return;
+    if (atual === etapas.length - 2) document.getElementById("enviar-zap").href = "https://wa.me/" + ZAP + "?text=" + encodeURIComponent(mensagem());
+    mostrar(atual + 1);
+  });
+  voltar.addEventListener("click", () => mostrar(atual - 1));
+  mostrar(0);
+})();
+</script>
