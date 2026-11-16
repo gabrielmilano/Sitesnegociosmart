@@ -264,7 +264,7 @@ sitemap: false
   const barra = document.getElementById("barra"), passoTxt = document.getElementById("passo-txt");
   let atual = 0;
 
-  function mostrar(i) {
+  function mostrar(i, rolar = true) {
     etapas.forEach((e, k) => { e.hidden = k !== i; });
     atual = i;
     const fim = i === etapas.length - 1;
@@ -273,7 +273,7 @@ sitemap: false
     avancar.textContent = i === etapas.length - 2 ? "Revisar e enviar" : "Avançar";
     barra.style.width = ((Math.min(i + 1, 5)) / 5 * 100) + "%";
     passoTxt.textContent = fim ? "Tudo pronto" : "Etapa " + (i + 1) + " de 5";
-    window.scrollTo({ top: form.getBoundingClientRect().top + scrollY - 140, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    if (rolar) window.scrollTo({ top: form.getBoundingClientRect().top + scrollY - 140, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   }
 
   function valido(q) {
@@ -327,6 +327,6 @@ sitemap: false
     mostrar(atual + 1);
   });
   voltar.addEventListener("click", () => mostrar(atual - 1));
-  mostrar(0);
+  mostrar(0, false);
 })();
 </script>
