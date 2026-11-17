@@ -102,8 +102,8 @@ equipe:
     aba: "Arthur"
     area: "Tráfego pago"
     cargo: "Gestor de tráfego pago"
-    foto: ""          # [FOTO ARTHUR]
-    foto_celular: ""
+    foto: "/assets/brand/arthur-da-silva-rodrigues.webp"
+    foto_celular: "/assets/brand/arthur-da-silva-rodrigues-rosto.webp"
     texto:
       - "Arthur cuida do tráfego pago do começo ao fim, com tudo bem documentado para o cliente acompanhar."
     # [SERVIÇOS ARTHUR] confirmar com ele
