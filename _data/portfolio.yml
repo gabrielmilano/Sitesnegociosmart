@@ -84,8 +84,8 @@ projetos:
     segmento: "Lavanderia"
     url: "https://lavanderialaundrylounge.com.br"
     url_curta: "lavanderialaundrylounge.com.br"
-    texto: "Lavanderia no Centro de Criciúma. O site de uma página ganhou uma página para cada serviço, sitemap, Search Console e o mesmo endereço do Perfil no Google em todo o site."
-    tags: ["Páginas por serviço", "Search Console", "Dados estruturados"]
+    texto: "Lavanderia no Centro de Criciúma. O site de uma página ganhou uma página para cada serviço, fotos reais da loja, sitemap, Search Console e o mesmo endereço do Perfil no Google em todo o site."
+    tags: ["Páginas por serviço", "Fotos reais da loja", "Search Console"]
     case: "/cases/laundry-lounge"
     alt_desk: "Página inicial do site da Laundry Lounge, lavanderia no Centro de Criciúma"
     alt_cel: "Site da Laundry Lounge aberto no celular"
