@@ -114,8 +114,8 @@ equipe:
       - { titulo: "Documentação", texto: "Cada etapa registrada para você acompanhar." }
     whatsapp_msg: "Olá! Vi o site da Negócios Smart e quero falar sobre tráfego pago com o Arthur."
     whatsapp_rotulo: "Falar sobre tráfego pago"
-    instagram_url: ""  # [INSTAGRAM ARTHUR]
-    instagram_rotulo: "Ver no Instagram"
+    instagram_url: "https://www.instagram.com/sites.negociossmart/"   # Arthur sem Instagram próprio: leva ao da Negócios Smart
+    instagram_rotulo: "Ver no Instagram da Negócios Smart"
 
 # --- Case Laundry Lounge (/cases/laundry-lounge) ---
 case_laundry:
