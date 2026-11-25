@@ -35,7 +35,8 @@
                 {%- for n in port.nichos %}
                 {%- assign doNicho = port.projetos | where: "nicho", n.id %}
                 {%- assign clientes = doNicho | where: "status", "cliente" %}
-                {%- if clientes.size > 0 %}{% assign ref = clientes | first %}{% else %}{% assign ref = doNicho | first %}{% endif %}
+                {%- comment -%} referência: cliente real; sem cliente, um sistema próprio (nunca a demonstração) {%- endcomment -%}
+                {%- if clientes.size > 0 %}{% assign ref = clientes | first %}{% else %}{% assign ref = doNicho | where: "status", "sistema" | first %}{% endif %}
                 "{{ n.id }}": {"nicho": {{ n.titulo | jsonify }}, "nome": {{ ref.nome | jsonify }}, "segmento": {{ ref.segmento | jsonify }}, "status": {{ ref.status | jsonify }}, "slug": {{ ref.slug | jsonify }}, "url": {{ ref.case | default: ref.url | jsonify }}, "clientes": {{ clientes.size }}}{% unless forloop.last %},{% endunless %}
                 {%- endfor %}
             }</script>

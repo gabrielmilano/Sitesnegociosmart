@@ -1594,3 +1594,99 @@ html:not(.js) .mini__endereco { display: none; }
     .analise__proj img { width: 96px; height: 60px; }
 }
 /* reduzir movimento: os deslocamentos aqui são de 10px (entrada suave), então ficam */
+
+/* ========================================
+   PORTFÓLIO, PARTE 2 (não são clientes): aviso de separação, autoagendamento em destaque
+   ======================================== */
+.port__contagem li.port__contagem--outro { background: var(--white); border-style: dashed; color: var(--muted); }
+.port__contagem li.port__contagem--outro b { background: var(--paper); color: var(--ink-700); }
+.port__nichos a.port__nichos-outro { padding-right: 16px; border-style: dashed; color: var(--muted); box-shadow: none; }
+
+.port-divisa {
+    display: flex; align-items: center; gap: 14px 20px; margin: 104px 0 32px; padding: 20px 24px;
+    border: 1.5px dashed #c3ccdb; border-radius: var(--r);
+    background: repeating-linear-gradient(-45deg, var(--paper) 0 10px, var(--white) 10px 20px);
+    scroll-margin-top: calc(var(--header-h) + 24px);
+}
+.port-divisa__selo {
+    flex: none; padding: 6px 14px; border-radius: 999px;
+    font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    color: #fff; background: var(--ink-700);
+}
+.port-divisa p { color: var(--muted); }
+.port-divisa b { color: var(--text); }
+
+/* autoagendamento com WhatsApp personalizado (demonstração) */
+.auto {
+    position: relative; isolation: isolate; overflow: hidden;
+    display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 40px;
+    padding: 48px; border-radius: var(--r-lg);
+    background: var(--fundo, var(--ink-900)); color: #eaf4f1;
+}
+.auto::before { /* brilho na cor de destaque */
+    content: ""; position: absolute; z-index: -1; right: -12%; top: -30%; width: 60%; aspect-ratio: 1;
+    border-radius: 50%; background: radial-gradient(closest-side, var(--cor), transparent); opacity: .28;
+}
+.auto .proj__segmento { color: #9be7d3; }
+.auto .proj__selo--demo { margin-left: 0; color: #eaf4f1; background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .35); }
+.auto__titulo {
+    margin: 14px 0 12px; font-family: var(--font-display);
+    font-size: clamp(1.7rem, 1.25rem + 1.6vw, 2.6rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.08; color: #fff;
+}
+.auto__texto { max-width: 36em; color: rgba(234, 244, 241, .82); }
+.auto__passos { counter-reset: passo; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 28px; margin: 28px 0 30px; list-style: none; }
+.auto__passos li { counter-increment: passo; position: relative; display: grid; align-content: start; gap: 4px; padding-left: 42px; }
+.auto__passos li::before {
+    content: counter(passo); position: absolute; left: 0; top: -2px;
+    display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%;
+    font-family: var(--font-display); font-weight: 700; font-size: .9rem; color: var(--fundo); background: var(--cor);
+}
+.auto__passos b { color: #fff; font-weight: 600; }
+.auto__passos span { font-size: .92rem; color: rgba(234, 244, 241, .72); }
+.auto__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; }
+.auto__acoes .link-arrow { color: #fff; }
+
+.auto__visual { position: relative; display: flex; justify-content: center; align-items: flex-end; min-height: 440px; }
+.auto__tela { display: block; width: min(230px, 62%); margin-bottom: -96px; transform: rotate(-4deg); transition: transform .6s var(--ease); }
+.auto__tela:hover { transform: rotate(-2deg) translateY(-8px); }
+.auto__zap {
+    position: absolute; left: 0; top: 40px; width: min(290px, 78%);
+    padding: 12px; border-radius: 18px;
+    background: #0b141a; box-shadow: 0 24px 60px -18px rgba(0, 0, 0, .7);
+    animation: zapEntra 7s var(--ease) infinite;
+}
+.auto__zap-topo { display: flex; align-items: center; gap: 6px; margin: 0 4px 8px; font-size: .72rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #8696a0; }
+.auto__zap-topo .icon { color: #25d366; }
+.auto__zap-msg {
+    position: relative; margin: 0 0 6px; padding: 8px 10px 18px; border-radius: 10px 10px 10px 2px;
+    font-size: .88rem; line-height: 1.4; color: #e9edef; background: #202c33;
+}
+.auto__zap-msg small { position: absolute; right: 8px; bottom: 3px; font-size: .66rem; color: #8696a0; }
+.auto__zap-msg--resp { margin: 0 0 0 auto; width: fit-content; max-width: 82%; border-radius: 10px 10px 2px 10px; background: #005c4b; }
+@keyframes zapEntra {
+    0%, 6% { opacity: 0; transform: translateY(14px) scale(.97); }
+    12%, 92% { opacity: 1; transform: none; }
+    100% { opacity: 0; transform: translateY(-6px); }
+}
+
+/* analisador: link para a demonstração (clínicas) */
+.analise__demo { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 14px; }
+.analise__demo a { font-weight: 600; color: var(--blue); }
+.analise__demo-selo { padding: 3px 10px; border-radius: 999px; font-size: .74rem; font-weight: 600; color: var(--muted); border: 1px dashed #cbd3e1; }
+
+@media (max-width: 1080px) {
+    .auto { grid-template-columns: minmax(0, 1fr); padding: 40px 36px 0; }
+    .auto__visual { min-height: 380px; }
+}
+@media (max-width: 760px) {
+    .port-divisa { flex-direction: column; align-items: flex-start; margin-top: 72px; padding: 18px; }
+    .auto { padding: 28px 22px 0; gap: 8px; }
+    .auto__passos { grid-template-columns: minmax(0, 1fr); gap: 14px; margin: 22px 0 24px; }
+    .auto__acoes .btn { width: 100%; justify-content: center; }
+    .auto__visual { min-height: 360px; margin-top: 16px; }
+    .auto__tela { width: 52%; margin-left: 30%; margin-bottom: -80px; }
+    .auto__zap { top: 0; width: 76%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .auto__zap { animation: none; } /* mensagem fica parada e visível */
+}

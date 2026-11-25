@@ -19,7 +19,7 @@
     const PERGUNTAS = [
         { id: 'ramo', titulo: 'Qual é o ramo do seu negócio?', resumo: 'Ramo', op: [
             { v: 'automotivo', t: 'Automotivo', d: 'Som, película, estética automotiva, oficina' },
-            { v: 'saude', t: 'Saúde e estética', d: 'Clínica, consultório, podologia, estética' },
+            { v: 'saude', t: 'Clínica, saúde e estética', d: 'Clínica, consultório, podologia, estética' },
             { v: 'comercio', t: 'Comércio e serviços locais', d: 'Loja, lavanderia, serviços da cidade' },
             { v: 'imoveis', t: 'Imóveis', d: 'Corretor autônomo, imobiliária' },
             { v: 'industria', t: 'Indústria e metalurgia', d: 'Usinagem, caldeiraria, fabricação' },
@@ -63,6 +63,7 @@
         celular: { t: 'Site que funciona no celular', d: 'Rápido, com o seu serviço explicado em poucos segundos e o botão de chamar sempre à mão.' },
         pedido: { t: 'Pedido pronto no WhatsApp', d: 'O cliente escolhe o serviço no site e a mensagem chega montada. Menos vai e volta, mais tempo para atender.' },
         agenda: { t: 'Agenda organizada', d: 'Agendamento pelo site, com o horário escolhido pelo cliente e o aviso chegando para você.' },
+        autoagenda: { t: 'Autoagendamento com WhatsApp personalizado', d: 'O paciente marca sozinho pelo celular, a recepção confirma com um toque e ele recebe no WhatsApp a mensagem com o nome dele, o dia e a hora. Na véspera, sai o lembrete.' },
         marca: { t: 'Marca que passa confiança', d: 'Identidade com as cores e o jeito do seu negócio, igual no site, no Google e no Instagram.' },
         fidelizar: { t: 'Clientes que voltam', d: 'Sistemas sob medida para lembrar o retorno, oferecer o próximo serviço e manter quem já é cliente por perto.' }
     };
@@ -137,6 +138,12 @@
         if (resp.pedidos === 'whats') add('pedido');
         if (resp.pedidos === 'telefone' || resp.pedidos === 'ordem') add('agenda');
         add('fidelizar');
+        // clínica: o autoagendamento com WhatsApp entra no lugar da agenda comum, logo no começo
+        if (resp.ramo === 'saude' && resp.pedidos !== 'online') {
+            const i = chaves.indexOf('agenda');
+            if (i > -1) chaves.splice(i, 1);
+            chaves.splice(Math.min(1, chaves.length), 0, 'autoagenda');
+        }
         const lista = chaves.slice(0, 4);
 
         const wrap = el('div', 'analise__resultado');
@@ -164,22 +171,31 @@
         const proj = projetos[resp.ramo];
         if (proj && proj.nome) {
             const a = el('a', 'analise__proj');
-            a.href = `#nicho-${resp.ramo}`;
+            a.href = proj.status === 'cliente' ? `#nicho-${resp.ramo}` : '#sistemas-proprios';
             const img = el('img');
             img.src = `/assets/cases/${proj.slug}-800.webp`;
             img.alt = '';
             img.width = 160; img.height = 100;
             img.loading = 'lazy';
             const txt = el('span', 'analise__proj-txt');
-            const rotulo = proj.status === 'cliente' ? 'Do seu ramo, já com a gente' : proj.status === 'sistema' ? 'Feito por nós para o seu ramo' : 'Demonstração para o seu ramo';
-            txt.append(el('small', null, rotulo), el('b', null, proj.nome), el('span', null, `Ver projetos de ${proj.nicho} →`));
+            const cliente = proj.status === 'cliente';
+            const rotulo = cliente ? 'Cliente real do seu ramo, no ar' : 'Sistema próprio da Negócios Smart · não é cliente';
+            txt.append(el('small', null, rotulo), el('b', null, proj.nome), el('span', null, cliente ? `Ver clientes de ${proj.nicho} →` : 'Ver os sistemas próprios →'));
             a.append(img, txt);
             a.addEventListener('click', () => {
-                const g = document.getElementById(`nicho-${resp.ramo}`);
+                const g = document.getElementById(proj.status === 'cliente' ? `nicho-${resp.ramo}` : 'sistemas-proprios');
                 if (g) { g.classList.add('is-alvo'); setTimeout(() => g.classList.remove('is-alvo'), 2400); }
             });
             wrap.append(a);
-        } else {
+        }
+        if (resp.ramo === 'saude') {
+            const p = el('p', 'analise__demo');
+            const a = el('a', null, 'Testar o autoagendamento com WhatsApp →');
+            a.href = '#autoagendamento';
+            p.append(el('span', 'analise__demo-selo', 'Demonstração'), a);
+            wrap.append(p);
+        }
+        if (!(proj && proj.nome)) {
             const p = el('p', 'analise__sem-proj', 'Ainda não temos um projeto do seu ramo publicado aqui. ');
             const a = el('a', null, 'Veja como trabalhamos nos outros ramos →');
             a.href = '#projetos';

@@ -1,14 +1,15 @@
 {%- comment -%}
-  Portfólio da home (#projetos). Dados em _data/portfolio.yml.
-  Grupos por NICHO (ordem de "nichos" no yml; dentro de cada um, clientes primeiro), atalhos
-  para cada nicho (também usados pelo analisador, #analise), faixas cruzadas
-  com o que já foi entregue e, no computador, a página do projeto rola dentro da tela
-  ao passar o mouse (script.js, data-inteira). No celular, cada grupo vira um carrossel.
+  Portfólio da home (#projetos). Dados em _data/portfolio.yml. Duas partes que NÃO se misturam:
+  1) Clientes reais, separados por nicho (ordem de "nichos"), com atalhos #nicho-<id>.
+  2) Depois do aviso "não são clientes": o autoagendamento com WhatsApp personalizado em destaque
+     (demonstração, #autoagendamento) e os sistemas próprios.
+  No computador, a página do projeto rola dentro da tela ao passar o mouse (script.js, data-inteira).
+  No celular, grupos com mais de um projeto viram carrossel.
 {%- endcomment -%}
 {%- assign port = site.data.portfolio %}
-{%- assign n_cliente = port.projetos | where: "status", "cliente" | size %}
-{%- assign n_sistema = port.projetos | where: "status", "sistema" | size %}
-{%- assign n_demo = port.projetos | where: "status", "demo" | size %}
+{%- assign clientes = port.projetos | where: "status", "cliente" %}
+{%- assign sistemas = port.projetos | where: "status", "sistema" %}
+{%- assign demos = port.projetos | where: "status", "demo" %}
 {%- assign num = 0 %}
         <!-- PROJETOS -->
         <section class="section section--projetos" id="projetos">
@@ -16,14 +17,14 @@
                 <div class="section-head section-head--split" data-reveal>
                     <div>
                         <span class="tag">Portfólio</span>
-                        <h2 class="section-title">Projetos reais, <em class="serif">no ar</em> agora.</h2>
+                        <h2 class="section-title">Clientes reais, <em class="serif">no ar</em> agora.</h2>
                     </div>
                     <div class="port__resumo">
-                        <p class="section-lead">Separados por ramo: encontre o seu e veja o que já fizemos para negócios parecidos. Todos estão publicados e funcionando.</p>
+                        <p class="section-lead">Separados por ramo: encontre o seu e veja o que já fizemos para negócios parecidos. Mais abaixo, separado, o que construímos para você testar.</p>
                         <ul class="port__contagem">
-                            {%- if n_cliente > 0 %}<li><b>{{ n_cliente }}</b> {% if n_cliente == 1 %}site de cliente{% else %}sites de clientes{% endif %}</li>{% endif %}
-                            {%- if n_sistema > 0 %}<li><b>{{ n_sistema }}</b> {% if n_sistema == 1 %}sistema próprio{% else %}sistemas próprios{% endif %}</li>{% endif %}
-                            {%- if n_demo > 0 %}<li><b>{{ n_demo }}</b> {% if n_demo == 1 %}demonstração{% else %}demonstrações{% endif %}</li>{% endif %}
+                            <li><b>{{ clientes.size }}</b> {% if clientes.size == 1 %}cliente no ar{% else %}clientes no ar{% endif %}</li>
+                            {%- if demos.size > 0 %}<li class="port__contagem--outro"><b>{{ demos.size }}</b> {% if demos.size == 1 %}demonstração{% else %}demonstrações{% endif %}</li>{% endif %}
+                            {%- if sistemas.size > 0 %}<li class="port__contagem--outro"><b>{{ sistemas.size }}</b> {% if sistemas.size == 1 %}sistema próprio{% else %}sistemas próprios{% endif %}</li>{% endif %}
                         </ul>
                     </div>
                 </div>
@@ -42,7 +43,7 @@
                 <div class="faixa faixa--escura">
                     <div class="faixa__trilho">
                         {%- for volta in (1..4) %}
-                        <ul class="faixa__lista"{% if volta > 1 %} aria-hidden="true"{% else %} aria-label="Segmentos atendidos"{% endif %}>
+                        <ul class="faixa__lista"{% if volta > 1 %} aria-hidden="true"{% else %} aria-label="Ramos dos nossos clientes"{% endif %}>
                             {%- for item in port.faixa_segmentos %}<li>{{ item }}</li>{% endfor %}
                         </ul>
                         {%- endfor %}
@@ -51,71 +52,31 @@
             </div>
 
             <div class="container">
-                <nav class="port__nichos" aria-label="Projetos por ramo">
+                <nav class="port__nichos" aria-label="Clientes por ramo">
                     {%- for n in port.nichos %}
-                    {%- assign qtd = port.projetos | where: "nicho", n.id | size %}
+                    {%- assign qtd = clientes | where: "nicho", n.id | size %}
                     {%- if qtd > 0 %}
                     <a href="#nicho-{{ n.id }}">{{ n.titulo }} <b>{{ qtd }}</b></a>
                     {%- endif %}
                     {%- endfor %}
+                    <a class="port__nichos-outro" href="#autoagendamento">Demonstrações e sistemas</a>
                 </nav>
 
+                <!-- PARTE 1: CLIENTES REAIS, POR NICHO -->
                 {%- for n in port.nichos %}
-                {%- assign doNicho = port.projetos | where: "nicho", n.id %}
+                {%- assign doNicho = clientes | where: "nicho", n.id %}
                 {%- if doNicho.size > 0 %}
-                {%- assign n_cli = doNicho | where: "status", "cliente" | size %}
-                {%- assign n_sis = doNicho | where: "status", "sistema" | size %}
-                {%- if n_cli > 0 %}{% assign selo = "cliente" %}{% elsif n_sis > 0 %}{% assign selo = "sistema" %}{% else %}{% assign selo = "demo" %}{% endif %}
                 {%- assign impar = doNicho.size | modulo: 2 %}
-                {%- assign k = 0 %}
-                <div class="port-grupo port-grupo--{{ selo }}" id="nicho-{{ n.id }}" data-reveal>
+                <div class="port-grupo port-grupo--cliente" id="nicho-{{ n.id }}" data-reveal>
                     <div class="port-grupo__head">
-                        <h3 class="port-grupo__titulo"><span class="status status--{{ selo }}">{{ n.titulo }}</span></h3>
-                        <p>{{ n.texto }}{% if n_cli > 0 %} <b class="port-grupo__clientes">{{ n_cli }} {% if n_cli == 1 %}cliente{% else %}clientes{% endif %} no ar</b>{% endif %}</p>
+                        <h3 class="port-grupo__titulo"><span class="status status--cliente">{{ n.titulo }}</span></h3>
+                        <p>{{ n.texto }} <b class="port-grupo__clientes">{{ doNicho.size }} {% if doNicho.size == 1 %}cliente{% else %}clientes{% endif %} no ar</b></p>
                     </div>
                     <div class="port-grupo__lista{% if doNicho.size > 1 %} port-grupo__lista--carrossel{% endif %}">
-                        {%- for st in port.status_ordem %}
-                        {%- assign parte = doNicho | where: "status", st %}
-                        {%- for p in parte %}
+                        {%- for p in doNicho %}
                         {%- assign num = num | plus: 1 %}
-                        {%- assign k = k | plus: 1 %}
-                        {%- if impar == 1 and k == 1 %}{% assign largo = true %}{% else %}{% assign largo = false %}{% endif %}
-                        <article class="proj proj--{{ p.status }}{% if largo %} proj--destaque{% endif %}" style="--fundo: {{ p.fundo }}; --cor: {{ p.cor }}">
-                            <a class="proj__media" href="{{ p.url }}" target="_blank" rel="noopener" data-inteira="/assets/cases/rolagem/{{ p.slug }}-desktop-800.webp" data-inteira-grande="/assets/cases/rolagem/{{ p.slug }}-desktop.webp">
-                                <div class="browser">
-                                    <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">{{ p.url_curta }}</span></div>
-                                    <div class="proj__tela">
-                                        <img src="/assets/cases/{{ p.slug }}-800.webp" srcset="/assets/cases/{{ p.slug }}-800.webp 800w, /assets/cases/{{ p.slug }}.webp 1600w" sizes="{% if largo %}(max-width: 760px) 80vw, (max-width: 1080px) calc(100vw - 96px), 640px{% else %}(max-width: 760px) 80vw, (max-width: 1200px) 46vw, 540px{% endif %}" width="1600" height="1000" alt="{{ p.alt_desk }}" loading="lazy" decoding="async">
-                                    </div>
-                                </div>
-                                <div class="phone proj__phone">
-                                    <img src="/assets/cases/{{ p.slug }}-mobile-260.webp" srcset="/assets/cases/{{ p.slug }}-mobile-260.webp 260w, /assets/cases/{{ p.slug }}-mobile.webp 520w" sizes="{% if largo %}(max-width: 760px) 22vw, 150px{% else %}(max-width: 760px) 20vw, 120px{% endif %}" width="520" height="1125" alt="{{ p.alt_cel }}" loading="lazy" decoding="async">
-                                </div>
-                                {%- if num == 1 %}
-                                <span class="proj__dica" aria-hidden="true">Passe o mouse para rolar a página</span>
-                                {%- endif %}
-                            </a>
-                            <div class="proj__info">
-                                <div class="proj__meta">
-                                    <span class="proj__num">{% if num < 10 %}0{% endif %}{{ num }}</span>
-                                    <span class="proj__segmento">{{ p.segmento }}</span>
-                                    <span class="proj__selo proj__selo--{{ p.status }}">{{ port.status_rotulo[p.status] }}</span>
-                                </div>
-                                <h4 class="proj__nome">{{ p.nome }}</h4>
-                                <p>{{ p.texto }}</p>
-                                <ul class="proj__tags">{% for t in p.tags %}<li>{{ t }}</li>{% endfor %}</ul>
-                                <div class="proj__links">
-                                    {%- if p.case %}
-                                    <a class="link-arrow" href="{{ p.case }}">Ver o case <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
-                                    {%- endif %}
-                                    <a class="link-arrow" href="{{ p.url }}" target="_blank" rel="noopener">{{ p.rotulo_link | default: "Visitar o site" }} <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
-                                    {%- if p.link2 %}
-                                    <a class="link-arrow" href="{{ p.link2 }}" target="_blank" rel="noopener">{{ p.link2_rotulo }} <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
-                                    {%- endif %}
-                                </div>
-                            </div>
-                        </article>
-                        {%- endfor %}
+                        {%- if impar == 1 and forloop.first %}{% assign largo = true %}{% else %}{% assign largo = false %}{% endif %}
+                        {% include proj-card.html p=p num=num largo=largo %}
                         {%- endfor %}
                     </div>
                     {%- if doNicho.size > 1 %}
@@ -124,5 +85,73 @@
                 </div>
                 {%- endif %}
                 {%- endfor %}
+
+                <!-- PARTE 2: NÃO SÃO CLIENTES -->
+                <div class="port-divisa" id="autoagendamento" data-reveal>
+                    <span class="port-divisa__selo">Não são clientes</span>
+                    <p><b>Daqui para baixo, é o que a Negócios Smart construiu para você testar.</b> Uma demonstração com dados fictícios e os sistemas próprios que a gente mantém.</p>
+                </div>
+
+                {%- for d in demos %}
+                {%- assign num = num | plus: 1 %}
+                <article class="auto" style="--fundo: {{ d.fundo }}; --cor: {{ d.cor }}" data-reveal>
+                    <div class="auto__info">
+                        <div class="proj__meta">
+                            <span class="proj__segmento">{{ d.segmento }}</span>
+                            <span class="proj__selo proj__selo--demo">Demonstração · clínica fictícia</span>
+                        </div>
+                        <h3 class="auto__titulo">{{ d.nome }}</h3>
+                        <p class="auto__texto">{{ d.texto }}</p>
+                        {%- if d.passos %}
+                        <ol class="auto__passos">
+                            {%- for passo in d.passos %}
+                            <li><b>{{ passo[0] }}</b><span>{{ passo[1] }}</span></li>
+                            {%- endfor %}
+                        </ol>
+                        {%- endif %}
+                        <div class="auto__acoes">
+                            <a class="btn btn--primary" href="{{ d.url }}" target="_blank" rel="noopener">{{ d.rotulo_link | default: "Testar" }}</a>
+                            {%- if d.link2 %}
+                            <a class="link-arrow" href="{{ d.link2 }}" target="_blank" rel="noopener">{{ d.link2_rotulo }} <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+                            {%- endif %}
+                            <a class="link-arrow" href="{% include wa.html msg='Olá! Vi no site o autoagendamento com WhatsApp e quero para a minha clínica.' %}" target="_blank" rel="noopener">Quero na minha clínica <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="auto__visual">
+                        <a class="auto__tela" href="{{ d.url }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                            <div class="phone">
+                                <img src="/assets/cases/{{ d.slug }}-mobile-260.webp" srcset="/assets/cases/{{ d.slug }}-mobile-260.webp 260w, /assets/cases/{{ d.slug }}-mobile.webp 520w" sizes="(max-width: 760px) 44vw, 230px" width="520" height="1125" alt="" loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                        {%- if d.mensagem_exemplo %}
+                        <div class="auto__zap" role="img" aria-label="Exemplo da mensagem que o paciente recebe no WhatsApp: {{ d.mensagem_exemplo }}">
+                            <span class="auto__zap-topo"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg> Exemplo de mensagem</span>
+                            <p class="auto__zap-msg">{{ d.mensagem_exemplo }}<small>14:02 ✓✓</small></p>
+                            {%- if d.mensagem_resposta %}<p class="auto__zap-msg auto__zap-msg--resp">{{ d.mensagem_resposta }}<small>14:05</small></p>{% endif %}
+                        </div>
+                        {%- endif %}
+                    </div>
+                </article>
+                {%- endfor %}
+
+                {%- if sistemas.size > 0 %}
+                <div class="port-grupo port-grupo--sistema" id="sistemas-proprios" data-reveal>
+                    <div class="port-grupo__head">
+                        <h3 class="port-grupo__titulo"><span class="status status--sistema">Sistemas próprios</span></h3>
+                        <p>Plataformas que a Negócios Smart construiu e mantém. Não são sites de clientes.</p>
+                    </div>
+                    <div class="port-grupo__lista{% if sistemas.size > 1 %} port-grupo__lista--carrossel{% endif %}">
+                        {%- assign impar = sistemas.size | modulo: 2 %}
+                        {%- for p in sistemas %}
+                        {%- assign num = num | plus: 1 %}
+                        {%- if impar == 1 and forloop.first %}{% assign largo = true %}{% else %}{% assign largo = false %}{% endif %}
+                        {% include proj-card.html p=p num=num largo=largo %}
+                        {%- endfor %}
+                    </div>
+                    {%- if sistemas.size > 1 %}
+                    <p class="port__dica" aria-hidden="true">Arraste para o lado →</p>
+                    {%- endif %}
+                </div>
+                {%- endif %}
             </div>
         </section>

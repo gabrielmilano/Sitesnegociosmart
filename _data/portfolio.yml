@@ -1,13 +1,12 @@
 # =====================================================================
 #  PORTFÓLIO da home (seção #projetos) — _includes/portfolio.html
 #
-#  Desde 25/11/2026 a seção é separada por NICHO (lista "nichos", na ordem em que aparecem).
-#  Cada projeto diz o "nicho" (id) e o "status"; dentro do nicho, clientes vêm primeiro:
-#    cliente  = cliente fechado, site no ar    (selo "Cliente · no ar")
-#    sistema  = sistema/produto da Negócios Smart (selo "Sistema próprio")
-#    demo     = demonstração com dados fictícios  (selo "Demonstração")
-#  Card largo: automático quando o nicho tem número ímpar de projetos (o primeiro fica largo).
-#  Cliente novo: acrescentar em "projetos" com o nicho certo (ou criar o nicho) e tirar os prints.
+#  A seção tem DUAS PARTES que nunca se misturam (pedido do Gabriel, 25/11/2026):
+#    1) Clientes reais (status "cliente"), separados por NICHO, na ordem da lista "nichos".
+#    2) Abaixo do aviso "não são clientes": a demonstração de autoagendamento em destaque
+#       (status "demo", com "passos" e "mensagem_exemplo") e os sistemas próprios (status "sistema").
+#  Card largo: automático quando o nicho tem número ímpar de clientes (o primeiro fica largo).
+#  Cliente novo: acrescentar em "projetos" com status "cliente" e o nicho certo, e tirar os prints.
 #  Os ids dos nichos também são usados pelo analisador (assets/js/analisador.js).
 #
 #  Prints (nomes fixos a partir do "slug"), tirados com o capturar.js:
@@ -29,29 +28,26 @@ faixa_entregas:
   - "Busca com mapa"
   - "Assinaturas"
   - "Domínio próprio"
-faixa_segmentos:
+faixa_segmentos:   # só ramos de CLIENTES reais
+  - "Clínica de podologia"
   - "Som automotivo"
   - "Películas"
-  - "Podologia"
   - "Lavanderia"
-  - "Corretores de imóveis"
-  - "Finanças pessoais"
-  - "Clínicas e consultórios"
+  - "Sobrancelhas e estética"
 
 # Ordem dos selos dentro de cada nicho
-status_ordem: ["cliente", "sistema", "demo"]
 status_rotulo:
   cliente: "Cliente · no ar"
   sistema: "Sistema próprio"
   demo: "Demonstração"
 
 nichos:
+  - id: "saude"
+    titulo: "Clínicas e saúde"
+    texto: "Clínicas, consultórios, podologia e estética."
   - id: "automotivo"
     titulo: "Automotivo"
     texto: "Som, películas, estética automotiva e oficinas."
-  - id: "saude"
-    titulo: "Saúde e estética"
-    texto: "Clínicas, consultórios, podologia e estética."
   - id: "comercio"
     titulo: "Comércio e serviços locais"
     texto: "Lojas e serviços do dia a dia da cidade."
@@ -84,11 +80,11 @@ projetos:
     cor: "#c4a265"     # detalhe de destaque
     status: "cliente"
     nome: "Podocri"
-    segmento: "Podologia clínica"
+    segmento: "Clínica de podologia"
     url: "https://podocri.com.br"
     url_curta: "podocri.com.br"
     texto: "Clínica de podologia no Centro de Criciúma. A fachada da clínica abre o site, cada tratamento tem a própria página e um pé interativo monta a mensagem de agendamento no WhatsApp."
-    tags: ["Páginas por tratamento", "Agendamento pelo WhatsApp", "SEO local"]
+    tags: ["Clínica de saúde", "Páginas por tratamento", "Agendamento pelo WhatsApp", "SEO local"]
     case: "/cases/podocri"
     alt_desk: "Página inicial do site da Podocri, com a fachada da clínica de podologia no Centro de Criciúma"
     alt_cel: "Site da Podocri aberto no celular"
@@ -141,11 +137,18 @@ projetos:
     fundo: "#0f4f45"   # cor de fundo atrás dos aparelhos (da identidade do projeto)
     cor: "#e07a5f"     # detalhe de destaque
     status: "demo"
-    nome: "Site com autoagendamento"
-    segmento: "Clínicas e consultórios"
+    nome: "Autoagendamento com WhatsApp personalizado"
+    segmento: "Para clínicas e consultórios"
     url: "/demos/clinica/"
     url_curta: "negociosmart.com.br/demos/clinica"
-    texto: "O paciente marca a consulta sozinho, pelo celular, em 4 toques: motivo, condições de saúde, dia e horário. A recepção recebe o pedido na hora e confirma pelo WhatsApp. Letra grande e uma pergunta por tela. Demonstração com uma clínica fictícia."
+    texto: "O paciente marca a consulta sozinho, pelo celular, e a recepção confirma com um toque. A confirmação chega no WhatsApp dele com o nome, o dia, a hora e o profissional, e na véspera sai o lembrete. Letra grande e uma pergunta por tela, pensado para qualquer idade."
+    passos:
+      - ["O paciente marca sozinho", "Escolhe o motivo, conta as condições de saúde e vê só os horários livres."]
+      - ["A recepção recebe na hora", "O pedido cai no painel da clínica, com aviso de saúde destacado."]
+      - ["Confirmação no WhatsApp", "Um toque em confirmar e o paciente recebe a mensagem com o nome dele, o dia e a hora."]
+      - ["Lembrete na véspera", "Um dia antes, sai o lembrete automático. Menos falta na agenda."]
+    mensagem_exemplo: "Olá, João! Sua consulta na clínica está confirmada para quinta-feira, às 14h, com a Dra. Helena. Até lá!"
+    mensagem_resposta: "Obrigado, estarei aí!"
     tags: ["Autoagendamento", "Painel da recepção", "Avisos em tempo real"]
     rotulo_link: "Testar o autoagendamento"
     link2: "/demos/clinica/admin/"

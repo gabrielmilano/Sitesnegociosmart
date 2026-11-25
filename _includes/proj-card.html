@@ -1,0 +1,39 @@
+{%- comment -%}
+  Card de um projeto do portfólio. Uso: {% include proj-card.html p=projeto num=1 largo=true %}
+  (prints com nomes fixos a partir do slug; ver _data/portfolio.yml)
+{%- endcomment -%}
+<article class="proj proj--{{ include.p.status }}{% if include.largo %} proj--destaque{% endif %}" style="--fundo: {{ include.p.fundo }}; --cor: {{ include.p.cor }}">
+    <a class="proj__media" href="{{ include.p.url }}" target="_blank" rel="noopener" data-inteira="/assets/cases/rolagem/{{ include.p.slug }}-desktop-800.webp" data-inteira-grande="/assets/cases/rolagem/{{ include.p.slug }}-desktop.webp">
+        <div class="browser">
+            <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">{{ include.p.url_curta }}</span></div>
+            <div class="proj__tela">
+                <img src="/assets/cases/{{ include.p.slug }}-800.webp" srcset="/assets/cases/{{ include.p.slug }}-800.webp 800w, /assets/cases/{{ include.p.slug }}.webp 1600w" sizes="{% if include.largo %}(max-width: 760px) 80vw, (max-width: 1080px) calc(100vw - 96px), 640px{% else %}(max-width: 760px) 80vw, (max-width: 1200px) 46vw, 540px{% endif %}" width="1600" height="1000" alt="{{ include.p.alt_desk }}" loading="lazy" decoding="async">
+            </div>
+        </div>
+        <div class="phone proj__phone">
+            <img src="/assets/cases/{{ include.p.slug }}-mobile-260.webp" srcset="/assets/cases/{{ include.p.slug }}-mobile-260.webp 260w, /assets/cases/{{ include.p.slug }}-mobile.webp 520w" sizes="{% if include.largo %}(max-width: 760px) 22vw, 150px{% else %}(max-width: 760px) 20vw, 120px{% endif %}" width="520" height="1125" alt="{{ include.p.alt_cel }}" loading="lazy" decoding="async">
+        </div>
+        {%- if include.num == 1 %}
+        <span class="proj__dica" aria-hidden="true">Passe o mouse para rolar a página</span>
+        {%- endif %}
+    </a>
+    <div class="proj__info">
+        <div class="proj__meta">
+            <span class="proj__num">{% if include.num < 10 %}0{% endif %}{{ include.num }}</span>
+            <span class="proj__segmento">{{ include.p.segmento }}</span>
+            <span class="proj__selo proj__selo--{{ include.p.status }}">{{ site.data.portfolio.status_rotulo[include.p.status] }}</span>
+        </div>
+        <h4 class="proj__nome">{{ include.p.nome }}</h4>
+        <p>{{ include.p.texto }}</p>
+        <ul class="proj__tags">{% for t in include.p.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+        <div class="proj__links">
+            {%- if include.p.case %}
+            <a class="link-arrow" href="{{ include.p.case }}">Ver o case <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+            {%- endif %}
+            <a class="link-arrow" href="{{ include.p.url }}" target="_blank" rel="noopener">{{ include.p.rotulo_link | default: "Visitar o site" }} <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+            {%- if include.p.link2 %}
+            <a class="link-arrow" href="{{ include.p.link2 }}" target="_blank" rel="noopener">{{ include.p.link2_rotulo }} <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+            {%- endif %}
+        </div>
+    </div>
+</article>
