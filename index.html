@@ -5,7 +5,7 @@ description: "Criação e desenvolvimento de sites, landing pages e sistemas em 
 preload_image: /assets/cases/vitrine.webp
 schemas: [empresa]
 sitemap: true
-last_modified_at: 2026-11-17
+last_modified_at: 2026-11-25
 ---
         <!-- HERO -->
         <section class="hero" id="topo">
@@ -42,6 +42,10 @@ last_modified_at: 2026-11-17
                             <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-down"/></svg>
                         </a>
                     </div>
+                    <a href="#analise" class="hero__analise">
+                        <span>Seu negócio se encaixa?</span> Faça a análise rápida
+                        <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+                    </a>
                     <ul class="hero__trust">
                         <li><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Prazo combinado e cumprido</li>
                         <li><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Pagamento 50% / 50%</li>
@@ -82,6 +86,8 @@ last_modified_at: 2026-11-17
                 </div>
             </div>
         </section>
+
+{% include analisador.html %}
 
         <!-- DIFERENCIAIS (BENTO) -->
         <section class="section section--paper" id="diferenciais">

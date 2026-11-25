@@ -1,0 +1,43 @@
+{%- comment -%}
+  Analisador de encaixe (#analise), logo depois do herói.
+  6 perguntas, uma por tela. No fim: o nível de oportunidade, o que resolvemos para aquele negócio,
+  o projeto do mesmo ramo (vem do _data/portfolio.yml, pelo "nicho") e o WhatsApp com as respostas.
+  Perguntas, respostas e textos do resultado ficam em assets/js/analisador.js.
+  Não promete número nem resultado: só diz o que a gente resolve.
+{%- endcomment -%}
+{%- assign port = site.data.portfolio %}
+        <!-- ANALISADOR -->
+        <section class="section analise" id="analise" aria-labelledby="analise-titulo">
+            <div class="container analise__grid">
+                <div class="analise__copy">
+                    <span class="tag">Análise rápida · 1 minuto</span>
+                    <h2 class="section-title" id="analise-titulo">Seu negócio se encaixa no que a gente <em class="serif">resolve?</em></h2>
+                    <p class="section-lead">Responda 6 perguntas sobre como os clientes te encontram hoje. No fim você vê o que dá para melhorar e quem do seu ramo já trabalha com a gente.</p>
+                    <ul class="analise__pontos">
+                        <li><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Sem cadastro e sem e-mail</li>
+                        <li><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>O resultado aparece na hora</li>
+                        <li><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Se quiser, manda para a gente pelo WhatsApp</li>
+                    </ul>
+                </div>
+
+                <div class="analise__card" id="analisador" data-zap="{{ site.data.negocio.empresa.whatsapp }}">
+                    <div class="analise__topo">
+                        <span class="analise__passo" id="analisePasso">Pergunta 1 de 6</span>
+                        <button type="button" class="analise__voltar" id="analiseVoltar" hidden>← Voltar</button>
+                    </div>
+                    <div class="analise__barra" aria-hidden="true"><span id="analiseBarra"></span></div>
+                    <div class="analise__corpo" id="analiseCorpo" aria-live="polite">
+                        <noscript><p>Para usar a análise, ative o JavaScript ou <a href="/diagnostico">responda o diagnóstico completo</a>.</p></noscript>
+                    </div>
+                </div>
+            </div>
+            <script type="application/json" id="analiseProjetos">{
+                {%- for n in port.nichos %}
+                {%- assign doNicho = port.projetos | where: "nicho", n.id %}
+                {%- assign clientes = doNicho | where: "status", "cliente" %}
+                {%- if clientes.size > 0 %}{% assign ref = clientes | first %}{% else %}{% assign ref = doNicho | first %}{% endif %}
+                "{{ n.id }}": {"nicho": {{ n.titulo | jsonify }}, "nome": {{ ref.nome | jsonify }}, "segmento": {{ ref.segmento | jsonify }}, "status": {{ ref.status | jsonify }}, "slug": {{ ref.slug | jsonify }}, "url": {{ ref.case | default: ref.url | jsonify }}, "clientes": {{ clientes.size }}}{% unless forloop.last %},{% endunless %}
+                {%- endfor %}
+            }</script>
+            <script src="/assets/js/analisador.js?v={{ site.time | date: '%s' }}" defer></script>
+        </section>

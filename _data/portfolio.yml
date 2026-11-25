@@ -1,11 +1,14 @@
 # =====================================================================
 #  PORTFÓLIO da home (seção #projetos) — _includes/portfolio.html
 #
-#  Cada projeto entra num grupo pelo "status":
-#    cliente  = site de cliente, no ar        (grupo "Clientes no ar")
-#    sistema  = sistema/produto da Negócios Smart (grupo "Sistemas próprios")
-#    demo     = demonstração com dados fictícios  (grupo "Demonstração")
-#  "destaque: true" = card largo, no topo do grupo (um por grupo).
+#  Desde 25/11/2026 a seção é separada por NICHO (lista "nichos", na ordem em que aparecem).
+#  Cada projeto diz o "nicho" (id) e o "status"; dentro do nicho, clientes vêm primeiro:
+#    cliente  = cliente fechado, site no ar    (selo "Cliente · no ar")
+#    sistema  = sistema/produto da Negócios Smart (selo "Sistema próprio")
+#    demo     = demonstração com dados fictícios  (selo "Demonstração")
+#  Card largo: automático quando o nicho tem número ímpar de projetos (o primeiro fica largo).
+#  Cliente novo: acrescentar em "projetos" com o nicho certo (ou criar o nicho) e tirar os prints.
+#  Os ids dos nichos também são usados pelo analisador (assets/js/analisador.js).
 #
 #  Prints (nomes fixos a partir do "slug"), tirados com o capturar.js:
 #    /assets/cases/<slug>.webp (1600×1000) + <slug>-800.webp
@@ -35,23 +38,36 @@ faixa_segmentos:
   - "Finanças pessoais"
   - "Clínicas e consultórios"
 
-grupos:
-  - status: "cliente"
-    titulo: "Clientes no ar"
-    texto: "Sites que trabalham todos os dias para negócios de Criciúma."
-  - status: "sistema"
-    titulo: "Sistemas próprios"
-    texto: "Plataformas que a Negócios Smart construiu e mantém."
-  - status: "demo"
-    titulo: "Demonstração"
-    texto: "Para testar antes de ter o seu."
+# Ordem dos selos dentro de cada nicho
+status_ordem: ["cliente", "sistema", "demo"]
+status_rotulo:
+  cliente: "Cliente · no ar"
+  sistema: "Sistema próprio"
+  demo: "Demonstração"
+
+nichos:
+  - id: "automotivo"
+    titulo: "Automotivo"
+    texto: "Som, películas, estética automotiva e oficinas."
+  - id: "saude"
+    titulo: "Saúde e estética"
+    texto: "Clínicas, consultórios, podologia e estética."
+  - id: "comercio"
+    titulo: "Comércio e serviços locais"
+    texto: "Lojas e serviços do dia a dia da cidade."
+  - id: "imoveis"
+    titulo: "Imóveis"
+    texto: "Corretores autônomos e imobiliárias."
+  - id: "sistemas"
+    titulo: "Aplicativos e sistemas"
+    texto: "Plataformas com login, assinaturas e WhatsApp."
 
 projetos:
   - slug: "salame"
+    nicho: "automotivo"
     fundo: "#17140f"   # cor de fundo atrás dos aparelhos (da identidade do projeto)
     cor: "#f5c518"     # detalhe de destaque
     status: "cliente"
-    destaque: true
     nome: "Salame Som e Películas"
     segmento: "Som automotivo e películas"
     url: "https://salamesomepeliculas.com.br"
@@ -63,6 +79,7 @@ projetos:
     alt_cel: "Site da Salame Som e Películas aberto no celular"
 
   - slug: "podocri"
+    nicho: "saude"
     fundo: "#0e3f44"   # cor de fundo atrás dos aparelhos (da identidade do projeto)
     cor: "#c4a265"     # detalhe de destaque
     status: "cliente"
@@ -77,6 +94,7 @@ projetos:
     alt_cel: "Site da Podocri aberto no celular"
 
   - slug: "laundry"
+    nicho: "comercio"
     fundo: "#1d3a8f"   # cor de fundo atrás dos aparelhos (da identidade do projeto)
     cor: "#60a5fa"     # detalhe de destaque
     status: "cliente"
@@ -91,6 +109,7 @@ projetos:
     alt_cel: "Site da Laundry Lounge aberto no celular"
 
   - slug: "vitrine"
+    nicho: "imoveis"
     fundo: "#1b2540"   # cor de fundo atrás dos aparelhos (da identidade do projeto)
     cor: "#8fa6e0"     # detalhe de destaque
     status: "sistema"
@@ -104,6 +123,7 @@ projetos:
     alt_cel: "Vitrine de Corretores aberta no celular"
 
   - slug: "financeiro"
+    nicho: "sistemas"
     fundo: "#1f4fd6"   # cor de fundo atrás dos aparelhos (da identidade do projeto)
     cor: "#93c5fd"     # detalhe de destaque
     status: "sistema"
@@ -117,10 +137,10 @@ projetos:
     alt_cel: "Aplicativo Financeiro aberto no celular"
 
   - slug: "clinica"
+    nicho: "saude"
     fundo: "#0f4f45"   # cor de fundo atrás dos aparelhos (da identidade do projeto)
     cor: "#e07a5f"     # detalhe de destaque
     status: "demo"
-    destaque: true
     nome: "Site com autoagendamento"
     segmento: "Clínicas e consultórios"
     url: "/demos/clinica/"
