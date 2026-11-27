@@ -1,0 +1,180 @@
+---
+layout: base
+permalink: /videomaker-criciuma
+title: "Videomaker em Criciúma: Vídeos e Fotos para Empresas | Negócios Smart"
+description: "Videomaker em Criciúma: gravação e edição de vídeos e fotos do seu negócio, prontos para Instagram, site, Google e anúncios. Captação no seu negócio."
+schemas: [servico]
+servico_nome: "Videomaker em Criciúma: vídeos e fotos para empresas"
+servico_tipo: "Produção, gravação e edição de vídeos e fotos para empresas"
+publico: "Empresas e negócios locais de Criciúma e região"
+sitemap: true
+last_modified_at: 2026-11-27
+breadcrumb: "Videomaker em Criciúma"
+whatsapp_msg: "Olá! Vi a página de vídeos e quero falar com o Guilherme sobre vídeos e fotos do meu negócio."
+faq:
+  - pergunta: "A gravação é feita no meu negócio?"
+    resposta: "Sim. A captação é feita no seu negócio, em Criciúma e região, para mostrar o lugar, o serviço e as pessoas de verdade."
+  - pergunta: "Preciso aparecer nos vídeos?"
+    resposta: "Não é obrigatório. Dá para mostrar o ambiente, o serviço sendo feito e os produtos. Quando quem atende aparece, o cliente costuma confiar mais."
+  - pergunta: "Os vídeos servem para anúncios?"
+    resposta: "Servem. O mesmo material pode ir para o Instagram, para o site e para as campanhas de tráfego pago, que o Arthur cuida aqui na equipe."
+  - pergunta: "As fotos podem ir para o Google Meu Negócio?"
+    resposta: "Podem e devem. Fotos reais da fachada, do ambiente e dos trabalhos ajudam o Perfil da empresa no Google a passar confiança."
+  - pergunta: "Onde vejo trabalhos já feitos?"
+    resposta: "Os trabalhos do Guilherme estão no Instagram dele, @guilhermealvesdsouza."
+---
+{%- assign gui = site.data.negocio.equipe | where: "slug", "guilherme" | first %}
+{%- capture wa_link %}{% include wa.html msg=page.whatsapp_msg %}{% endcapture %}
+        <!-- TOPO -->
+        <section class="hero hero--page" id="topo">
+            <div class="hero__bg" aria-hidden="true">
+                <div class="hero__grid"></div>
+                <div class="glow glow--green"></div>
+                <div class="glow glow--blue"></div>
+            </div>
+
+            <div class="container hero__inner">
+                <div class="hero__copy">
+                    <nav class="crumbs" aria-label="Você está em">
+                        <ol>
+                            <li><a href="/">Início</a></li>
+                            <li aria-current="page">{{ page.breadcrumb }}</li>
+                        </ol>
+                    </nav>
+                    <span class="eyebrow">
+                        <span class="eyebrow__dot"></span>
+                        Vídeo · Foto · Redes sociais · Criciúma
+                    </span>
+                    <h1 class="hero__title hero__title--page">
+                        Videomaker em Criciúma: vídeos e fotos do seu negócio, prontos para publicar
+                    </h1>
+                    <p class="hero__lead">
+                        O {{ gui.aba }}, videomaker da Negócios Smart, grava no seu negócio e entrega vídeos e fotos
+                        editados para o Instagram, o site, o Google e os anúncios. Imagem real, no lugar de foto de banco.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="{{ wa_link }}" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            Falar sobre vídeos
+                        </a>
+                        <a href="{{ gui.instagram_url }}" class="btn btn--glass btn--lg" target="_blank" rel="noopener">
+                            <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-instagram"/></svg>
+                            Ver trabalhos
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero__visual hero__visual--pessoa">
+                    <figure class="pessoa">
+                        <img src="{{ gui.foto }}" alt="Foto de {{ gui.nome }}, videomaker da Negócios Smart" width="448" height="560" fetchpriority="high">
+                        <figcaption>
+                            <b>{{ gui.nome }}</b>
+                            <span>{{ gui.cargo }} · Negócios Smart</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- O QUE ELE FAZ (serviços do Guilherme em _data/negocio.yml) -->
+        <section class="section" id="servicos">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="tag">O que está incluso</span>
+                    <h2 class="section-title">Da gravação ao vídeo <em class="serif">pronto.</em></h2>
+                    <p class="section-lead">Você não precisa editar nada nem aprender programa: recebe o material pronto para publicar.</p>
+                </div>
+
+                <ol class="steps">
+                    {%- for s in gui.servicos %}
+                    <li class="step" data-reveal{% unless forloop.first %} style="--d:{{ forloop.index0 | times: 80 }}ms"{% endunless %}>
+                        <span class="step__num">0{{ forloop.index }}</span>
+                        <h3>{{ s.titulo }}</h3>
+                        <p>{{ s.texto }}</p>
+                    </li>
+                    {%- endfor %}
+                </ol>
+            </div>
+        </section>
+
+        <!-- ONDE USAR -->
+        <section class="section section--paper" id="onde-usar">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="tag">Onde o material trabalha por você</span>
+                    <h2 class="section-title">Uma gravação, <em class="serif">vários lugares.</em></h2>
+                    <p class="section-lead">O mesmo dia de gravação rende conteúdo para tudo o que o cliente vê antes de chamar você.</p>
+                </div>
+
+                <ul class="incl">
+                    <li class="incl__card" data-reveal>
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-instagram"/></svg></span>
+                        <h3>Instagram</h3>
+                        <p>Reels, stories e posts com a cara do seu negócio.</p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:80ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-layout"/></svg></span>
+                        <h3>Site</h3>
+                        <p>Fotos reais do lugar e da equipe, que passam mais confiança que imagem genérica. <a href="/#planos">Ver os sites</a></p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:160ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg></span>
+                        <h3>Google Meu Negócio</h3>
+                        <p>Fachada, ambiente e trabalhos no Perfil da empresa no Maps. <a href="/google-meu-negocio-criciuma">Como funciona</a></p>
+                    </li>
+                    <li class="incl__card" data-reveal style="--d:240ms">
+                        <span class="local__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-search"/></svg></span>
+                        <h3>Anúncios</h3>
+                        <p>Vídeo que prende a atenção nas campanhas de tráfego pago. <a href="/trafego-pago-criciuma">Tráfego pago</a></p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+            <div class="container faq">
+                <div class="faq__aside" data-reveal>
+                    <span class="tag">Dúvidas frequentes</span>
+                    <h2 class="section-title">Perguntas <em class="serif">frequentes.</em></h2>
+                    <div class="faq__help">
+                        <p><b>Ficou alguma dúvida?</b> A gente responde no WhatsApp.</p>
+                        <a href="{% include wa.html msg='Olá! Tenho uma dúvida sobre vídeos e fotos.' %}" class="btn btn--dark btn--sm" target="_blank" rel="noopener">
+                            <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            Tirar dúvida
+                        </a>
+                    </div>
+                </div>
+
+                <div class="faq__list" data-reveal style="--d:80ms">
+                    {%- for item in page.faq %}
+                    <details class="faq-item"{% if forloop.first %} open{% endif %}>
+                        <summary>{{ item.pergunta }}<span class="faq-item__plus" aria-hidden="true"></span></summary>
+                        <p>{{ item.resposta }}</p>
+                    </details>
+                    {%- endfor %}
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAMADA FINAL -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta__box" data-reveal="scale">
+                    <div class="cta__bg" aria-hidden="true">
+                        <div class="glow glow--green"></div>
+                        <div class="glow glow--blue"></div>
+                        <img src="/assets/brand/logo-mark.webp" alt="Símbolo da Negócios Smart" class="cta__mark" width="176" height="240" loading="lazy">
+                    </div>
+                    <h2 class="cta__title">Seu negócio merece imagem <em class="serif">de verdade.</em></h2>
+                    <p class="cta__text">Chame no WhatsApp, conte o que você quer mostrar e a gente combina o dia da gravação.</p>
+                    <div class="cta__actions">
+                        <a href="{{ wa_link }}" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            Falar sobre vídeos
+                        </a>
+                        <a href="/#equipe" class="btn btn--glass btn--lg">Conhecer a equipe</a>
+                    </div>
+                </div>
+            </div>
+        </section>

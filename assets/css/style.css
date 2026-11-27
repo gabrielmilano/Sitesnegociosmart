@@ -1688,3 +1688,37 @@ html:not(.js) .mini__endereco { display: none; }
 @media (prefers-reduced-motion: reduce) {
     .auto__zap { animation: none; } /* mensagem fica parada e visível */
 }
+
+/* ========================================
+   PÁGINAS DE SERVIÇO DA EQUIPE (/trafego-pago-criciuma, /videomaker-criciuma)
+   Topo com a foto real de quem cuida do serviço
+   ======================================== */
+.hero__visual--pessoa { padding: 0; display: flex; justify-content: center; }
+.pessoa {
+    position: relative; width: min(400px, 100%); margin: 0;
+    border-radius: 14px; overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .12); background: var(--ink-900);
+    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .7);
+}
+.pessoa img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.pessoa figcaption {
+    position: absolute; inset: auto 0 0; display: grid; gap: 2px; padding: 48px 20px 18px;
+    background: linear-gradient(transparent, rgba(5, 9, 20, .92) 55%);
+}
+.pessoa figcaption b { font-family: var(--font-display); font-size: 1.1rem; color: #fff; }
+.pessoa figcaption span { font-size: .88rem; color: var(--on-dark-muted); }
+.pessoa__link { display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; font-size: .88rem; font-weight: 600; color: #7dd3fc; }
+.pessoa__link:hover { color: #fff; }
+
+/* perfil da equipe na home: link para a página do serviço */
+.perfil__acoes { align-items: center; }
+.perfil__pagina { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 4px; font-weight: 600; color: #7dd3fc; }
+.perfil__pagina:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+
+@media (max-width: 900px) {
+    .hero__visual--pessoa { max-width: 400px; padding: 0; }
+}
+@media (max-width: 600px) {
+    .pessoa { width: 78%; }
+    .pessoa img { aspect-ratio: 1; object-position: top; }
+}

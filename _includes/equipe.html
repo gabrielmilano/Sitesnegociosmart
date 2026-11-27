@@ -68,6 +68,9 @@
                                     {{ p.instagram_rotulo }}
                                 </a>
                                 {%- endif %}
+                                {%- if p.pagina and p.pagina != "" %}
+                                <a href="{{ p.pagina }}" class="perfil__pagina">{{ p.pagina_rotulo }} <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+                                {%- endif %}
                             </div>
                         </div>
                         {%- endfor %}

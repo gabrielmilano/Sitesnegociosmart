@@ -96,6 +96,8 @@ equipe:
     whatsapp_rotulo: "Falar sobre vídeos"
     instagram_url: "https://www.instagram.com/guilhermealvesdsouza/"
     instagram_rotulo: "Ver trabalhos no Instagram"
+    pagina: "/videomaker-criciuma"            # página do serviço (sitemap)
+    pagina_rotulo: "Vídeos e fotos em Criciúma"
 
   - slug: "arthur"
     nome: "Arthur da Silva Rodrigues"
@@ -116,6 +118,8 @@ equipe:
     whatsapp_rotulo: "Falar sobre tráfego pago"
     instagram_url: "https://www.instagram.com/sites.negociossmart/"   # Arthur sem Instagram próprio: leva ao da Negócios Smart
     instagram_rotulo: "Ver no Instagram da Negócios Smart"
+    pagina: "/trafego-pago-criciuma"          # página do serviço (sitemap)
+    pagina_rotulo: "Tráfego pago em Criciúma"
 
 # --- Case Laundry Lounge (/cases/laundry-lounge) ---
 case_laundry:
